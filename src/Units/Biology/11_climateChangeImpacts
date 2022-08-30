@@ -1,0 +1,61 @@
+import MakePage from './MakePage.js'; // For parsing -> every parser change will be made in MakePage.js and not the other Parser files
+import { useTranslation } from 'react-i18next';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Impacts of Climate Change on Canadians Assignment',
+        Text: {
+            transition: null,
+            text: [
+                `<p><b>Learning expectation: B1.1, A2.3</b></p>`
+            ]
+        },
+        Image: {
+            url: "Polar",
+            alt: 'polar',
+            position: 'below',
+            width: 420,
+            height: 320,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson1 = {
+        Type: 'Default',
+        Header: null,
+        Text: {
+            transition: "Next",
+            text: [
+                `<br><p><i>In this assignment, students will:</i></p>
+                <p>Assess impacts of climate change on the sustainability of local and global systems, describe local initiatives for combatting climate change, and identify solutions to address some of the impacts.</p>`,
+                `<p><b>Your mission?</b> Pick one of the following topics and create a short, 1 minute PSA describing:</p>`,
+                "<span class='re'>Impacts from extreme events and natural disturbances</span>",
+                "<span class='or'>Impacts on buildings and infrastructure</span>",
+                "<span class='ye'>Impacts on the product and prices/demand for goods and services</span>",
+                "<span class='gr'>Costs related to the impacts on public safety, health, and welfare of populations</span>",
+                "<span class='bl'>Impacts resulting from hydrological changes in lakes and streams</span>"
+            ]
+        }
+    }
+
+    const Lesson2 = {
+        Type: 'Default',
+        Header: null,
+        Text: {
+            transition: null,
+            text: [
+                `Remember to upload your video!`
+            ]
+        }
+    }
+
+const ComponentArray = [Intro, Lesson1, Lesson2]; // Insert component names here in the order they should be displayed
+
+    return ( 
+    <MakePage componentArray={ComponentArray} /> 
+    );
+}
+export default MakeComponent;

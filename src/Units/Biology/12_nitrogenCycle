@@ -1,0 +1,159 @@
+import MakePage from './MakePage.js'; // For parsing -> every parser change will be made in MakePage.js and not the other Parser files
+import { useTranslation } from 'react-i18next';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'The Nitrogen Cycle',
+        Text: {
+            transition: "Next",
+            text: [
+                `<p><i>By the end of this lesson, students will be able to:</i></p>
+                <p>Explain how naturally occuring phenomena, including the cycling matter and the flow of energy, contribute to the dynamic equilibrium within and bewteen ecosystems.</p>`,
+                `<p>Reflect an understanding of the importance of the dynamic equilibrium of ecosystems.</p>`,
+                `<p><br><b>Learning Expectations: B2.2</b></p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/SNC1D/Unit1/The+Nitrogen+Cycle/nitrogen-1.png",
+            alt: 'nitrogen',
+            position: 'below',
+            width: 300,
+            height: 300,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson1 = {   
+        Type: 'Default',
+        Header: 'Nitrogen is a key component of the bodies of living organisms, particularly in DNA.',
+        Text: {
+            transition: "Next",
+            text: [
+                `It exists in the atmosphere as <b>N2 gas.</b> During nitrogen fixation, 
+                bacteria convert N2 into ammonia, a form of nitrogen that plants are able to use.`,
+
+                `When animals eat the plants, they acquire <b>usable nitrogen compounds.</b>`,
+
+                `Nitrogen is a common <i>limiting nutrient</i> in nature and agriculture.`,
+
+                `<h3>When a nutrient is limiting, adding more of it will increase growth; 
+                it will cause plants to grow taller than if nothing were added.</h3>`,
+
+                { // note
+                    Example: 'Note',
+                    Content: "Nitrogen cycles in marine ecosystems: ammonification, nitrification, and denitrification.",
+                    // Image: { // optional
+                    //     url: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/SNC1D/Unit1/The+Nitrogen+Cycle/nitrogen-3.png', 
+                    //     alt: 'bacteria',
+                    //     height:100,
+                    //     width: 100,
+                    //     position: 'below',
+                    //     zoom: null // optional
+                    // },
+                },
+            ]
+
+            
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/SNC1D/Unit1/The+Nitrogen+Cycle/nitrogen-2.png",
+            alt: 'DNA',
+            position: 'above',
+            width: 150,
+            height: 150,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson2 = {   
+        Type: 'Default',
+        Header: 'Bacteria in the Nitrogen Cycle ',
+        Text: {
+            transition: "Next",
+            text: [
+                `Nitrogen fixing micro-organisms capture atmospheric nitrogen by converting it to ammonia, <b>NH3</b>, 
+                which can be taken up by plants and used to make organic molecules`,
+
+                `<p>Nitrogen-containing molecules are passed to animals when the plants are eaten.</p>`,
+
+                `<p>They are incorporated into the animal's body or excreted as waste, such as <b>urea</b> in urine.</p>`
+                
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/SNC1D/Unit1/The+Nitrogen+Cycle/nitrogen-3.png",
+            alt: 'bacteria',
+            position: 'below',
+            width: 250,
+            height: 250,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson3 = {   
+        Type: 'Default',
+        Header: 'Human Activity and the Nitrogen Cycle',
+        Text: {
+            transition: "Next",
+            text: [
+                `<h2>Humans may not be able to fix nitrogen biologically, but we do so by means of industrial processes.</h2>`,
+
+                `Human activity releases nitrogen into the environment by two main means:`,
+
+                {
+                    Example: 'List',
+                    Content: [
+                        {   front: {
+                            Example: null,
+                            Content: "Combustion of Fossil Fuels",
+                            },
+                            back: {
+                                Example: null,
+                                Content: "Nitrogen oxides are released into the atmosphere, contributing to the formation of <b>smog and acid rain.</b>",
+                            }
+                        },
+                        {   front: {
+                                Example: null,
+                                Content: "Nitrogen-containing fertilizers in agriculture"
+                            },
+                            back: {
+                                Example: null,
+                                Content: "Fertilizers as runoff into bodies of water result in blooms of algae, called <b>eutrophication</b>, reducing oxygen, killing aquatic organisms."
+                            }
+                        },
+                    ]
+                }
+                
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/SNC1D/Unit1/The+Nitrogen+Cycle/nitrogen-5.png",
+            alt: 'farming',
+            position: 'below',
+            width: 200,
+            height: 200,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Ready for a quick quiz?',
+        Text: null,
+        Audio: null
+    }
+
+
+const ComponentArray = [Intro, Lesson1, Lesson2, Lesson3, Ending]; // Insert component names here in the order they should be displayed
+
+    return ( 
+    <MakePage componentArray={ComponentArray} /> 
+    );
+}
+export default MakeComponent;

@@ -1,0 +1,30 @@
+.placeholder {
+  padding-top:100px;
+  position: relative;
+  border-radius: 3px;
+}
+
+.row {
+  position: absolute;
+  top: 350px;
+}
+
+.horizontal h1 {
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 25px;
+  color: #000;
+  background: #000;
+  display: inline-block;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sign {
+  margin-top: -15px;
+}
+
+.animals {
+  margin: -20px;;
+}

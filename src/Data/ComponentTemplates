@@ -1,0 +1,298 @@
+/* ------------ DO NOT ALTER TEMPLATES ------------ */
+
+const Mission_Intro_template = {
+    Type: 'Default',
+    Header: 'Final Mission',
+    Text: null,
+    Image: {
+        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+        alt: 'flag',
+        position: 'below',
+        width: 350,
+        zoom: null
+    },
+    Audio: null
+}
+
+const CheckIn_Intro_template = {
+    Type: 'Default',
+    Header: 'Check-in Questions',
+    Text: {
+        transition: null,
+        text: [ 
+        ]
+    },
+    Image: {
+        url: "https://drive.google.com/uc?export=view&id=13q-YS6jrBihLiUuGNcrz9sNmMhjMX3kr",
+        alt: 'flag',
+        position: 'below',
+        width: 300,
+        zoom: null
+    },
+    Audio: null
+}
+
+const CheckIn_Question_template = {
+    Type: 'Default',
+    Header: 'Question (question number goes here)',
+    Text: {
+        transition: null,
+        text: [
+            "<div class='or'>Question goes here</div>",
+        ]
+    },
+    Image: null,
+    Audio: null
+}
+
+const Examples_in_Lesson_template = {
+    Type: 'Default',
+    Header: 'Header goes here',
+    Text: {
+        transition: "Next or null",
+        text: [
+            { // cards
+                Example: 'List',
+                Content: [
+                    {   front: {
+                            Example: 'Math goes here or null', // any text is formatted using Mathjax
+                            Content: "Content at front of card goes here"
+                        }, 
+                        back: {
+                            Example: 'Math goes here or null', // any text is formatted using Mathjax
+                            Content: "Content at back of card goes here"
+                        },
+                    },
+                ]
+            },
+            { // number line
+                Example: 'Number Line',
+                Max: 'Maximum value goes here',
+                Min: 'Minimum value goes here',
+                Step: 'Interval value goes here',
+                Initial: "Initial value goes here",
+                Data: "Text goes here", // optional
+            },
+            { // math
+                Example: 'Math',
+                Content: 'Math goes here' // must follow Mathjax formatting guidelines
+            },
+            { // note
+                Example: 'Note',
+                Content: "Note content goes here",
+                Image: { // optional
+                    url: 'Image url goes here', 
+                    alt: 'Short image description goes here',
+                    position: 'above or below (for above or below text)',
+                    zoom: 'zoomed image goes here' // optional
+                },
+            },
+        ]
+    },
+    Image: { // optional
+        url: 'Image url goes here', 
+        alt: 'Short image description goes here',
+        position: 'above or below (for above or below text)',
+        zoom: 'zoomed image goes here' // optional
+    },
+    Audio: 'Audio file goes here' , // optional
+}
+
+
+const Excel_template = {
+    Type: 'Default',
+    Header: "Don't forget to save and submit your excel worksheet!",
+    Text: null,
+    Image: {
+        url: "https://drive.google.com/uc?export=view&id=1TWP3O79FQt6R3taVTr-wgvaqA65ri-0-",
+        alt: 'flag',
+        position: 'below',
+        width: '600vw',
+        zoom: null
+    },
+    Audio: null
+}
+
+const Worksheet_template = {
+    Type: 'Default',
+    Header: "Don't forget to print and fill out the worksheet!",
+    Text: null,
+    Image: {
+        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/worksheet1.gif",
+        alt: 'flag',
+        position: 'below',
+        width: '600vw',
+        zoom: null
+    },
+    Audio: null
+}
+
+const MC_template = {
+        Type: 'Multiple Choice',
+        Header: 'Header goes here',
+        Index: 'Index goes here', // if using multiple MC questions (ex.1, 2, 3, etc.)
+        Question: 'Question goes here',
+        Options: [
+            "Option 1",
+            "Option 2",
+            "Option 3"
+        ],
+        Answer: 'Option 2', // answer must be one of your options
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+    
+    const SA_template = {
+        Type: 'Short Answer',
+        Header: 'Header goes here',
+        Question: 'Question goes here',
+        Placeholder: 'Input placeholder goes here',
+        Answer: 'Answer goes here',
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+
+    const FB_template = {
+        Type: 'Fill in the Blank',
+        Header: 'Header goes here',
+        Question: ['Text before blank goes here', ['Options go here'], 'Text after blank goes here'],
+        Answer: ['Answers go here'],
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+    
+    const Default_template = {
+        Type: 'Default',
+        Header: 'Header goes here',
+        Text: {
+            transition: "Transition goes here ('Next' or 'null')",
+            text: ['Text goes here'],
+        },
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+
+    const VertDND_template = {
+        Type: 'Vertical DND',
+        Header: 'Header goes here',
+        Data: [
+            {
+                id: 'unique id for group',
+                label: 'group label goes here',
+                items: [
+                    {id: 'unique id for item', label: 'item content goes here'},
+                    {id: 'unique id for item', label: 'item content goes here'},
+                ],
+                tint: '1 (blue), 2 (green), 3 (orange), or 4 (purple)',
+            }
+        ],
+        Answer: [
+            {
+                id: 'unique id for group',
+                label: 'group label goes here',
+                items: [
+                  {id: 'unique id for item', label: 'item content goes ehre'},
+                  {id: 'unique id for item', label: 'item content goes here'},
+                ],
+                tint: '1 (blue), 2 (green), 3 (orange), or 4 (purple)',
+              } 
+        ]
+    }
+
+    const HorizDND_template = {
+        Type: 'Horizontal DND',
+        Data: {
+            tasks: {
+                'item name goes here': { id: 'unique item id', content: 'item content goes here' },
+            },
+            columns: {
+                'column name goes here': {
+                    id: 'unique column id goes here',
+                    type: 'input or options',
+                    title: 'name of group goes here',
+                    taskIds: ['ids of tasks go here'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column ids in order'],
+        },
+        Answer: {
+            tasks: {
+                'item name goes here': { id: 'unique item id', content: 'item content goes here' },
+            },
+            columns: {
+                'column name goes here': {
+                    id: 'unique column id goes here',
+                    type: 'input or options',
+                    title: 'name of group goes here',
+                    taskIds: ['ids of tasks go here'],
+                    },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column ids in order'],
+        },
+    }
+
+    const NumberLine_Template = {
+        Type: 'Number Line',
+        Max: 'Maximum value goes here',
+        Min: 'Minimum value goes here',
+        Step: 'Incremental value goes here',
+        Initial: 'Initial value goes here'
+    }
+
+    const WP_template = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next or null",
+            text: [
+                "Text goes here."
+            ]
+        },
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    }
+
+    const Ending_template = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=144cHnrSnRLPCIOXWqPCwpu6JRVQaV3CQ",
+            alt: 'process',
+            position: 'below',
+            width: '500vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+
+    /* ------------ CREATE CUSTOM COMPONENTS HERE ------------ */
+    
