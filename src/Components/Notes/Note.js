@@ -3,7 +3,6 @@ import './Note.css'
 const Note = (props) => {
     const text = props.text;
     const image = props.image;
-
     return (
         <div className="container">
             <div className="note-container">

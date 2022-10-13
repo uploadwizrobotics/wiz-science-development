@@ -1,0 +1,122 @@
+.grid {
+    margin: auto;
+    width: 80%;
+    font-weight: 405;
+    font-size: 1.4vw;
+    letter-spacing: 0.05vw;
+    padding-top: 10px;
+    line-height: 2;
+}
+.grid .intro {
+    vertical-align:middle;
+    margin-bottom: 70px;
+    display: inline-block;
+    width: 60%;
+}
+
+.grid h1 {
+    font-family: 'Fogie';
+    letter-spacing: 0.2vw;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 3.2vw;
+    color: #000;
+    background: #000;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.grid .introh1 {
+    border:solid;
+    font-family: 'Fogie';
+    letter-spacing: 0.2vw;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 3.2vw;
+    color: #000;
+    background: #000;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.grid h2 {
+    margin: 20px 0;
+    font-weight: 600;
+    font-size: 1.6vw;
+    text-transform: uppercase;
+    color: #000;
+    background: #000;
+    display: inline-block;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.grid b {
+    font-weight: 700;
+    font-size: 1.6vw;
+}
+
+.grid .numbers {
+    color: #fa2a1b;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+    margin: 0vh;
+}
+
+.grid .re {
+    color: #fa2a1b;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+.grid .or {
+    color: #fa991b;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+.grid .ye {
+    color: #faeb1b;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+.grid .gr {
+    color: #1bfa53;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+.grid .bl {
+    color: #1b83fa;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+.grid .vi {
+    color: #961bfa;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+
+.grid i {
+    font-weight: 300;
+    font-size: 1.6vw;
+}
+.grid .zero {
+    color: #faeb1b;
+    font-weight: 600;
+    font-size: 5vw;
+    display: inline-block;
+}
+
+.thermostat {
+    display: inline-block;
+}
+
+.grid .example {
+    font-size: 4vw;
+}

@@ -49,7 +49,7 @@ const Continue = () => {
   const type = list[0].props.component.Type;
 
   useEffect(() => {
-    if (type !== 'Default') {
+    if (type !== 'Default' && type !== "Grid") {
         setShowMore(false); 
       } else if (next === true) {
         setShowMore(false); 

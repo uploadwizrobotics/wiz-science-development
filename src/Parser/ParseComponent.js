@@ -1,3 +1,4 @@
+import IsValidUrl from '../Components/Image/Display/isUrl.js'
 import SA from '../Components/Input/ShortAnswer/SA.js'
 import MC from '../Components/Input/MultipleChoice/MC.js'
 import Default from '../Components/Default/Default.js'
@@ -9,6 +10,7 @@ import FB from '../Components/Input/FillBlank/FB.js'
 import Feed from '../Components/Examples/Feed/Feed.js'
 import Farm from '../Components/Examples/Farm/Farm.js'
 import Rocket from '../Components/Examples/Rocket/Rocket.js'
+import GridLayout from "../Components/GridLayout/GridLayout"
 
 /* ------------------------------------- PARSE DATA ------------------------------------- */
 
@@ -18,7 +20,6 @@ const ParseComponent = (props) => {
 
     const component = props.component;
     const pagetype = props.pagetype;
-
     // type of element
     var type = null;
     var Header = null;
@@ -45,6 +46,8 @@ const ParseComponent = (props) => {
     var Initial = 0;
     var Options = null;
     var Intro = null;
+    var Columns = null;
+    var columnDimensions = [];
     
     Object.keys(component).map(key => {   
         if (key === 'Type') {
@@ -55,21 +58,22 @@ const ParseComponent = (props) => {
 
     /* -------------------------- DETERMINE TYPE OF ELEMENT -------------------------- */
 
+
     if (type === 'Multiple Choice') {
         Object.keys(component).map(key => {   
             if (component[key]) {  
-                if (key === 'Header') { // string
+                if (key === 'Header') {
                     Header = component[key];
-                } else if (key === 'Index') { // int
+                } else if (key === 'Index') {
                     Index = component[key];
                 } else if (key === 'Question') {
-                    Question = component[key]; // string
+                    Question = component[key];
                 } else if (key === 'Options') {
-                    Options = component[key]; // string array
+                    Options = component[key];
                     Length = Options.length;
                 } else if (key === 'Answer') {
-                    Answer = component[key]; // string
-                } else if (key === 'Image') { // image
+                    Answer = component[key];
+                } else if (key === 'Image') {
                     Image = Object.values(component[key]);
                     ImageURL = Image[0];
                     Alt = Image[1];
@@ -84,15 +88,15 @@ const ParseComponent = (props) => {
     } else if (type === 'Short Answer') {
         Object.keys(component).map(key => {   
             if (component[key]) {
-                if (key === 'Header') { // string
+                if (key === 'Header') {
                     Header = component[key];
-                } else if (key === 'Question') { // string
+                } else if (key === 'Question') {
                     Question = component[key];
-                } else if (key === 'Placeholder') { // string
+                } else if (key === 'Placeholder') {
                     Placeholder = component[key];
-                } else if (key === 'Answer') { // string
+                } else if (key === 'Answer') {
                     Answer = component[key];
-                } else if (key === 'Image') { // image
+                } else if (key === 'Image') {
                     Image = Object.values(component[key]);
                     ImageURL = Image[0];
                     Alt = Image[1];
@@ -108,14 +112,14 @@ const ParseComponent = (props) => {
     } else if (type === 'Default') {
         Object.keys(component).map(key => { 
             if (component[key]) {   
-                if (key === 'Header') { // string
+                if (key === 'Header') {
                     Header = component[key];
-                } else if (key === 'Intro') { // boolean
+                } else if (key === 'Intro') {
                     Intro = component[key];
-                } else if (key === 'Text') { // string array (translated in Next.js) used text={t(component)} on line 45
+                } else if (key === 'Text') {
                     Transition = component[key].transition;
                     Text = component[key].text;
-                } else if (key === 'Image') { // Img
+                } else if (key === 'Image') {
                     Image = Object.values(component[key]);
                     ImageURL = Image[0];
                     Alt = Image[1];
@@ -129,13 +133,13 @@ const ParseComponent = (props) => {
     } else if (type === 'Vertical DND') {
         Object.keys(component).map(key => {   
             if (component[key]) {   
-                if (key === 'Header') { // string
+                if (key === 'Header') {
                     Header = component[key];
-                } else if (key === 'Data') { // array
+                } else if (key === 'Data') {
                     Data = component[key];
-                } else if (key === 'Answer') { // array
+                } else if (key === 'Answer') {
                     Answer = component[key];
-                } else if (key === 'loadMore') { // ???
+                } else if (key === 'loadMore') {
                     loadMore = component[key];
                 }
             }
@@ -143,13 +147,13 @@ const ParseComponent = (props) => {
     } else if (type === 'Horizontal DND') {
         Object.keys(component).map(key => {   
             if (component[key]) { 
-                if (key === 'Header') { // string
+                if (key === 'Header') {
                     Header = component[key];
-                } else if (key === 'Data') { // array
+                } else if (key === 'Data') {
                     Data = component[key];
-                } else if (key === 'Answer') { // array
+                } else if (key === 'Answer') {
                     Answer = component[key];
-                } else if (key === 'loadMore') { // ???
+                } else if (key === 'loadMore') {
                     loadMore = component[key];
                 }
             }
@@ -157,17 +161,17 @@ const ParseComponent = (props) => {
     } else if (type === 'Number Line') {
         Object.keys(component).map(key => {   
             if (component[key]) { 
-                if (key === 'Text') {  // ???
+                if (key === 'Text') {
                     Text = component[key];
-                } else if (key === 'Position') { // ???
+                } else if (key === 'Position') {
                     Position = component[key];
-                } else if (key === 'Max') { // int
+                } else if (key === 'Max') {
                     Max = component[key];
-                } else if (key === 'Min') {  // int
+                } else if (key === 'Min') {
                     Min = component[key];
-                } else if (key === 'Step') {  // int
+                } else if (key === 'Step') {
                     Step = component[key];
-                } else if (key === 'Initial') {  //int
+                } else if (key === 'Initial') {
                     Initial = component[key];
                 }
             }
@@ -175,13 +179,13 @@ const ParseComponent = (props) => {
     } else if (type === 'Fill in the Blank') {
         Object.keys(component).map(key => {   
             if (component[key]) { 
-                if (key === 'Header') { // string
+                if (key === 'Header') {
                     Header = component[key];
-                } else if (key === 'Question') { // array
+                } else if (key === 'Question') {
                     Question = component[key];
-                } else if (key === 'Answer') { // array
+                } else if (key === 'Answer') {
                     Answer = component[key];
-                } else if (key === 'Image') { // image
+                } else if (key === 'Image') {
                     Image = Object.values(component[key]);
                     ImageURL = Image[0];
                     Alt = Image[1];
@@ -195,9 +199,9 @@ const ParseComponent = (props) => {
     } else if (type === 'Feed') {
         Object.keys(component).map(key => {   
             if (component[key]) { 
-                if (key === 'Header') { // string
+                if (key === 'Header') {
                     Header = component[key];
-                } else if (key === 'Options') { // array
+                } else if (key === 'Options') {
                     Options = component[key];
                 } 
             }
@@ -205,13 +209,13 @@ const ParseComponent = (props) => {
     } else if (type === 'Farm') {
         Object.keys(component).map(key => {   
             if (component[key]) { 
-                if (key === 'Header') { // string
+                if (key === 'Header') {
                     Header = component[key];
-                } else if (key === 'Data') { // array?
+                } else if (key === 'Data') {
                     Data = component[key];
-                } else if (key === 'Answer') { // array?
+                } else if (key === 'Answer') {
                     Answer = component[key];
-                } else if (key === 'loadMore') { // ???
+                } else if (key === 'loadMore') {
                     loadMore = component[key];
                 }
             }
@@ -219,15 +223,15 @@ const ParseComponent = (props) => {
     } else if (type === 'Rocket') {
         Object.keys(component).map(key => {   
             if (component[key]) {
-                if (key === 'Header') { // string
+                if (key === 'Header') {
                     Header = component[key];
-                } else if (key === 'Question') { // string
+                } else if (key === 'Question') {
                     Question = component[key];
-                } else if (key === 'Placeholder') { // string
+                } else if (key === 'Placeholder') {
                     Placeholder = component[key];
-                } else if (key === 'Answer') { // string
+                } else if (key === 'Answer') {
                     Answer = component[key];
-                } else if (key === 'Image') { // image
+                } else if (key === 'Image') {
                     Image = Object.values(component[key]);
                     ImageURL = Image[0];
                     Alt = Image[1];
@@ -240,8 +244,30 @@ const ParseComponent = (props) => {
                 }
             }
         })
-    }
-    
+    }   else if (type === "Grid") {
+        Object.keys(component).map(key => {
+            if (component[key]) {
+                if (key === 'Header') { // String
+                    Header = component[key];
+                } else if (key === 'Text') { // Bool
+                    Text = component[key].text;
+                    Transition = component[key].transition;
+                } else if (key === "Columns"){
+                    Columns = component[key]
+                } else if (key === "Image") {
+                    Image = Object.values(component[key]);
+                    ImageURL = Image[0];
+                    Alt = Image[1];
+                    Position = Image[2];
+                    Width = Image[3]
+                    Height = Image[4]
+                    Zoom = Image[5];
+                } else if (key === "columnDimensions"){
+                    columnDimensions = component[key]
+                }
+            }
+        })
+    } 
     /* ------------------- PRINT ACCORDING TO TYPE ------------------- */
     // print as Media as default
     return (
@@ -253,9 +279,10 @@ const ParseComponent = (props) => {
             : (type === 'Horizontal DND') ? <Horiz header={Header} data={Data} answer={Answer} loadMore={loadMore} pagetype={pagetype} />
             : (type === 'Number Line') ? <NL text={Text} position={Position} max={Max} min={Min} step={Step} init={Initial} />
             : (type === 'Fill in the Blank') ? <FB header={Header} question={Question} answer={Answer} image={ImageURL} alt={Alt} position={Position} width={Width} height={Height} zoom={Zoom} />
-            : (type === 'Feed') ? <Feed header={Header} options={Options} pagetype={pagetype} />
+            : (type === 'Feed') ? <Feed header={Header} options={Options} />
             : (type === 'Farm') ? <Farm header={Header} data={Data} answer={Answer} loadMore={loadMore} />
-            : (type === 'Rocket') ? <Rocket header={Header} question={Question} placeholder={Placeholder} answer={Answer} image={ImageURL} alt={Alt} position={Position} width={Width} height={Height} zoom={Zoom} loadMore={loadMore} pagetype={pagetype} />
+            : (type === 'Rocket') ? <Rocket header={Header} question={Question} placeholder={Placeholder} answer={Answer} image={ImageURL} alt={Alt} position={Position} width={Width} height={Height} zoom={Zoom} loadMore={loadMore} />
+            : (type === "Grid") ? <GridLayout text = {Text} header = {Header} columns = {Columns} transition = {Transition} image = {ImageURL} alt = {Alt} width = {Width} height = {Height} zoom = {Zoom} columnDimensions = {columnDimensions}/>            
             : <Default header={Header} text={Text} transition={Transition} image={ImageURL} alt={Alt} position={Position} width={Width} height={Height} zoom={Zoom} />
             }
         </div>
