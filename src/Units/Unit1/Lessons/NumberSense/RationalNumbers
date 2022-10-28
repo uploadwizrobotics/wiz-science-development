@@ -1,0 +1,530 @@
+import 'katex/dist/katex.min.css';
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+    
+    const Intro = {
+        Type: 'Default',
+        Header: 'Rational Numbers',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Describe how various subsets of a number system are defined, and describe similarities and differences between these subsets</p>
+                <p>Use patterns and number relationships to explain density, infinity, and limit as they relate to number sets</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Identify rational numbers</p>
+                <p>Visualize rational numbers using the number line</p>`
+            ]
+        },
+        Image: {
+            url: "Swipe",
+            alt: 'Swipe',
+            position: 'below',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson1 = {
+        Type: 'Default',
+        Header: 'Introduction to Rational Numbers',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p><b>Rational Numbers</b>, represented by <b>Q</b>, are numbers that are made from dividing two integers:</p>",
+                {
+                    Example: 'Math',
+                    Content: '0, \\frac{1}{2}, \\frac{14}{99}, 0.75, ...'
+                },
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> The denominator of a rational number can never be 0!",
+                    Image: {
+                        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/DenomNotZero.gif",
+                        alt: 'stop',
+                        position: 'below',
+                        width: 200,
+                        zoom: null
+                    },
+                },
+                "<img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/pizza.gif width='400' style='border-radius: 20px; padding-top: 10px;' alt={alt}/><p>Rational numbers are used all the time, from calculating the <i>cost of groceries</i> to deciding <i>how many slices of pizza each person gets</i> at a party!</p>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Fill in the blanks',
+        Question: [
+            'A rational number can be expressed as a fraction where both numerator and the denominator are', 
+            ['rational', 'integers', 'opposite', 'positive'], 
+            'and the denominator is not', 
+            ['negative', 'equal', 'exponential', 'zero']
+        ],
+        Answer: ['integers', 'zero'],
+        Image: null,
+        Audio: null
+    };
+    
+    const Lesson2 = {
+        Type: 'Default',
+        Header: 'Types of Rational Numbers',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>There are various types of rational numbers, We shouldn't assume that only fractions with integers are rational numbers.</p>",
+                "<p>The different types consist of:</p>",
+                {
+                    Example: 'List',
+                    Content: [
+                        {   front: {
+                            Example: null,
+                            Content: "<p>0</p><p>-3</p><p>6</p>", 
+                            },
+                            back: {
+                                Example: null,
+                                Content: "<h2>Integers</h2>", 
+                            }
+                        },
+                        {   front: {
+                                Example: 'Math',
+                                Content: "\\frac{3}{7}\\   \\frac{-6}{5}\\   \\frac{9}{2}"
+                            }, 
+                            back: {
+                                Example: null,
+                                Content: "<h2>Fractions</h2>"
+                            }
+                        },
+                        {   front: {
+                                Example: null,
+                                Content: "<p>0.333</p><p>8.121212</p><p>-0.72</p>", 
+                            },
+                            back: {
+                                Example: null,
+                                Content: "<h2>Decimals</h2>"
+                            }
+                        },
+                    ]
+                }
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    
+    const Lesson3 = {
+        Type: 'Default',
+        Header: 'Types of Rational Numbers',
+        Text: {
+            transition: "Next",
+            text: [ 
+                "<p>In the last few lessons we saw integers, whole numbers, and natural numbers on the number line.</p>",
+                {
+                    Example: 'Number Line',
+                    Max: 10,
+                    Min: -10,
+                    Step: 1,
+                    Initial: 0,
+                    UseType: null,
+                    Data: "Integers,"
+                },
+                {
+                    Example: 'Number Line',
+                    Max: 10,
+                    Min: 0,
+                    Step: 1,
+                    Initial: 0,
+                    UseType: null,
+                    Data: "Whole numbers, and ..."
+                },
+                {
+                    Example: 'Number Line',
+                    Max: 10,
+                    Min: 1,
+                    Step: 1,
+                    Initial: 1,
+                    UseType: null,
+                    Data: "Natural numbers."
+                },
+                "<p>Now, let's take a look at rational numbers on the number line:</p>",
+                {
+                    Example: 'Number Line',
+                    Max: 10,
+                    Min: -10,
+                    Step: 0.1,
+                    Initial: 0,
+                    UseType: null,
+                    Data: "What do you notice? How are the number lines similar/different?"
+                },
+                "<p>We previously saw that <b>whole numbers</b>, <b>integers</b>, and <b>natural numbers</b> are all <i>separated by 1</i>, and that whole numbers and natural numbers <i>don't contain negative numbers</i></p><br />",
+                {
+                    Example: 'Number Line',
+                    Max: 10,
+                    Min: -10,
+                    Step: 0.1,
+                    Initial: 0,
+                    UseType: 'true',
+                    Data: null
+                },
+                "<p>What about <b>Rational Numbers?</b></p>",
+                "<p>From the number line, we can see that rational numbers are <b>not</b> separated by 1, and that they <b>contain both negative and positive numbers</b>.</p><br />",
+                "<p>In fact, rational numbers do not have a set number that separates each one from another.</p>",
+                "<p>Why?</p>",
+                "<img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/infinity.gif width='300' style='border-radius: 20px; padding-top: 10px;' alt={alt}/><p>Because there are an <b>infinite number</b> of rational numbers <b>between each rational number</b>!</p>"
+            ]
+        },
+        Image: null,
+        Audio: null
+    };
+    
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Which of the following is not a rational number?',
+        Question: null,
+        Options: [
+            "-72",
+            "3.4",
+            "√5",
+            "-⁶⁄₃"
+        ],
+        Answer: "√5",
+        Image: null,
+        Audio: null // optional
+    };
+    
+    const Lesson4 = {
+        Type: 'Default',
+        Header: 'Visualize Fractions on the Number Line',
+        Text: {
+            transition: "Next",
+            text: [
+                {
+                    Example: 'Math',
+                    Content: "Let's\\ visualize\\ \\frac{3}{4}."
+                },
+                {
+                    Example: 'Number Line',
+                    Max: 3,
+                    Min: 0,
+                    Step: 0.75,
+                    Initial: 0,
+                    UseType: null,
+                    Data: "We divide 3 into 4 equal pieces."
+                },
+                {
+                    Example: 'Math',
+                    Content: "Each\\ part\\ is\\  \\frac{3}{4}."
+                },
+                "<p>We can also represent <b>negative fractions</b> on a number line.</p>",
+                "<p>For every positive fraction, there is a <i>corresponding negative fraction</i>.</p>",
+                {
+                    Example: 'Math',
+                    Content: "For\\ example,\\ \\frac{3}{4}\\ and\\ \\frac{-3}{4}\\ are\\ opposites."
+                },
+                {
+                    Example: 'Number Line',
+                    Max: 0.75,
+                    Min: -0.75,
+                    Step: 0.75,
+                    Initial: 0,
+                    UseType: null,
+                    Data: {
+                        Example: 'Math',
+                        Content: "\\frac{-3}{4}\\ is\\ the\\ same\\ distance\\ to\\ the\\ left\\ of\\ 0\\ as\\ \\frac{3}{4}\\ is\\ to\\ the\\ right\\ of\\ 0."
+                    }
+                },
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> A fraction stays the same if its <i>numerator</i> and <i>denominator</i> are both multiplied by the <b>same non-zero number</b>!",
+                    Image: null
+                },
+                {
+                    Example: 'Math',
+                    Content: "So\\ \\frac{-3}{4}\\ can\\ be\\ written\\ as\\ \\frac{-3}{4}\\ \\times \\frac{-1}{-1}\\ = \\frac{3}{-4}\\ = -\\frac{3}{4}."
+                },
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Drag and drop the options to the topics that best describe them.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-⅜'},
+                'op-2': { id: 'op-2', content: '⁵⁄₉' },
+                'op-3': { id: 'op-3', content: '-10/4' },
+                'op-4': { id: 'op-4', content: '-1¼' },
+                'op-5': { id: 'op-5', content: '⁷⁄₁₀' },
+                'op-6': { id: 'op-6', content: '⁸⁄₃' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  'Between -3 and -2',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Between -2 and -1',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Between -1 and 0',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Between 0 and 1',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'input',
+                    title: 'Between 1 and 2',
+                    taskIds: [],
+                },
+                'column-6': {
+                    id: 'column-6',
+                    type: 'input',
+                    title: 'Between 2 and 3',
+                    taskIds: [],
+                },
+                'column-7': {
+                    id: 'column-7',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4', 'op-5', 'op-6'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5', 'column-6', 'column-7'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-⅜'},
+                'op-2': { id: 'op-2', content: '⁵⁄₉' },
+                'op-3': { id: 'op-3', content: '-10/4' },
+                'op-4': { id: 'op-4', content: '-1¼' },
+                'op-5': { id: 'op-5', content: '⁷⁄₁₀' },
+                'op-6': { id: 'op-6', content: '⁸⁄₃' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  'Between -3 and -2',
+                    taskIds: ['op-3'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Between -2 and -1',
+                    taskIds: ['op-4'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Between -1 and 0',
+                    taskIds: ['op-1'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Between 0 and 1',
+                    taskIds: ['op-2', 'op-5'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'input',
+                    title: 'Between 1 and 2',
+                    taskIds: [],
+                },
+                'column-6': {
+                    id: 'column-6',
+                    type: 'input',
+                    title: 'Between 2 and 3',
+                    taskIds: ['op-6'],
+                },
+                'column-7': {
+                    id: 'column-7',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5', 'column-6', 'column-7'],
+        }
+    }
+    
+    const Lesson5 = {
+        Type: 'Default',
+        Header: 'Rational Numbers Between Rational Numbers',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p> As we learned in the first lesson, Number Systems, the number we use now follow the <b>base ten</b>, or <b>decimal</b> system.</p>",
+                "<p>Suppose there are 2 different robots, <i>Rodd</i> and <i>Todd</i>:</p><br /><p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='400' style='border-radius: 20px; padding-top: 10px;' alt={alt}/><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='400' style='border-radius: 20px; padding-top: 10px;' alt={alt}/></p>",
+                `<p>2 robots can make 8 new robots, giving us 10 robots in total.</p>
+                <p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='200' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='200' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='200' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='200' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='200' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='200' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='200' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='200' style='border-radius: 20px; padding-top: 10px;' alt={alt}/></p>`,
+                `<p>Then from these 10 new robots, they will pair up again, each pair making 8 more robots, and so on</p><br />
+                <p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='200' style='border-radius: 20px; padding-top: 10px;' alt={alt}/><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='200' style='border-radius: 20px; padding-top: 10px;' alt={alt}/></p>
+                <p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='100' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='100' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='100' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='100' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='100' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='100' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='100' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='100' style='border-radius: 20px; padding-top: 10px;' alt={alt}/></p>
+                <p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                &nbsp
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/RationalNumbers/Robot+(1).gif width='10' style='border-radius: 20px; padding-top: 10px;' alt={alt}/>`,
+                "<p>What are we left with?<p>",
+                "<b>A neverending colony of robots!</b>",
+                "<p>Just like the robots, there are an <b>infinite number</b> of rational numbers between each pair.</p>",
+                "<p>Let’s consider the robot example again, except this time, we will replace the robots with numbers on the number line.</p>",
+                "<p>Let’s let robot A be the number 0 and robot B be the number 1.</p>",
+                {
+                    Example: 'Number Line',
+                    Max: 1,
+                    Min: 0,
+                    Step: 0.1,
+                    Initial: 0,
+                    UseType: null,
+                    Data: null,
+                },
+                "<p>Then, as the distance between the numbers 0 and 1 is:</p><div class='example'>1 - 0 = 1</div><p>dividing the number line into 10 equal pieces gives us a length of...</p>",
+                {
+                    Example: 'Math',
+                    Content: '\\frac{1}{10} for\\ each\\ piece\\'
+                },
+                "<p>or</p><span class='example'>10 robots!</span></p>",
+                {
+                    Example: 'Number Line',
+                    Max: 0.2,
+                    Min: 0.1,
+                    Step: 0.01,
+                    Initial: 0.1,
+                    UseType: null,
+                    Data: null,
+                },
+                "<p>Then, between the numbers ⅒ and ²⁄₁₀, there are ten more numbers.</p>",
+                "<p>As the length between ⅒ and ²⁄₁₀ is:</p>",
+                {
+                    Example: 'Math',
+                    Content: '\\frac{2}{10} - \\frac{1}{10} = \\frac{1}{10}'
+                },
+                "<p>Dividing into 10 equal pieces gives:</p>",
+                {
+                    Example: 'Math',
+                    Content: '\\frac{\\frac{1}{10}}{10}'
+                },
+                "<p>or</p><span class='example'>100 robots!</span></p>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Lesson1, FB, Lesson2, Lesson3, MC, Lesson4, Match, Lesson5, Ending ];
+
+
+    return (
+        <div>
+        <MakePage componentArray={ComponentArray} />
+        </div>
+    );
+}
+
+export default MakeComponent;
+
+
+

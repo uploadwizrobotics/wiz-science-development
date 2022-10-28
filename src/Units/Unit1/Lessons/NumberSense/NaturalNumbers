@@ -1,0 +1,153 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+    
+    const Intro = {
+        Type: 'Default',
+        Header: 'Natural Numbers',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Describe how various subsets of a number system are defined, and describe similarities and differences between these subsets</p>
+                <p>Use patterns and number relationships to explain density, infinity, and limit as they relate to number sets</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Identify natural numbers</p>
+                <p>Visualize natural numbers using the number line</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NaturalNumbers/crowd.gif",
+            alt: 'People',
+            position: 'below',
+            width: '350vw',
+            zoom: null
+        },
+        Audio: null
+    }
+    
+    const Lesson1 = {
+        Type: 'Default',
+        Header: 'Introduction to Natural Numbers',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p><b>Natural Numbers</b>, represented by <b>N</b>, are a subset of whole numbers containing only positive numbers:</p>",
+                "<p><div class='numbers'>1, 2, 3, 4, 5, 6, ...</div></p>",
+                "<p>These numbers are also called <i>Positive Numbers</i> or <i>Counting Numbers.</i></p>",
+                "<img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NaturalNumbers/counting.gif width='500' style='border-radius: 20px; padding-top: 10px;' alt={alt}/></p>You can think of natural numbers as the numbers you can count on your fingers and toes!",
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> Notice that the set of natural numbers omits the number 0.",
+                    Image: {
+                        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NaturalNumbers/nozero1.gif",
+                        alt: 'stop',
+                        position: 'below',
+                        width: 200,
+                        zoom: null
+                    },
+                    Text: "Positive integers and 0 are often used to count objects and people!"
+                },
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: null,
+        Question: 'Which of the following is a natural number?',
+        Options: [
+            "0",
+            "3/4",
+            "1/2",
+            "32"
+        ],
+        Answer: '32', 
+        Image: null,
+        Audio: null
+    };
+    
+    const NL = {
+        Type: 'Number Line',
+        Max: 10,
+        Min: 1,
+        Step: 1,
+        Initial: 1
+    }
+
+    const Lesson2 = {
+        Type: 'Default',
+        Header: 'Visualizing Natural Numbers on the Number Line',
+        Text: {
+            transition: "Next",
+            text: [ 
+                "<p>In the last few lessons we saw both integers and whole numbers on the number line.</p>",
+                {
+                    Example: 'Number Line',
+                    Max: 10,
+                    Min: -10,
+                    Step: 1,
+                    Initial: 0,
+                    Data: "Integers, and..."
+                },
+                {
+                    Example: 'Number Line',
+                    Max: 10,
+                    Min: 1,
+                    Step: 1,
+                    Initial: 0,
+                    Data: "Whole numbers!"
+                },
+                "<p>Let's take a look at natural numbers on the number line and see their differences:</p>",
+                {
+                    Example: 'Number Line',
+                    Max: 10,
+                    Min: 1,
+                    Step: 1,
+                    Initial: 1,
+                    UseType: 'true',
+                    Data: "What do you notice? How are the number lines similar/different?"
+                },
+                "<p>We previously saw that whole numbers and integers are both</p><p>separated by 1, and that whole numbers do not contain negative numbers the way integers do.</p><br /><p>What about Natural Numbers?</p>",
+                "<p>From the number line, we can see that natural numbers are also</p><p><b>separated by 1</b>, and that they also <b>don't contain negative numbers</b></p>.<br /><p><i>How then, are natural numbers any different from whole numbers?</i></p>",
+                "<p>The answer is, <i>not much</i>.</p>",
+                "<p>In fact, a <b>single number</b> distinguishes natural numbers from whole numbers. Did you notice which number it is?</p>",
+                "<p>You're right! It's none other than</p><p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NaturalNumbers/zero.gif width='300' style='border-radius: 20px; padding-top: 10px;' alt={alt}/></p>",
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> 0 is <b>neither positive nor negative</b>, but a placeholder!</p>This means that natural numbers only contain positive numbers, but whole numbers do not.",
+                    Image: {
+                        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NaturalNumbers/idea.gif",
+                        alt: 'stop',
+                        position: 'below',
+                        width: 200,
+                        zoom: null
+                    },
+                    Text: null,
+                },
+            ]
+        },
+        Image: null,
+        Audio: null
+    };
+    
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    const ComponentArray = [ Intro, Lesson1, MC, Lesson2, Ending ];
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

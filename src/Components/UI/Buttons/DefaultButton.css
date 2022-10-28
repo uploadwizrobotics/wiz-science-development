@@ -1,0 +1,94 @@
+.next {
+  padding: 5vh;
+
+}
+
+.continue {
+
+}
+
+.sub {
+  border:solid;
+}
+
+/* submit/continue button, use button function */
+  .cta {
+    text-decoration: none;
+    color: inherit; 
+    border: none;
+    background-color: transparent;
+    position: relative;
+    margin: auto;
+    transition: all .2s ease; 
+    padding: 18px 22px;
+  }
+  .next .cta {
+    padding: 14px 22px;
+  }
+  .continue .cta {
+    padding: 18px 22px;
+  }
+  .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: #5C71EE;
+    width: 56px;
+    height: 56px;
+    transition: all .3s ease; 
+  }
+  .cta span {
+    margin: auto;
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    vertical-align: middle; 
+    text-decoration: none;
+    color: black;
+  }
+
+  .cta span a {
+    color: black;
+    text-decoration: none;
+    display: inline-block;     
+    position: relative;    
+    z-index: 1;     
+    padding: 2em;     
+    margin: -2em; 
+  }
+  
+  .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #111;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all .3s ease; 
+  }
+  .cta:hover:before {
+    color: black;
+    width: 100%;
+    background: #FF6C24; 
+  }
+  .cta:hover svg {
+    text-decoration: none;
+    color: black;
+    transform: translateX(0); 
+  }
+  .cta:active {
+    text-decoration: none;
+    color: black;
+    transform: scale(0.96); 
+  }
+  /****************************************/
+  
+      

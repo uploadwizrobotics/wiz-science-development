@@ -1,0 +1,111 @@
+import './MC.css'
+import '../../UI/Buttons/DefaultButton.css'
+import React, { useState } from "react";
+import Question from "../Question/QuestionTemplate.js"
+import Box from "../../UI/Box/Box.js"
+import { showMoreContext } from "../../../Parser/ParsePage.js";
+import { endContext } from "../../../Parser/ParsePage.js";
+import scrollToDummy from '../../UI/Buttons/ScrollTo'
+import LoadMore from "../../../Transitions/Continue/LoadMore.js";
+
+function RocketMC(props) {
+
+  const header = props.header;
+  const question = props.question;
+  const options = props.options.map((option, i) => ({id: i, title: option}));
+  const length = props.length;
+  const answer = props.answer;
+  const image = props.image;
+  const alt = props.alt;
+  const position = props.position;
+  const zoom = props.zoom;
+
+  // create an array of states equal to the number of checkboxes + initialize to false
+  const [checked, setChecked] = useState(new Array(length).fill(false));
+
+  const [count, setCount] = useState(0);
+
+  var body = document.body,
+      html = document.documentElement;
+
+  var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                        html.clientHeight, html.scrollHeight, html.offsetHeight );
+  
+
+  // update checkbox status
+  const handleChange = (position) => {
+    const updatedChecked = checked.map((item, index) => index === position ? !item: item);
+    setChecked(updatedChecked);
+  };
+
+  const [showMore, setShowMore] = React.useContext(showMoreContext);
+  const [end, setEnd] = React.useContext(endContext);
+
+  const [loadMore, setLoadMore] = useState(false);
+
+  // execute once form is submitted
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (event.target.answer.value == answer) {
+      // execute when correct
+      console.log("correct");
+      setLoadMore(true);
+      scrollToDummy();
+    } else {
+      // execute when incorrect
+      console.log("incorrect");
+    }
+  };
+
+  if (loadMore === true && !end && count === 0) {
+    const newCount = count + 1;
+    setCount(newCount);
+    LoadMore();
+    setLoadMore(false);
+    setShowMore(true);
+}
+  return (
+    <div className='MC'>
+      <form onSubmit={handleSubmit}>
+          { header && <h1>{header}</h1> }
+          { question && <Question question={question} image={image} alt={alt} position={position} zoom={zoom} /> }
+          <br></br>
+          <Box classes="input_box">
+            {options.map((option) => (
+              <div key={option.id} className="option">
+                <input
+                type="radio"
+                className="radio"
+                name="answer"
+                id={"radio-" + option.id}
+                value={option.title}
+                isChecked={checked}
+                onChange={handleChange}
+                />
+                <label for={"radio-" + option.id}>
+                  <div className="name">
+                    {option.title}
+                  </div>
+                </label>
+              </div>
+            ))}
+          </Box>
+          <button href="#" className="cta">
+            <span>
+                Submit
+            </span>
+            <svg 
+                width="13px" 
+                height="10px" 
+                viewBox="0 0 13 10">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+        </button>
+      </form>
+    </div>
+  );
+  
+}
+
+export default RocketMC;

@@ -1,0 +1,291 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    /* ------------ DO NOT ALTER TEMPLATES ------------ */
+
+    const MC_template = {
+        Type: 'Multiple Choice',
+        Header: 'Header goes here',
+        Question: 'Question goes here',
+        Options: [
+            "Option 1",
+            "Option 2",
+            "Option 3"
+        ],
+        Answer: 'Option 2', // answer must be one of your options
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+    
+    const SA_template = {
+        Type: 'Short Answer',
+        Header: 'Header goes here',
+        Question: 'Question goes here',
+        Placeholder: 'Input placeholder goes here',
+        Answer: 'Answer goes here',
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+    
+    const Default_template = {
+        Type: 'Default',
+        Header: 'Header goes here',
+        Text: {
+            transition: "Transition goes here (currently only 'Next')", // optional
+            text: ['Text goes here'],
+        },
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+
+    const VertDND_template = {
+        Type: 'Vertical DND',
+        Header: 'Header goes here',
+        Data: [
+            {
+                id: 'unique id for group',
+                label: 'group label goes here',
+                items: [
+                    {id: 'unique id for item', label: 'item content goes here'},
+                    {id: 'unique id for item', label: 'item content goes here'},
+                ],
+                tint: '1 (blue), 2 (green), 3 (orange), or 4 (purple)',
+            }
+        ],
+        Answer: [
+            {
+                id: 'unique id for group',
+                label: 'group label goes here',
+                items: [
+                  {id: 'unique id for item', label: 'item content goes ehre'},
+                  {id: 'unique id for item', label: 'item content goes here'},
+                ],
+                tint: '1 (blue), 2 (green), 3 (orange), or 4 (purple)',
+              } 
+        ]
+    }
+
+    const HorizDND_template = {
+        Type: 'Horizontal DND',
+        Data: {
+            tasks: {
+                'item name goes here': { id: 'unique item id', content: 'item content goes here' },
+            },
+            columns: {
+                'column name goes here': {
+                    id: 'unique column id goes here',
+                    type: 'input or options',
+                    title: 'name of group goes here',
+                    taskIds: ['ids of tasks go here'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column ids in order'],
+        },
+        Answer: {
+            tasks: {
+                'item name goes here': { id: 'unique item id', content: 'item content goes here' },
+            },
+            columns: {
+                'column name goes here': {
+                    id: 'unique column id goes here',
+                    type: 'input or options',
+                    title: 'name of group goes here',
+                    taskIds: ['ids of tasks go here'],
+                    },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column ids in order'],
+        },
+    }
+
+    const NumberLine_Template = {
+        Type: 'Number Line',
+        Max: 'Maximum value goes here',
+        Min: 'Minimum value goes here',
+        Step: 'Incremental value goes here',
+        Initial: 'Initial value goes here'
+    }
+
+    /* ------------ CREATE CUSTOM COMPONENTS HERE ------------ */
+    
+    const Intro = {
+        Type: 'Default',
+        Header: 'Order of Operations Mission',
+        Text: {
+            transition: "Next",
+            text: [ 
+                "<img src=https://drive.google.com/uc?export=view&id=1BsLagNI951HVAXZ0446Ouwc54OZT-JNq width='300' alt={alt}/>",
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> This mission does not have a worksheet!",
+                    Image: {
+                        url: "https://drive.google.com/uc?export=view&id=1Qi9UKySMUPZ0-rFOPRoe5rPW01bd24IE",
+                        alt: 'stop',
+                        position: 'below',
+                        width: 200,
+                        zoom: null
+                    },
+                },
+            ]
+        },
+        Audio: null
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: null,
+        Question: 'Find the <b>first</b> line an error occurs.',
+        Options: [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        Answer: '1',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1rN9u7y5P3OpwCkdyEgbEeG7OK2X6uXdY",
+            alt: 'checkpoint',
+            position: 'above',
+            width: '40vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Translate',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Convert the following word problem into an expression and evaluate. Remember to use the order of operations and show your steps!</p>",
+                "<p>Michael is expecting a shipment of 5 boxes of A4 paper and 3 boxes of letter paper.</p><img src=https://drive.google.com/uc?export=view&id=1-nfidOmnuFbuSjpCAfIspc-bXv5Qqmlk width='300' alt={alt}/>",
+                "<p>Each box contains 4 packs of paper and each A4 pack contains 100 sheets of paper, while each letter pack contains 50 sheets.</p>",
+                "<img src=https://drive.google.com/uc?export=view&id=1GH7rFlkTq02H_wxnCEey1VcPpp0-egGQ width='300' alt={alt}/><p>If the manufacturing company forgets to add 5 sheets, how many sheets of paper does Michael receive?</p>",
+                {
+                    Example: 'List',
+                    Content: [
+                        {   front: {
+                                Example: null,
+                                Content: "Answers"
+                            }, 
+                            back: {
+                                Example: null,
+                                Content: "<p>5(4×100)+3(4×50)−5</p> = 2595 sheets"
+                            },
+                        },
+                    ]
+                }
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const VertDND = {
+        Type: 'Vertical DND',
+        Header: 'Arrange the steps in the correct order.',
+        Data: [
+            {
+                id: 'step-1',
+                label: '6 + 2 − 1',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'step-2',
+                label: '6 + 4 ÷ 2 − 1',
+                items: [],
+                tint: 2,
+            },
+            {
+                id: 'step-3',
+                label: '7',
+                items: [],
+                tint: 3,
+            },
+            {
+                id: 'step-4',
+                label: '6 + (36 ÷ 9) ÷ 2 − 1',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'step-5',
+                label: '8 − 1',
+                items: [],
+                tint: 2,
+            }
+        ],
+        Answer: [
+            {
+                id: 'step-4',
+                label: '6 + (36 ÷ 9) ÷ 2 − 1',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'step-2',
+                label: '6 + 4 ÷ 2 − 1',
+                items: [],
+                tint: 2,
+            },
+            {
+                id: 'step-1',
+                label: '6 + 2 − 1',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'step-5',
+                label: '8 − 1',
+                items: [],
+                tint: 2,
+            },
+            {
+                id: 'step-3',
+                label: '7',
+                items: [],
+                tint: 3,
+            }
+        ]
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, VertDND, WP, MC, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

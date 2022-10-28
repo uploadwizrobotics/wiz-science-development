@@ -1,0 +1,135 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Special Identities',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply the mathematical processes as they develop an understanding of algebraic concepts in various contexts</p>
+                <p>Simplify algebraic expressions by applying properties of operations of numbers, using various representations and tools, in different contexts</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Understand the difference of squares</p>,
+                <p>Identify products of the form (ax + b)(ax - b)</p>`
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1QGe64GCjWX0_4WmmYV--wsdRGeubNOgU",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Feed = {
+        Type: 'Feed',
+        Header: "Daniel will only eat products in the difference of squares form. Feed him up to five polynomials to see if you can get him to eat.",
+        Options : 
+        [
+            {
+                name:'3x² + 2x - 7',
+                score: '-6',
+                icon: 'A',
+            },
+            {
+                name:'(10 + 3x)(10 - 3x)',
+                score: '2',
+                icon: 'B',
+            },
+            {
+                name:'(9x - 2)²',
+                score: '2',
+                icon: 'C',
+            },
+            {
+                name:'9 - 25x²',
+                score: '2',
+                icon: 'D',
+            },
+            {
+                name:'9x - 2',
+                score: '-6',
+                icon: 'E',
+            },
+            {
+                name:'-3x³ - 29x² + 14',
+                score: '-6',
+                icon: 'F',
+            },
+            {
+                name:'12x⁶ - 6x⁴ + x²',
+                score: '-6',
+                icon: 'G',
+            },
+            {
+                name:'(9x + 2)(9x - 2)',
+                score: '2',
+                icon: 'H',
+            },
+            {
+                name:'-94x⁵ + 7x³ - 43x² - 8',
+                score: '-6',
+                icon: 'I',
+            },
+            {
+                name:'(5x + 4)(5x - 4)',
+                score: '2',
+                icon: 'J',
+            },
+            {
+                name:'121x⁵ - 8',
+                score: '-6',
+                icon: 'K',
+            },
+            {
+                name:'12x⁴ + 6x + 8',
+                score: '-6',
+                icon: 'L',
+            },
+        ]
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'What belongs in the blank?',
+        Question: [
+            '(3x + 12)(3x - 12) is of the form', 
+            ['(ax - b)²', 'ax + b', '(ax + b)(ax - b)', '(ax + b)(ax + b)'], 
+            'where a = '
+            ['3x', '3', '12', '3x + 12'], 
+            'and b = '
+            ['3x - 12','12', '3', '-12'],
+        ],
+        Answer: ['(ax + b)(ax - b)', '3', '12'],
+        Image: null,
+        Audio: null , 
+    };
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Feed, FB, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

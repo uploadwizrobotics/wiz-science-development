@@ -1,0 +1,273 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Exponent Laws I',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply an understanding of rational numbers, ratios, rates, percentages, and proportions in various mathematical contexts, and to solve problems</p>
+                <p>Use patterns and number relationships to explain density, infinity, and limit as they relate to number sets</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Identify the exponent laws</p>
+                <p>Explain and apply the exponent laws</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+I/law+(1).png",
+            alt: 'process',
+            position: 'below',
+            width: '20vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson1 = {
+        Type: 'Default',
+        Header: 'Product Rule',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>We previously discussed the method to multiply and divide powers with different bases. Now, we will deal with the multiplication of powers with the same base.</p>",
+                "<p>There is a rule, called the <b>product rule</b>, that provides a convenient shortcut when multiplying powers.</p>",
+                "<p>To multiply powers with the same base, simply <b>add</b> their exponents</p>",
+                "<p>Consider the example:</p>",
+                {
+                    Example: "Math",
+                    Content: 'Solve\\ 2^3 \\times 2^5.'
+                },
+                "<p>Using the product rule, we can obtain the result very quickly:</p>",
+                {
+                    Example: "Math",
+                    Content: '2^3 \\times 2^5 = 2^{(3 + 5)} = 2^8'
+                },
+                "<p>Without using the product rule, evaluating the expression requires quite a bit more calculation:</p>",
+                {
+                    Example: "Math",
+                    Content: '2^3 \\times 2^5 = (2 \\times 2 \\times 2) \\times (2 \\times 2 \\times 2 \\times 2 \\times 2)= 2^8'
+                }
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+I/multiplication.png",
+            alt: 'process',
+            position: 'below',
+            width: '15vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Solve the following expression.',
+        Index: 1,
+        Question: 'Remember to use the <i>product</i> rule!',
+        Options: [
+            "3⁵",
+            "3",
+            "√3",
+            "3⁴"
+        ],
+        Answer: '3⁵', 
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+I/U1_L19_MC1.png",
+            alt: 'process',
+            position: 'below',
+            width: '15vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const Translate = {
+        Type: 'Default',
+        Header: 'Make an Educated Guess',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>To multiply powers with the same base, you add their exponents.</p>",
+                "<p>How do you think we can divide powers with the same base?</p>"
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/WholeNumbers/thinking.gif",
+            alt: 'process',
+            position: 'below',
+            width: '20vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson2 = {
+        Type: 'Default',
+        Header: 'Quotient Rule',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Much like the product rule, there is also a rule for dividing powers with the same base:</p>",
+                "<p>To divide powers with the same base, <b>subtract</b> their exponents.</p>",
+                "<p>Consider the example:</p>",
+                {
+                    Example: "Math",
+                    Content: 'Solve\\ 2^5 \\div 2^3.'
+                },
+                "<p>Using the quotient rule, we can obtain the result very quickly:</p>",
+                {
+                    Example: "Math",
+                    Content: '2^5 \\div 2^3 = 2^{(5 - 3)} = 2^2'
+                },
+                "<p>Without the quotient rule, evaluating the expression requires quite a bit more calculation:</p>",
+                {
+                    Example: "Math",
+                    Content: '2^5 \\div 2^3 = (2 \\times 2 \\times 2 \\times 2 \\times 2) \\div (2 \\times 2 \\times 2) = 2^2'
+                },
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+I/divide.png",
+            alt: 'process',
+            position: 'below',
+            width: '15vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const SA = {
+        Type: 'Short Answer',
+        Header: 'What number belongs in the blank?',
+        Question: null,
+        Placeholder: 'Input answer here',
+        Answer: '3',
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+I/U1_L19_SA1.png",
+            alt: 'process',
+            position: 'below',
+            width: '15vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'What belongs in the blank?',
+        Question: [
+            'When adding and subtracting exponents, we evaluate the powers', 
+            ['last', 'after adding', 'after multiplying', 'first'], 
+        ],
+        Answer: ['first'],
+        Image: null,
+        Audio: null , // optional
+    };
+
+    const MC2 = {
+        Type: 'Multiple Choice',
+        Header: "Solve the following expression.",
+        Index: 2,
+        Question: 'Remember to use the <i>quotient</i> rule!',
+        Options: [
+            "1",
+            "7²",
+            "-7",
+            "7⁻²"
+        ],
+        Answer: '7⁻²', 
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+I/U1_L19_MC2.png",
+            alt: 'process',
+            position: 'below',
+            width: '15vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const Lesson3 = {
+        Type: 'Default',
+        Header: 'Power of a Power Rule',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Take a look at this example:</p>",
+                {
+                    Example: "Math",
+                    Content: 'Simplify\\ (2^5)^3.'
+                },
+                "<p>What do you notice?</p>",
+                "<p>There is an exponent applied on a power!</p>",
+                "<p>At first glance, this may seem like a difficult expression to solve. Luckily, we can obtain the help of the <b>power of a power rule</b>:</p>",
+                "<p>When we have a single base with two exponents, we <b>multiply</b> the exponents.</p>",
+                "<p>Using the power of a power rule, we get:</p>",
+                {
+                    Example: "Math",
+                    Content: '(2^5)^3 = 2^(5 \\times 3) = 2^15.'
+                },
+                "<p>Without using the power of a power rule, evaluating the expression requires much more calculation:</p>",
+                "<p>The order of operations tells us to evaluate the power inside the brackets first:</p>",
+                {
+                    Example: "Math",
+                    Content: '(2^5)^3 = (2 \\times 2 \\times 2 \\times 2 \\times 2)^3 = (32)^3 = 2^15'
+                },
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+I/power+(2).png",
+            alt: 'process',
+            position: 'below',
+            width: '15vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC3 = {
+        Type: 'Multiple Choice',
+        Header: 'Solve the following expression.',
+        Index: 3,
+        Question: "Remember to use the <i>power of a power</i> rule!",
+        Options: [
+            "6²⁷",
+            "6¹⁴",
+            "6²⁴",
+            "6⁹"
+        ],
+        Answer: '6²⁷', 
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+I/U1_L19_MC3.png",
+            alt: 'process',
+            position: 'below',
+            width: '15vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Lesson1, MC, Translate, Lesson2, SA, MC2, Lesson3, MC3, Ending ];
+
+
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

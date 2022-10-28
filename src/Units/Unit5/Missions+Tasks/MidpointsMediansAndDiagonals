@@ -1,0 +1,411 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Final Mission',
+        Text: {
+            transition: null,
+            text: [ 
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'flag',
+            position: 'below',
+            width: 350,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC1 = {
+        Type: 'Multiple Choice',
+        Header: 'Solve. Show all your work!',
+        Index: 1,
+        Question: 'How many of the triangles in △ABC have the same area?',
+        Options: [
+            "0",
+            "2",
+            "4",
+            "6"
+        ],
+        Answer: "6",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=198AmlPxRH6oitiiZXwPMMUHHfyj4rmsr",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const MC2 = {
+        Type: 'Multiple Choice',
+        Header: 'Multiple Choice',
+        Index: 2,
+        Question: 'The diagonals of a rectangle',
+        Options: [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        Answer: "A",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1AsQ9hAu8fj7LCZl5j6gyfBWHYVDWyCkx",
+            alt: 'stop',
+            position: 'above',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP1 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>A town is building a small park in the shape of a triangle.<p/>",
+                "<p>The park will have a children's playground and a horseshoe pitch.</p>",
+                "<p>For safety, a fence will separate the playground from where poeple will be throwing horeshoes.</p>",
+                "<p>Describe how you could place the fence to divide the park evenly for the two uses.</p>",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1iRWj9ZnwXyYCOVEMz86_DjO0GejYUFqv",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const WP2 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>This diagram shows all possible diagonals for a regular pentagon ABCDE.<p/>",
+                "<p><b>A)</b> Is PQRST a regular polygon?</p>",
+                "<p><b>B)</b> Is PQRST similar to ABCDE?</p>",
+                "<p><b>C)</b> How are the areas of PQRST and ABCDE related to the ratio of their side lengths?</p>",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1LcwV8TEmW5ISF63MhRVX2kHVFDII5voM",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Rocket = {
+        Type: 'Rocket',
+        Header: 'Solve to launch the rocket.',
+        Question: '<p>12 people arrive at a meeting, one at a time.</p><p>Each one of these people shakes hands with everyone who is already there.</p><p>How many handshakes have occurred once the 12th person has finished shaking hands?</p>',
+        Placeholder: 'Input answer here',
+        Answer: '132',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1y5Q_suG9mHep-kukWwx3aPhx--lfTxlV",
+            alt: 'Question',
+            position: 'below',
+            width: 200,
+            zoom: null
+        },
+        Audio: null
+    }
+   
+    const Ending = {
+        Type: 'Default',
+        Header: "Congrats! You made it to the end!",
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, MC1, WP1, MC2, WP2, Rocket, Ending ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    /* ------------ DO NOT ALTER TEMPLATES ------------ */
+
+    const MC_template = {
+        Type: 'Multiple Choice',
+        Header: 'Header goes here',
+        Question: 'Question goes here',
+        Options: [
+            "Option 1",
+            "Option 2",
+            "Option 3"
+        ],
+        Answer: 'Option 2', // answer must be one of your options
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+    
+    const SA_template = {
+        Type: 'Short Answer',
+        Header: 'Header goes here',
+        Question: 'Question goes here',
+        Placeholder: 'Input placeholder goes here',
+        Answer: 'Answer goes here',
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+    
+    const Default_template = {
+        Type: 'Default',
+        Header: 'Header goes here',
+        Text: {
+            transition: "Transition goes here (currently only 'Next')", // optional
+            text: ['Text goes here'],
+        },
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+
+    const VertDND_template = {
+        Type: 'Vertical DND',
+        Header: 'Header goes here',
+        Data: [
+            {
+                id: 'unique id for group',
+                label: 'group label goes here',
+                items: [
+                    {id: 'unique id for item', label: 'item content goes here'},
+                    {id: 'unique id for item', label: 'item content goes here'},
+                ],
+                tint: '1 (blue), 2 (green), 3 (orange), or 4 (purple)',
+            }
+        ],
+        Answer: [
+            {
+                id: 'unique id for group',
+                label: 'group label goes here',
+                items: [
+                  {id: 'unique id for item', label: 'item content goes ehre'},
+                  {id: 'unique id for item', label: 'item content goes here'},
+                ],
+                tint: '1 (blue), 2 (green), 3 (orange), or 4 (purple)',
+              } 
+        ]
+    }
+
+    const HorizDND_template = {
+        Type: 'Horizontal DND',
+        Data: {
+            tasks: {
+                'item name goes here': { id: 'unique item id', content: 'item content goes here' },
+            },
+            columns: {
+                'column name goes here': {
+                    id: 'unique column id goes here',
+                    type: 'input or options',
+                    title: 'name of group goes here',
+                    taskIds: ['ids of tasks go here'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column ids in order'],
+        },
+        Answer: {
+            tasks: {
+                'item name goes here': { id: 'unique item id', content: 'item content goes here' },
+            },
+            columns: {
+                'column name goes here': {
+                    id: 'unique column id goes here',
+                    type: 'input or options',
+                    title: 'name of group goes here',
+                    taskIds: ['ids of tasks go here'],
+                    },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column ids in order'],
+        },
+    }
+
+    const NumberLine_Template = {
+        Type: 'Number Line',
+        Max: 'Maximum value goes here',
+        Min: 'Minimum value goes here',
+        Step: 'Incremental value goes here',
+        Initial: 'Initial value goes here'
+    }
+
+    /* ------------ CREATE CUSTOM COMPONENTS HERE ------------ */
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Final Mission',
+        Text: {
+            transition: null,
+            text: [ 
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'flag',
+            position: 'below',
+            width: 350,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC1 = {
+        Type: 'Multiple Choice',
+        Header: 'Solve. Show all your work!',
+        Index: 1,
+        Question: 'How many of the triangles in △ABC have the same area?',
+        Options: [
+            "0",
+            "2",
+            "4",
+            "6"
+        ],
+        Answer: "6",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=198AmlPxRH6oitiiZXwPMMUHHfyj4rmsr",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const MC2 = {
+        Type: 'Multiple Choice',
+        Header: 'Multiple Choice',
+        Index: 2,
+        Question: 'The diagonals of a rectangle',
+        Options: [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        Answer: "A",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1AsQ9hAu8fj7LCZl5j6gyfBWHYVDWyCkx",
+            alt: 'stop',
+            position: 'above',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP1 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>A town is building a small park in the shape of a triangle.<p/>",
+                "<p>The park will have a children's playground and a horseshoe pitch.</p>",
+                "<p>For safety, a fence will separate the playground from where poeple will be throwing horeshoes.</p>",
+                "<p>Describe how you could place the fence to divide the park evenly for the two uses.</p>",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1iRWj9ZnwXyYCOVEMz86_DjO0GejYUFqv",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const WP2 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>This diagram shows all possible diagonals for a regular pentagon ABCDE.<p/>",
+                "<p><b>A)</b> Is PQRST a regular polygon?</p>",
+                "<p><b>B)</b> Is PQRST similar to ABCDE?</p>",
+                "<p><b>C)</b> How are the areas of PQRST and ABCDE related to the ratio of their side lengths?</p>",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1LcwV8TEmW5ISF63MhRVX2kHVFDII5voM",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Rocket = {
+        Type: 'Rocket',
+        Header: 'Solve to launch the rocket.',
+        Question: '<p>12 people arrive at a meeting, one at a time.</p><p>Each one of these people shakes hands with everyone who is already there.</p><p>How many handshakes have occurred once the 12th person has finished shaking hands?</p>',
+        Placeholder: 'Input answer here',
+        Answer: '132',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1y5Q_suG9mHep-kukWwx3aPhx--lfTxlV",
+            alt: 'Question',
+            position: 'below',
+            width: 200,
+            zoom: null
+        },
+        Audio: null
+    }
+   
+    const Ending = {
+        Type: 'Default',
+        Header: "Congrats! You made it to the end!",
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, MC1, WP1, MC2, WP2, Rocket, Ending ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

@@ -1,0 +1,508 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Introduction to Powers',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Represent numbers in various ways, evaluate powers, and simplify expressions by using the relationships between powers and their exponents</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Identify powers and their components</p>
+                <p>Use powers to represent repeated multiplication</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/PowerButton.png",
+            alt: 'process',
+            position: 'below',
+            width: '20vw',
+            zoom: null
+        },
+        Audio: null
+    }
+    
+    const Lesson1 = {
+        Type: 'Default',
+        Header: 'What is a Power?',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>When an integer (<b>other than 0</b>) can be written as a <i>product of equal factors</i>, we can write the integer as a power.</p>",
+                "<p>In other words, the exponent of a number shows how many times the number is <b>multiplied by itself<b>.</p>",
+                "<p>Consider the example:",
+                {
+                    Example: "Math",
+                    Content: '2 \\times 2 \\times 2 \\times 2'
+                },
+                "<p>Since <b>2</b> is being multiplied by itself <b>4</b> times, this can be written as:",
+                {
+                    Example: "Math",
+                    Content: '2^4'
+                },
+                "2 is the <span class='or'>base</span>.</p> <p>4 is the <span class='ye'>exponent</span>.</p> <p>2<sup>4</sup> is the <span class='gr'>power</b>.</span> <p>2<sup>4</sup> is a <span class='bl'>power of 2</span>.</p>",
+                "<p>We say: <i>“2 to the 4th”</i>, or <i>“2 to the power of 4”</i>.</p>",
+                "<p>Exponents are important because they allow us to <b>abbreviate</b> an otherwise very long and tedious expression.</p>",
+                "<p>For example, to express 9 multiplied by itself 9 times, we would have to write:",
+                {
+                    Example: "Math",
+                    Content: '9 \\times 9 \\times 9 \\times 9 \\times 9 \\times 9 \\times 9 \\times 9 \\times 9'
+                },
+                "<p>as opposed to <b>9<sup>9</sup></b>.</p>",
+                "<p>This is especially important for scientists who often deal with incredibly large numbers.</p>",
+                "<p>Think about how long it would take to express 7<sup>100000000000</sup> without the use of exponents!</p>"
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Drag and drop the options to the topics that best describe them.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op1.png" },
+                'op-2': { id: 'op-2', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op2.png" },
+                'op-3': { id: 'op-3', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op3.png" },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  'Base',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Exponent',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Power',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op1.png" },
+                'op-2': { id: 'op-2', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op2.png" },
+                'op-3': { id: 'op-3', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op3.png" },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  'Base',
+                    taskIds: ['op-2'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Exponent',
+                    taskIds: ['op-3'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Power',
+                    taskIds: ['op-1'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4'],
+        }
+    }
+    
+    const Lesson2 = {
+        Type: 'Default',
+        Header: 'Common Types of Powers',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p><b>Square:</b></p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/square.png width='120' style='padding-top: 10px;' alt={alt}/><p>A power with an integer base and exponent <b>2</b> is a square number. When the base is a positive integer, we can illustrate a square number.</p>",
+                "<p><b>Cube:</b></p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/cube.png width='150' style='padding-top: 10px;' alt={alt}/><p>A power with an integer base and exponent <b>3</b> is a cube number. When the base is a positive integer, we can illustrate a cube number.</p>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Fill in the blanks.',
+        Question: [
+            '<p>Write, in order, the number of unit squares in each square as a power.</p>', 
+            'a =',            
+            ['2²', '4²', '6²', '8²'], 
+            'b =',
+            ['2³', '3²', '3³', '9³'], 
+            'c =',
+            ['4³', '5³', '5²', '5⁵'], 
+        ],
+        Answer: ['2²', '3²', '5²'],
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_FB1.png",
+            alt: 'process',
+            position: 'below',
+            width: 400,
+            zoom: null
+        },
+        Audio: null , // optional
+    };
+
+    const Lesson3 = {
+        Type: 'Default',
+        Header: 'Identity Exponent Rule',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p><i>Anything to the exponent of <b>1</b> is equal to <span class='re'>itself</span>.</i></p>",
+                "<p>Since the exponent is the number of times the base is multiplied by itself, anything with an exponent of 1 is just a single instance of that number!</p>",
+                "<p>Let’s try to visualize</p><div class='example'>2<sup>1</sup> = 2</div>",
+                "<p>Suppose you have one basketball.</p>",
+                {
+                    Example: 'Video',
+                    Button: false,
+                    Content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/bounce1.mp4'
+                },
+                "<p>Each time you click this button, the basketballs are doubled.</p>",
+                "<p><i>Click the button!</i></p>",
+                {
+                    Example: 'Video',
+                    Button: true,
+                    Content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/bounce2.mp4'
+                },
+                "<p>Now, you've doubled the basketballs, so you have 2 basketballs</p>",
+                "<p>The <b>base</b>, in this case 2, is the number you <i>multiply by each time</i>, and the <b>exponent</b> is the <i>number of times you multiply</i>.</p>",
+                "<p>We always start with 1, so by clicking the button once, we are multiplying one by the base.</p>",
+                "<p>This means that no matter what base you choose, having an exponent of 1 will give you:</p>",
+                {
+                    Example: "Math",
+                    Content: '1 \\times base'
+                },
+                 "<p>which is just the value of the base itself!</p>",
+                "<p>A simple way to think about it is that having an exponent of 1 has <div class='example'>no affect</div> on the number.</p>",
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> You can type exponents using the ^ character!",
+                    Image: {
+                        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/hatOperation.gif",
+                        alt: 'stop',
+                        position: 'above',
+                        width: 300,
+                        zoom: null
+                    },
+                },
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const SA1 = {
+        Type: 'Short Answer',
+        Header: 'Write the expression as a power.',
+        Question: 'Remember to use "^"',
+        Placeholder: 'Input answer here',
+        Answer: '3^6',
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_SA1.png",
+            alt: 'process',
+            position: 'below',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const SA2 = {
+        Type: 'Short Answer',
+        Header: 'Write the expression as a power.',
+        Question: 'Remember to use "^"',
+        Placeholder: 'Input answer here',
+        Answer: '7^1',
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_SA2.png",
+            alt: 'process',
+            position: 'below',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Make an educated guess.',
+        Question: 'Think about the <i>brackets</i>',
+        Options: [
+            "True",
+            "False",
+        ],
+        Answer: 'True', 
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_MC1.png",
+            alt: 'process',
+            position: 'above',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const Lesson4 = {
+        Type: 'Default',
+        Header: 'Expressions Involving Negative Signs',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>So far we’ve only seen powers with positive integer bases, but a power can also be negative or have a base that is a negative integer.</p>",
+                "<p>Consider the example:",
+                {
+                    Example: "Math",
+                    Content: '(-3)^4'
+                },
+                "<p>We can see that the expression is the repeated multiplication of -3.</p>",
+                "<p>Thus, we have:</p>",
+                {
+                    Example: "Math",
+                    Content: '(-3)^4 = (-3) \\times (-3) \\times (-3) \\times (-3)'
+                },
+                "<p>Applying the rules for multiplying integers, we know that the sign of a product with an even number of negative factors is positive.</p>",
+                "<p>So, we have:</p>",
+                {
+                    Example: "Math",
+                    Content: '(-3)^4 = 81'
+                },
+                {
+                    Example: 'Note',
+                    Content: 'Note:',
+                    Image: {
+                        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/notequal.gif",
+                        alt: 'stop',
+                        position: 'below',
+                        width: 300,
+                        zoom: null
+                    },
+                },
+                "<p>When there are no brackets containing the negative sign in the base of the power, the exponent only applies to the base 3.</p>",
+                "<p>Thus, we have:",
+                {
+                    Example: "Math",
+                    Content: '-3^4 = (-3^4) = -(3 \\times 3 \\times 3 \\times 3) = -81'
+                },
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const SA3 = {
+        Type: 'Short Answer',
+        Header: "Evaluate the expression.",
+        Question: 'Think about the <i>brackets</i>',
+        Placeholder: 'Input answer here',
+        Answer: '-144',
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_SA3.png",
+            alt: 'process',
+            position: 'below',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const Lesson5 = {
+        Type: 'Default',
+        Header: 'Expressions Involving Negative Signs',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>To understand the <b>powers of 10</b>, let’s take a look at an example.</p><p>This table shows decreasing powers of 10:</p><p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/Place+Value+Chart.png width='400' style='padding-top: 10px;' alt={alt}/></p>",
+                "<p>What pattern do you notice?</p>",
+                "<p>There are an <i>equal number</i> of <b>zeros</b> for every <b>exponent</b> in the power of 10!</p>",
+                "<p>Following the pattern gives us 10<sup>0</sup> = 1.</p><p>Why is this the case? We’ll find out more about powers of zero in the next module.</p>",
+                "<p>For now, let’s work through an example using the powers of 10.</p>",
+                "<p>We’ll use the same place-value chart:</p><p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/Place+Value+Chart.png width='400' style='padding-top: 10px;' alt={alt}/></p>",
+                "<p>This shows us that:",
+                {
+                    Example: "Math",
+                    Content: '3452'
+                },
+                {
+                    Example: "Math",
+                    Content: '= 3000 + 400 + 50 + 2'
+                },
+                {
+                    Example: "Math",
+                    Content: '= (3 \\times 1000) + (4 \\times 100) + (5 \\times 10) + (2 \\times 1)'
+                },
+                {
+                    Example: "Math",
+                    Content: '= (3 \\times 10^3) + (4 \\times 10^2) + (5 \\times 10^1) + (2 \\times 10^0)'
+                },
+                "<p>Powers of 10 are important because they <i>allow us to write extremely large or small numbers</i> without writing multiple zeros in a row. </p>",
+                "<p>They are often used in <b>scientific notation</b>, which is where a number is rewritten as a simple decimal multiplied by a power of ten.</p>"
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Lesson6 = {
+        Type: 'Default',
+        Header: 'Powers of Zero',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p><i>Any number (<b>other than 0</b>) raised to 0 is <span class='re'>1</span>.</i></p>",
+                "<p>To understand this, let’s go back to our basketball example.</p>",
+                "<p>This time, let’s try to visualize </p><div class='example'>2<sup>0</sup> = 1</div>",
+                "<p>We start again with just one ball.</p>",
+                {
+                    Example: 'Video',
+                    Button: false,
+                    Content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/bounce1.mp4'
+                },
+                "<p>Each time you click this button, the basketballs are doubled.</p>",
+                "<p><i>Click the button!</i></p>",
+                {
+                    Example: "Button"
+                },
+                "<p>Oops, this time the exponent is 0 so we get 0 clicks!</p>",
+                "<p>So, what do we have?</p>",
+                {
+                    Example: 'Video',
+                    Button: false,
+                    Content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/bounce1.mp4'
+                },
+                "<p>That’s right, the <b]i>single basketball</i> we started with.</p>",
+                "<p>Since we never click the button, the value of the base, or the number we multiply by each time, <b>doesn’t matter</b>.</p>",
+                "<p>We’ll always be left with <div class='example'>1</div> each time!</p>"
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Match2 = {
+        Type: 'Horizontal DND',
+        Header: 'Make the expressions true by matching each to the correct symbol.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '<'},
+                'op-2': { id: 'op-2', content: '>' },
+                'op-3': { id: 'op-3', content: '=' },
+                'op-4': { id: 'op-4', content: '>' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op1.png",
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op2.png",
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op3.png",
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '<'},
+                'op-2': { id: 'op-2', content: '>' },
+                'op-3': { id: 'op-3', content: '=' },
+                'op-4': { id: 'op-4', content: '>' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op1.png",
+                    taskIds: ['op-3'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op2.png",
+                    taskIds: ['op-2'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Introduction+To+Powers/U1_L16_Match_Op3.png",
+                    taskIds: ['op-4'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4'],
+        }
+    }
+    
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Lesson1, Match, Lesson2, FB, Lesson3, SA1, SA2, MC, Lesson4, SA3, Lesson5, Lesson6, Match2, Ending ];
+// 
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

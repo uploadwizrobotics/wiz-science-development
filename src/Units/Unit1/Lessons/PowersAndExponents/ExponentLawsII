@@ -1,0 +1,153 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+    Type: 'Default',
+    Header: 'Exponent Laws II',
+    Text: {
+        transition: 'Next',
+        text: [
+            `<i>By the end of this lesson, students will:</i>
+            <p>Apply an understanding of rational numbers, ratios, rates, percentages, and proportions in various mathematical contexts, and to solve problems</p>
+            <p>Use patterns and number relationships to explain density, infinity, and limit as they relate to number sets</p>`,
+            `<i>Students will be able to successfully:</i>
+            <p>Identify more exponent laws</p>
+            <p>Explain and apply the exponent laws</p>`
+        ]
+    },
+    Image: {
+        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+II/compliant.png",
+        alt: 'process',
+        position: 'below',
+        width: '20vw',
+        zoom: null
+    },
+    Audio: null
+}
+
+const Guess = {
+    Type: 'Default',
+    Header: 'Make an Educated Guess',
+    Text: {
+        transition: "Next",
+        text: [
+            "<p>We know that the exponent of a number tells us how many times we should multiply the base.</p>",
+            "<p>Knowing this, what do you think is the result of <div class='example'>2<sup>-5</sup>?</div></p>"
+        ]
+    },
+    Image: {
+        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+II/spongebobthink.gif",
+        alt: 'process',
+        position: 'below',
+        width: '30vw',
+        zoom: null
+    },
+    Audio: null
+}
+
+const Lesson1 = {
+    Type: 'Default',
+    Header: 'Negative Exponents',
+    Text: {
+        transition: "Next",
+        text: [
+            "<p>At first glance, it isn’t easy to see what a negative exponent implies. How do you multiply a number a negative number of times?</p>",
+            "<p>Enter the </p><div class='ye'>reciprocal</div><p>The reciprocal of a number is the number that becomes <span class='example'>1</span> when <i>multiplied to the original number!</i></p>",
+            "<p>We know that all integers are rational numbers and can be written as:</p>",
+            {
+                Example: "Math",
+                Content: '\\frac{number}{1}'
+            },
+            "<p>Knowing this, an easy way to think about the reciprocal is what you get when you flip the number <b>upside-down</b>.</p>",
+            "<p><i>A negative exponent tells us how many times we have to <span class='re'>multiply the reciprocal of the base</span></i></p>",
+            "<p>This means we have:</p>",
+            {
+                Example: "Math",
+                Content: '2^{-5} = (\\frac{1}{2})^5'
+            },
+            "<p>Then, using the power of a quotient rule, we get:</p>",
+            {
+                Example: "Math",
+                Content: '2^{-5} = (\\frac{1}{2})^5 = \\frac{1^5}{2^5} = 2^{-5} = \\frac{1}{32}'
+            },
+            "<p>Done!</p>"
+        ]
+    },
+    Image: {
+        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+II/subtraction.png",
+        alt: 'process',
+        position: 'below',
+        width: '15vw',
+        zoom: null
+    },
+    Audio: null
+}
+
+const MC = {
+    Type: 'Multiple Choice',
+    Header: "Solve the following expression.",
+    Question: 'Think about the <i>negative</i> exponent',
+    Options: [
+        "(-3)⁵",
+        "-3⁵",
+        "⅓⁵",
+        "(-⅓)⁵"
+    ],
+    Answer: "⅓⁵", 
+    Image: {
+        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+II/U1_L22_MC1.png",
+        alt: 'process',
+        position: 'below',
+        width: '15vw',
+        zoom: null
+    },
+    Audio: null
+};
+
+const Lesson2 = {
+    Type: 'Default',
+    Header: 'Rational Exponents',
+    Text: {
+        transition: "Next",
+        text: [
+            "<p>Just as the base of a power may be a product, it can also be a quotient.</p>",
+            "<p>If negative exponents </p>",
+            "<p><i>When we have a quotient raised to an exponent, <span class='re'>distribute the exponent</span> to both the numerator and the denominator.</i></p>",
+            "<p>Using the power of a quotient rule, we get:",
+            {
+                Example: 'Math',
+                Content:'(\\frac{2}{5})^3 = \\frac{2^3}{5^3} = \\frac{8}{125}'
+            },
+            "<p>Done!</p>"
+        ]
+    },
+    Image: {
+        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+II/Rational.png",
+        alt: 'process',
+        position: 'below',
+        width: '15vw',
+        zoom: null
+    },
+    Audio: null
+}
+
+const Ending = {
+    Type: 'Default',
+    Header: 'Congrats! You made it to the end!',
+    Text: null,
+    Audio: null
+}
+
+// place objects in order of appearance
+const ComponentArray = [ Intro, Guess, Lesson1, MC, Lesson2, Ending ];
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

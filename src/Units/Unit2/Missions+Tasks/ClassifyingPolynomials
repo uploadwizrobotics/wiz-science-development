@@ -1,0 +1,278 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+   const Intro = {
+        Type: 'Default',
+        Header: 'Classifying Polynomials',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply the mathematical processes as they develop an understanding of algebraic concepts in various contexts</p>
+                <p>Simplify algebraic expressions by applying properties of operations of numbers, using various representations and tools, in different contexts</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Identify and distinguish polynomial types</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Classify+Polynomials/MagnifyingGlass1.png",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Sort the polynomials by their type',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-30'},
+                'op-2': { id: 'op-2', content: '7z + 2' },
+                'op-3': { id: 'op-3', content: '6x⁴ + 3x³ -17x² + 9x - 39' },
+                'op-4': { id: 'op-4', content: '4y² + y + 1' },
+                'op-5': { id: 'op-5', content: '9x² + 8x³ - 4x' },
+                'op-6': { id: 'op-6', content: '15a⁷' },
+                'op-7': { id: 'op-7', content: '-8u + 7u² + 9u³ - 6u⁴ - 90u⁵ + 20c⁶ + 80' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'Monomial',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Binomial',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Trinomial',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Polynomial',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4', 'op-5', 'op-6', 'op-7'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+             tasks: {
+                'op-1': { id: 'op-1', content: '-30'},
+                'op-2': { id: 'op-2', content: '7z + 2' },
+                'op-3': { id: 'op-3', content: '6x⁴ + 3x³ -17x² + 9x - 39' },
+                'op-4': { id: 'op-4', content: '4y² + y + 1' },
+                'op-5': { id: 'op-5', content: '9x² + 8x³ - 4x' },
+                'op-6': { id: 'op-6', content: '15a⁷' },
+                'op-7': { id: 'op-7', content: '-8u + 7u² + 9u³ - 6u⁴ - 90u⁵ + 20c⁶ + 80' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'Monomial',
+                    taskIds: ['op-1', 'op-6'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Binomial',
+                    taskIds: ['op-2'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Trinomial',
+                    taskIds: ['op-4', 'op-5'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Polynomial',
+                    taskIds: ['op-3', 'op-7'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        }
+    }
+
+    const Sort = {
+        Type: 'Vertical DND',
+        Header: 'Order the polynomials from highest to lowest degree',
+        Data: [
+            {
+                id: '1',
+                label: '6x⁵ + 5x⁴ - 3x² + x⁷',
+                items: [
+                ],
+                tint: 1,
+              },
+              {
+                id: '2',
+                label: '10x² - 58x + 12',
+                items: [
+                ],
+                tint: 2,
+              },
+              {
+                id: '3',
+                label: 'x⁴ + x² + 6x - 2',
+                items: [
+                ],
+                tint: 3,
+              } ,
+              {
+                id: '4',
+                label: '6x⁵ - 2x² + 3x⁶ + x - 3x⁴',
+                items: [
+                ],
+                tint: 1,
+              }   
+        ],
+        Answer: [
+            {
+                id: '1',
+                label: '6x⁵ + 5x⁴ - 3x² + x⁷',
+                items: [
+                ],
+                tint: 1,
+              },
+              {
+                id: '4',
+                label: '6x⁵ - 2x² + 3x⁶ + x - 3x⁴',
+                items: [
+                ],
+                tint: 1,
+              },
+              {
+                id: '3',
+                label: 'x⁴ + x² + 6x - 2',
+                items: [
+                ],
+                tint: 3,
+              },
+              {
+                id: '2',
+                label: '10x² - 58x + 12',
+                items: [
+                ],
+                tint: 2,
+              },  
+        ]
+    }
+    
+    const Feed = {
+        Type: 'Feed',
+        Header: 'Daniel will only eat trinomials. Feed him up to five polynomials to see if you can get him to eat.',
+        Options : 
+        [
+            {
+                name:'3x² + 1',
+                score: '-6',
+                icon: 'A',
+            },
+            {
+                name:'4x³',
+                score: '-6',
+                icon: 'B',
+            },
+            {
+                name:'3x² + 2x - 7',
+                score: '2',
+                icon: 'C',
+            },
+            {
+                name:'5x + 8x³ - 12x² + 6x - 5',
+                score: '-6',
+                icon: 'D',
+            },
+            {
+                name:'9x - 2',
+                score: '-6',
+                icon: 'E',
+            },
+            {
+                name:'-3x³ - 29x² + 14',
+                score: '2',
+                icon: 'F',
+            },
+            {
+                name:'12x⁶ - 6x⁴ + x²',
+                score: '2',
+                icon: 'G',
+            },
+            {
+                name:'15x⁴ + 22x³ + 8x² - 10x + 42',
+                score: '-6',
+                icon: 'H',
+            },
+            {
+                name:'3x² + 2x - 7',
+                score: '2',
+                icon: 'I',
+            },
+            {
+                name:'512x',
+                score: '-6',
+                icon: 'J',
+            },
+            {
+                name:'-94x⁵ + 7x³ - 43x² - 8',
+                score: '-6',
+                icon: 'K',
+            },
+            {
+                name:'12x⁴ + 6x + 8',
+                score: '2',
+                icon: 'L',
+            },
+        ]
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Match, Sort, Feed, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

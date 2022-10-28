@@ -1,0 +1,294 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+    /* ------------ DO NOT ALTER TEMPLATES ------------ */
+
+    const MC_template = {
+        Type: 'Multiple Choice',
+        Header: 'Header goes here',
+        Question: 'Question goes here',
+        Options: [
+            "Option 1",
+            "Option 2",
+            "Option 3"
+        ],
+        Answer: 'Option 2', // answer must be one of your options
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+    
+    const SA_template = {
+        Type: 'Short Answer',
+        Header: 'Header goes here',
+        Question: 'Question goes here',
+        Placeholder: 'Input placeholder goes here',
+        Answer: 'Answer goes here',
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+
+    const FB_template = {
+        Type: 'Fill in the Blank',
+        Header: 'Header goes here',
+        Question: ['Text before blank goes here', ['Options go here'], 'Text after blank goes here'],
+        Answer: ['Answers go here'],
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+    
+    const Default_template = {
+        Type: 'Default',
+        Header: 'Header goes here',
+        Text: {
+            transition: "Transition goes here (currently only 'Next')", // optional
+            text: ['Text goes here'],
+        },
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+
+    const VertDND_template = {
+        Type: 'Vertical DND',
+        Header: 'Header goes here',
+        Data: [
+            {
+                id: 'unique id for group',
+                label: 'group label goes here',
+                items: [
+                    {id: 'unique id for item', label: 'item content goes here'},
+                    {id: 'unique id for item', label: 'item content goes here'},
+                ],
+                tint: '1 (blue), 2 (green), 3 (orange), or 4 (purple)',
+            }
+        ],
+        Answer: [
+            {
+                id: 'unique id for group',
+                label: 'group label goes here',
+                items: [
+                  {id: 'unique id for item', label: 'item content goes ehre'},
+                  {id: 'unique id for item', label: 'item content goes here'},
+                ],
+                tint: '1 (blue), 2 (green), 3 (orange), or 4 (purple)',
+              } 
+        ]
+    }
+
+    const HorizDND_template = {
+        Type: 'Horizontal DND',
+        Data: {
+            tasks: {
+                'item name goes here': { id: 'unique item id', content: 'item content goes here' },
+            },
+            columns: {
+                'column name goes here': {
+                    id: 'unique column id goes here',
+                    type: 'input or options',
+                    title: 'name of group goes here',
+                    taskIds: ['ids of tasks go here'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column ids in order'],
+        },
+        Answer: {
+            tasks: {
+                'item name goes here': { id: 'unique item id', content: 'item content goes here' },
+            },
+            columns: {
+                'column name goes here': {
+                    id: 'unique column id goes here',
+                    type: 'input or options',
+                    title: 'name of group goes here',
+                    taskIds: ['ids of tasks go here'],
+                    },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column ids in order'],
+        },
+    }
+
+    const NumberLine_Template = {
+        Type: 'Number Line',
+        Max: 'Maximum value goes here',
+        Min: 'Minimum value goes here',
+        Step: 'Incremental value goes here',
+        Initial: 'Initial value goes here'
+    }
+
+    /* ------------ CREATE CUSTOM COMPONENTS HERE ------------ */
+    
+    const Intro = {
+        Type: 'Default',
+        Header: 'Adding and Subtracting Polynomials',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply the mathematical processes as they develop an understanding of algebraic concepts in various contexts</p>
+                <p>Simplify algebraic expressions by applying properties of operations of numbers, using various representations and tools, in different contexts</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Add and subtract polynomials in one and two variables</p>`
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1LdXwGHI5e7vgjGpD4DRbcEpuUhU2LjsE",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Sort = {
+        Type: 'Vertical DND',
+        Header: 'Arrange the steps in the correct order:',
+        Data: [
+            {
+                id: 'group-1',
+                label: '5x² - 3xy + 2y² - 8x² - (-7xy) - (-4y²)',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'group-2',
+                label: '(5 - 8)x² + (-3 + 7)xy + (2 + 4)y²',
+                items: [],
+                tint: 2,
+            },
+            {
+                id: 'group-3',
+                label: '(5x² - 3xy + 2y²) - (8y² - 7xy - 4y²)',
+                items: [],
+                tint: 3,
+            },
+            {
+                id: 'group-4',
+                label: '5x² - 3xy + 2y² - 8x² + 7xy + 4y²',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'group-5',
+                label: '-3x² + 4xy + 6y²',
+                items: [],
+                tint: 2,
+            },
+        ],
+        Answer: [
+            {
+                id: 'group-3',
+                label: '(5x² - 3xy + 2y²) - (8y² - 7xy - 4y²)',
+                items: [],
+                tint: 3,
+            },
+            {
+                id: 'group-1',
+                label: '5x² - 3xy + 2y² - 8x² - (-7xy) - (-4y²)',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'group-4',
+                label: '5x² - 3xy + 2y² - 8x² + 7xy + 4y²',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'group-2',
+                label: '(5 - 8)x² + (-3 + 7)xy + (2 + 4)y²',
+                items: [],
+                tint: 2,
+            },
+            {
+                id: 'group-5',
+                label: '-3x² + 4xy + 6y²',
+                items: [],
+                tint: 2,
+            },
+        ]
+    }
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "The sum of two polynomials is:",
+                {
+                    Example: 'Math',
+                    Content: '12m^2 + 2m + 4'
+                },
+                "One polynomial is:",
+                {
+                    Example: 'Math',
+                    Content: '4m^2 - 6 + 8'
+                },
+                "What is the other polynomial?",
+                "Explain how you found your answer."
+            ]
+        }
+    }
+
+    const Rocket = {
+        Type: 'Rocket',
+        Header: 'Solve to launch the rocket.',
+        Question: 'Input A, B, C, or D!',
+        Placeholder: 'Input answer here',
+        Answer: 'D',
+        Image: {
+            url: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Adding+and+Subtracting+Polynomials/U1_L12_Rocket1.png', 
+            alt: 'Question',
+            position: 'above',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Sort, Rocket, WP, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

@@ -1,0 +1,240 @@
+@charset "UTF-8";
+
+html,
+body,
+main{
+    margin: 0 auto;
+    justify-content: center;
+}
+main{
+    perspective: 500px;
+    transform-style: preserve-3d;
+    transition: all 500ms;
+}
+main,
+.thermometer-wrapper{
+    padding-bottom: 10px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+.thermometer-wrapper{
+    position: relative;
+    width: 120px;
+    height: 400px;
+}
+.thermometer-base{
+    position: relative;
+    top: -38px;
+    width: 70px;
+    height: 300px;
+    border-radius: 70px 70px 0 0;
+    background-color: rgb(255, 255, 255);
+}
+.thermometer-base::before,
+.thermometer-base::after{
+    position: absolute;
+    content: "";
+    background-color: inherit;
+    display: block;
+}
+.thermometer-base::before{
+    top: 260px;
+    width: 70px;
+    height: 40px;
+    box-shadow: inset 26px 0 0 rgba(39, 41, 43, 0.15);
+    z-index: 2;
+}
+.thermometer-base::after{
+    top: 274px;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-left: -50px;
+}
+.thermometer-base,
+.thermometer-base::after{
+    box-shadow:
+    0 0 0 8px rgb(37, 38, 44),
+    inset 26px 0 0 rgba(5,15,25,.15),
+    0 18px 0 rgba(0,0,0,.25),
+    0 19px 20px rgba(0,0,0,.25);
+}
+.thermometer-liquid{
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    width: 40px;
+    height: 28px;
+    max-height: 300px;
+    border-radius: 40px 40px 0 0;
+    margin-left: -20px;
+    background-color: rgb(80,10,10);
+    box-shadow:inset 22px 0 0 rgba(5,15,25,.15),
+    inset -6px 0 0 rgba(255,255,255,.1);
+    z-index: 3;
+}
+.thermometer-liquid::before{
+    position: inherit;
+    bottom: -40px;
+    left: 50%;
+    content: "";
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    margin-left: -35px;
+    background-color: inherit;
+    z-index: 3;
+    box-shadow:
+    inset 10px 0 0 rgba(5,15,25,.15),
+    inset -8px -4px 0 rgba(255,255,255,.1);
+}
+.thermometer-rule{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 44px;
+    height: 275px;
+    transform: translate(-50%,38%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    z-index: 4;
+}
+.thermometer-rule-steps{
+    width: 55%;
+    height: 10px;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 25px;
+    background-color: rgba(200,200,200,.5);
+    box-shadow:
+    2px 4px 0 rgba(5,15,25,.5),
+    inset 2px 0 0 rgba(5,15,25,.15);
+}
+.thermometer-rule-steps:first-of-type{
+    margin-top: 40px;
+}
+.neon-header{
+    position: relative;
+    margin-top: 0;
+    margin-bottom: .25em;
+    color: white;
+    font-family: 'Baloo Thambi';
+    font-size: 4em;
+    text-transform: uppercase;
+    /*text-shadow:
+    0 0 4px rgb(255,255,255),
+    0 0 8px rgb(255,0,0),
+    0 0 16px rgb(255,0,0),
+    0 0 24px rgb(255,0,80),
+    0 0 48px rgb(255,0,80);*/
+    transform: translateZ(70px) rotateZ(-3deg);
+}
+
+/*ANIMATIONS*/
+@keyframes heat {
+    from{
+        height: 28px;
+        background-color: rgb(167, 0, 0);
+        box-shadow:
+        inset 22px 0 0 rgba(5,15,25,.15),
+        inset -6px 0 0 rgba(255,255,255,.1);
+    }
+    to{
+        height: 300px;
+        background-color: rgb(216, 0, 0);
+        box-shadow:
+        inset 22px 0 0 rgba(5,15,25,.15),
+        inset -6px 0 0 rgba(255,255,255,.1),
+        0 0 5px rgb(255,255,255),
+        0 0 20px rgb(255,0,0);
+    }
+}
+.anim-heat{
+    animation-name: heat;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(.58,.92,.6,-0.3);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes neon-glow {
+    0%{
+        color: rgb(255,255,255);
+        text-shadow:
+        0 2px 0 rgb(220,220,220),
+        0 0 4px rgb(255,255,255),
+        0 0 4px transparent,
+        0 0 8px rgb(255,0,0),
+        0 0 16px rgb(255,0,0),
+        0 0 24px rgb(255,0,80),
+        0 0 48px rgb(255,0,80),
+        6px 20px 1px rgba(0,0,0,.75);
+    }
+    100%{
+        color: #E1E1E1;
+        color: rgba(255,255,255,.15);
+        text-shadow:
+        0 2px 0 rgb(220,220,220),
+        0 0 4px rgb(255,255,255),
+        0 0 16px rgb(255,255,255),
+        0 0 16px rgb(255,0,0),
+        0 0 32px rgb(255,0,0),
+        0 0 60px rgb(255,0,80),
+        0 0 100px rgb(255,0,80),
+        11px 25px 1px rgba(0,0,0,.75);
+    }
+}
+.anim-neon-glow{
+    animation-name: neon-glow;
+    animation-duration: 250ms;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0,1.31,1,-0.48);
+    animation-iteration-count: infinite;
+}
+
+/*MEDIA QUERIES*/
+
+/*1280 x 600 landscape*/
+@media only screen and
+(max-device-width:1280px){
+    main{
+        transform: scale(.85);
+    }
+}
+/*360 x 640 landscape*/
+@media only screen and
+(min-device-width:360px) and
+(max-device-width:640px) and
+(orientation:landscape){
+    main{
+        top: -50px;
+        transform: scale(.55);
+    }
+}
+/*320 x 480*/
+@media only screen and
+(min-device-width:320px) and
+(max-device-width:480px) and
+(orientation:landscape) {
+    main{
+        top: -70px;
+        transform: scale(.5);
+    }
+}
+@media only screen and
+(min-device-width:320px) and
+(max-device-width:480px) and
+(orientation:portrait) {
+    main{
+        transform: scale(.5);
+    }
+}

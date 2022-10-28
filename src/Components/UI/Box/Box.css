@@ -1,0 +1,280 @@
+/* question box */
+.outer_square_white {
+    background-color: #fff;
+  }
+  .squircle__content {
+    font-size: 2.5vw;
+    position: relative;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    padding: 5%;
+  }
+  
+  .squircle__out {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    border-radius: 5em;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 30px 35px 10px;
+  }
+
+  .MuiGrid-root .css-vj1n65-MuiGrid-root .SA .squircle__out {
+    width: 80%;
+  }
+  
+  .squircle__out:before, .squircle__out:after {
+    z-index: 1;
+    mix-blend-mode: darken;
+    border-radius: 1.85em;
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+  .squircle__out .squircle {
+    mix-blend-mode: lighten;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+  .squircle__out .squircle .squircle__in {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    filter: contrast(75);
+    background-color: black;
+    margin: 0;
+    padding: 0;
+  }
+  .squircle__out .squircle .squircle__in:after {
+    filter: blur(1em);
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: white;
+    z-index: 0;
+  }
+  .squircle__big .squircle .squircle__in:after {
+    filter: blur(1.5em);
+  }
+
+
+  /* list_box */
+  .outer_square_list {
+    display: inline-block;
+    background-color: #fff;
+    vertical-align: middle;
+    width: 30%;
+    margin: 10px;
+  }
+
+  .squircle__content__list {
+    font-size: 1.4vw;
+    position: relative;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    padding: 5%;
+  }
+
+  .squircle__list {
+    display: inline-block;
+    margin: 30px 0;
+    text-align: center;
+    width: 100%;
+    border-radius: 5em;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 20px 65px 0px;
+  }
+  
+  .squircle__list:before, .squircle__list:after {
+    display: inline-block;
+    z-index: 1;
+    mix-blend-mode: darken;
+    border-radius: 1.85em;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+  .squircle__list .squircle {
+    mix-blend-mode: lighten;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+  .squircle__list .squircle .squircle__in {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    filter: contrast(75);
+    background-color: black;
+  }
+  .squircle__list .squircle .squircle__in:after {
+    filter: blur(1em);
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: white;
+    z-index: 0;
+  }
+  .squircle__med .squircle .squircle__in:after {
+    filter: blur(1em);
+  }
+  
+  /* input box, use */
+  .squircle__input {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    border-radius: 5em;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 20px 65px 0px;
+    color: white;
+    box-shadow: none;
+  }
+  .squircle__input a {
+    color: white;
+  }
+  .squircle__input code {
+    border: none;
+  }
+  /******************/
+  
+  /* don't use, will be applied automatically */
+  .squircle__input:after {
+    opacity: 0;
+    z-index: 1;
+    mix-blend-mode: darken;
+    border-radius: 1.85em;
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+  .squircle__input:before {
+    border-radius: 0;
+    mix-blend-mode: lighten;
+    background-color: #FECB37;
+    z-index: 1;
+    mix-blend-mode: darken;
+    border-radius: 1.85em;
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+  .squircle__input .squircle {
+    mix-blend-mode: lighten;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+  .squircle__input .squircle .squircle__in {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    filter: contrast(75);
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    filter: contrast(75);
+    background-color: white;
+  }
+  .squircle__input .squircle .squircle__in:after {
+    background-color: black;
+    filter: blur(0.9em);
+    filter: blur(1em);
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: white;
+    z-index: 0;
+  }
+  /************************************************/
+  
+  p a {
+    text-decoration: underline;
+  }
+  code {
+    border-radius: .5em;
+    padding: .25em .3em;
+    margin: 0 -.1em;
+    border: 1px solid rgba(255, 255, 255, .5);
+  }
+  .header h1 {
+    margin: 30px;
+    color: #000000;
+    background: #000000;
+    display: inline-block;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header h2 {
+    text-transform: uppercase;
+    color: #fff;
+    background: #fff;
+    display: inline-block;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .input {
+    width: 80%;
+    font-weight: 405;
+    font-size: 1.8vw;
+    vertical-align: center;
+    width: 100%;
+    border-radius: 0.5em;
+    border: none;
+    outline: none;
+    background-color: #FECB37;
+    color: white;
+    letter-spacing: 1px;
+  }

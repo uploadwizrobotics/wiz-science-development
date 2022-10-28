@@ -1,0 +1,210 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Simple Linear Inequalities',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this mission, students will:</i>
+                <p>Create algebraic expressions to generalize relationships expressed in words, numbers, and visual representations, in various contexts</p>
+                <p>Create and solve equations for various contexts, and verify their solutions</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Evaluate one and two step linear inequalities</p>`
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=181fJcQoxbn6yIqJChXBl5Cu-Ilw2wP09",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Find the solution set of the inequality.',
+        Question: [
+            '<p>14 - 3x < -1</p>',
+            'x',
+            ['<', '≤', '>', '≥'], 
+            ['6', '-1', '7', '5'],
+        ],
+        Answer: ['>', '5'],
+        Image: null,
+        Audio: null , 
+    };
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Match the inequality with the correct solution set.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '5a + 18 < -27'},
+                'op-2': { id: 'op-2', content: '4x + 11 < -21' },
+                'op-3': { id: 'op-3', content: '9 - 4d ≥ -3' },
+                'op-4': { id: 'op-4', content: '-2x + 7 < 23' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1uWkjK7OMfuASYBqJSJr52fVOG9TxWjsA',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1kpQsDCz3OWAlzntJpvMDFO2Dq8rYLz5j',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1XozYj1PQRjobVaPbgEr_xn-zHTtrNP6E',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1lV7iEvQSq_dIQOb8p6PqT62vDkZGmtRr',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '5a + 18 < -27'},
+                'op-2': { id: 'op-2', content: '4x + 11 < -21' },
+                'op-3': { id: 'op-3', content: '9 - 4d ≥ -3' },
+                'op-4': { id: 'op-4', content: '-2x + 7 < 23' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1uWkjK7OMfuASYBqJSJr52fVOG9TxWjsA',
+                    taskIds: ['op-2'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1kpQsDCz3OWAlzntJpvMDFO2Dq8rYLz5j',
+                    taskIds: ['op-4'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1XozYj1PQRjobVaPbgEr_xn-zHTtrNP6E',
+                    taskIds: ['op-3'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1lV7iEvQSq_dIQOb8p6PqT62vDkZGmtRr',
+                    taskIds: ['op-1'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        }
+    }
+
+    const WP1 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "Donna pushes the elevator button, but the elevator does not budge.",
+                "The mass limit for the elevator is <b>450kg</b>, but Donna and her load of identical packages weigh a total of <b>620</b>kg.",
+                "<p><img src=https://drive.google.com/uc?export=view&id=1-NBv7YOxMeXDi-W6zUWL_m5UTWb-XcfX width='300' style='padding-top: 4vh;' alt={alt}/></p>Each package has a mass of <b>37.4</b>kg.",
+                "<b>A)</b> Write an inequality to determine the number of packages, <i>p</i>, Donna could remove from the elevator to meet the mass requirement.",
+                "<b>B)</b> What is the <b>minimum</b> number of packages Donna needs to remove from the elevator?",
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p>You cannot have a non-whole number of packages!</p>",
+                    Image: {
+                        url: "https://drive.google.com/uc?export=view&id=1SfZZfEHxCHHZOBzzrUPPrqTDubUReCKb",
+                        alt: 'stop',
+                        position: 'below',
+                        width: '20vw',
+                        zoom: null
+                    },
+                }, 
+
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1dk6C1xJFiGr8CAWE9RVT8t-uaxWtgMHO",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const WP2 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "Solve the equation:",
+                {
+                    Example: 'Math',
+                    Content: '7.4 + 2p = p - 2.8'
+                },
+                "Solve the inequality:",
+                {
+                    Example: 'Math',
+                    Content: '7.4 + 2p \\geq p - 2.8'
+                },
+                "<b>A)</b> Compare the <b>processes</b> in parts a and b. <p>How is solving an inequality <i>like</i> solving the related equation?</p><p>How is it <i>different?</i></p>",
+                "<b>B)</b> Compare the <b>solutions</b> in parts a and b.<p>How is the solution of an inequality <i>like</i> the solution of the related equation?</p><p>How is it <i>different?</i></p>",
+            ]
+        },
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Match, WP1, FB, WP2, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

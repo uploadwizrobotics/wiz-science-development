@@ -1,0 +1,198 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Final Mission',
+        Text: null,
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'flag',
+            position: 'below',
+            width: 350,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Worksheet = {
+        Type: 'Default',
+        Header: "Don't forget to print and fill out the worksheet!",
+        Text: null,
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1rSdQNvCOfJgV_TO1MHhUpdLx9dqwushs",
+            alt: 'flag',
+            position: 'below',
+            width: '600vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const SA = {
+        Type: 'Short Answer',
+        Header: 'Evaluate the power.',
+        Question: 'Answer as a simplified <i>improper</i> fraction',
+        Placeholder: 'Input answer here',
+        Answer: '64/27',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1JoYKHKRn3btI6pWCKr1QyBZ5nIE8TDYd",
+            alt: 'process',
+            position: 'below',
+            width: '250vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: "Evaluate.",
+        Question: "Select one of the following options.", 
+        Options: [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        Answer: 'B',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1z-NzEMdh5fo6-5FjCMSJ2ZnUWpGMp9bv",
+            alt: 'process',
+            position: 'below',
+            width: '350vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<b>Find</b> and <b>correct</b> any errors in the work given.",
+                "<img src=https://drive.google.com/uc?export=view&id=1vTswmjaxF9pwq0dpechoLYUoE8Qis5sV width='400vw' style='border-radius: 20px; padding-top: 10px;' alt={alt}/><br />How do you think the errors occurred? <i>Explain</i>.<br><br><br><br>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Match each expression with its exponential form.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '4×4×4' },
+                'op-2': { id: 'op-2', content: '1' },
+                'op-3': { id: 'op-3', content: '3×3×3×3' },
+                'op-4': { id: 'op-4', content: '27' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  '3⁴',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: '4³',
+                    taskIds: []
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: '3³',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: '3⁰',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '4×4×4' },
+                'op-2': { id: 'op-2', content: '1' },
+                'op-3': { id: 'op-3', content: '3×3×3×3' },
+                'op-4': { id: 'op-4', content: '27' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  '3⁴',
+                    taskIds: ['op-3'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: '4³',
+                    taskIds: ['op-1']
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: '3³',
+                    taskIds: ['op-4'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: '3⁰',
+                    taskIds: ['op-2'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        }
+    }
+
+    
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=144cHnrSnRLPCIOXWqPCwpu6JRVQaV3CQ",
+            alt: 'process',
+            position: 'below',
+            width: '500vw',
+            zoom: null
+        },
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Worksheet, Match, SA, WP, MC, Ending ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

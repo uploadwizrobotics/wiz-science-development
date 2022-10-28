@@ -1,0 +1,161 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+   const Intro = {
+        Type: 'Default',
+        Header: 'Farm Frenzy',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply the mathematical processes as they develop an understanding of algebraic concepts in various contexts</p>
+                <p>Simplify algebraic expressions by applying properties of operations of numbers, using various representations and tools, in different contexts</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Identify and combine the like terms of a polynomial</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/barn.png",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Farm = {
+        Type: 'Farm',
+        Header: 'The farm animals have escaped! Return them to their corresponding homes.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Chicken1.png"},
+                'op-2': { id: 'op-2', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Horse1.png" },
+                'op-3': { id: 'op-3', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Goose1.png" },
+                'op-4': { id: 'op-4', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Pig1.png" },
+                'op-5': { id: 'op-5', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Chicken2.png" },
+                'op-6': { id: 'op-6', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Cow1.png" },
+                'op-7': { id: 'op-7', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Goose2.png" },
+                'op-8': { id: 'op-8', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Cow2.png"},
+                'op-9': { id: 'op-9', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Pig2.png" },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Sign_x2.png',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Sign_x3.png',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Sign_x4.png',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Sign_x5.png',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'input',
+                    title: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Sign_x6.png',
+                    taskIds: [],
+                },
+                'column-6': {
+                    id: 'column-6',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4', 'op-5', 'op-6', 'op-7', 'op-8', 'op-9'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5', 'column-6'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Chicken1.png"},
+                'op-2': { id: 'op-2', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Horse1.png" },
+                'op-3': { id: 'op-3', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Goose1.png" },
+                'op-4': { id: 'op-4', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Pig1.png" },
+                'op-5': { id: 'op-5', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Chicken2.png" },
+                'op-6': { id: 'op-6', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Cow1.png" },
+                'op-7': { id: 'op-7', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Goose2.png" },
+                'op-8': { id: 'op-8', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Cow2.png"},
+                'op-9': { id: 'op-9', content: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Pig2.png" },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Sign_x2.png',
+                    taskIds: ['op-3', 'op-7'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Sign_x3.png',
+                    taskIds: ['op-2'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Sign_x4.png',
+                    taskIds: ['op-4', 'op-9'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Sign_x5.png',
+                    taskIds: ['op-1', 'op-5'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'input',
+                    title: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FarmFenzy/Sign_x6.png',
+                    taskIds: ['op-6', 'op-8'],
+                },
+                'column-6': {
+                    id: 'column-6',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5', 'column-6'],
+        }
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Farm, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

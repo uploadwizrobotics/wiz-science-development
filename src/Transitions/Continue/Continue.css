@@ -1,0 +1,16 @@
+.set {
+    margin-bottom: 20px;
+}
+
+.set:not(:first-child) {
+    padding-top: 100px;
+}
+
+.options {
+    list-style: none;
+    text-align: center;
+}
+
+.Default {
+    padding-top: 11vh;
+}

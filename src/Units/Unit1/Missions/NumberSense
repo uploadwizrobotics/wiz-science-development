@@ -1,0 +1,431 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Final Mission',
+        Text: null,
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'flag',
+            position: 'below',
+            width: 350,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Worksheet = {
+        Type: 'Default',
+        Header: "Don't forget to print and fill out the worksheet!",
+        Text: null,
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/worksheet1.gif",
+            alt: 'flag',
+            position: 'below',
+            width: '600vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+
+    const Hint = {
+        Type: 'Default',
+        Header: 'Sort the numbers to the groups that BEST describe them',
+        Text: {
+            transition: "Next",
+            text: [ 
+                "Sort the number types from most <i>specific</i> to <i>general</i>.",
+                {
+                    Example: 'List',
+                    Content: [
+                        {   front: {
+                                Example: null,
+                                Content: "Hint 1"
+                            }, 
+                            back: {
+                                Example: null,
+                                Content: "<p><i>Irrational Numbers</i> belong at the <b>top</b></p>"
+                            },
+                        },
+                        {   
+                            front: {
+                                Example: null,
+                                Content: "Hint 3"
+                            }, 
+                            back: {
+                                Example: null,
+                                Content: "<p><i>Rational Numbers</i> belong at the <b>bottom</b></p>"
+                            },
+                        },
+                        {   
+                            front: {
+                                Example: null,
+                                Content: "Hint 2"
+                            }, 
+                            back: {
+                                Example: null,
+                                Content: "<p>Keep moving the numbers <b>up</b> as far as you can!</p>"
+                            },
+                        }
+                    ]
+                }
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const sampleVertDND = {
+        Type: 'Vertical DND',
+        Header: 'Sort',
+        Data: [
+            {
+                id: 'rational',
+                label: 'Rational Numbers',
+                items: [
+                    {id: 'item-1', label: '√3'},
+                    {id: 'item-2', label: '-⁶⁄₂'},
+                ],
+                tint: 1,
+            },
+            {
+                id: 'integer',
+                label: 'Integers',
+                items: [
+                    {id: 'item-3', label: '-⁴⁄₃'},
+                    {id: 'item-4', label: '53'},
+                ],
+                tint: 2,
+            },
+            {
+                id: 'natural',
+                label: 'Natural Numbers',
+                items: [
+                    {id: 'item-5', label: '-99'},
+                    {id: 'item-6', label: '8'},
+                ],
+                tint: 3,
+            },
+            {
+                id: 'irrational',
+                label: 'Irrational Numbers',
+                items: [
+                    {id: 'item-7', label: '⅓'},
+                    {id: 'item-8', label: '0'},
+                ],
+                tint: 4,
+            },
+            {
+                id: 'whole',
+                label: 'Whole Numbers',
+                items: [
+                    {id: 'item-9', label: '𝜋'},
+                ],
+                tint: 2,
+            }
+        ],
+        Answer: [
+            {
+                id: 'irrational',
+                label: 'Irrational Numbers',
+                items: [
+                    {id: 'item-9', label: '𝜋'},
+                    {id: 'item-1', label: '√3'},
+                ],
+                tint: 4,
+            },
+            {
+                id: 'natural',
+                label: 'Natural Numbers',
+                items: [
+                    {id: 'item-4', label: '53'},
+                    {id: 'item-6', label: '8'},
+                ],
+                tint: 3,
+            },
+            {
+                id: 'whole',
+                label: 'Whole Numbers',
+                items: [
+                    {id: 'item-8', label: '0'},
+                ],
+                tint: 2,
+            },
+            {
+                id: 'integer',
+                label: 'Integers',
+                items: [
+                    {id: 'item-2', label: '-⁶⁄₂'},
+                    {id: 'item-5', label: '-99'},
+                ],
+                tint: 2,
+            },
+            {
+                id: 'rational',
+                label: 'Rational Numbers',
+                items: [
+                    {id: 'item-7', label: '⅓'},
+                    {id: 'item-3', label: '-⁴⁄₃'},
+                ],
+                tint: 1,
+            }
+        ]
+    }
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "The thermostat on a freezer is set at <b>-18°C</b>.",
+                "The compressor on the freezer turns on and cools down the freezer when the temperature <i>rises</i> to <b>-15.5°C</b>.",
+                "The compressor turns off when the temperature <i>drops</i> to <b>-19.5°C</b>.",
+                "<b>a)</b> Sketch a thermometer and mark the 3 freezer temperatures.",
+                "<b>b)</b> A package of meat must remain <i>below</i> <b>18°C</b>. Should this freezer be used? <i>Explain</i>.",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+
+    const sampleHorizDND = {
+        Type: 'Horizontal DND',
+        Header: 'Number Line Plotting (use the number line to help you)',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op1.png'},
+                'op-2': { id: 'op-2', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op2.png' },
+                'op-3': { id: 'op-3', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op3.png' },
+                'op-4': { id: 'op-4', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op4.png' },
+                'op-5': { id: 'op-5', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op5.png' },
+                'op-6': { id: 'op-6', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op6.png' },
+                'op-7': { id: 'op-7', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op7.png' }
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  'Between -6 and -4',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Between -4 and -2',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Between -2 and 0',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Between 0 and 2',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'input',
+                    title: 'Between 2 and 4',
+                    taskIds: [],
+                },
+                'column-6': {
+                    id: 'column-6',
+                    type: 'input',
+                    title: 'Between 4 and 6',
+                    taskIds: [],
+                },
+                'column-7': {
+                    id: 'column-7',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4', 'op-5', 'op-6','op-7'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5', 'column-6', 'column-7'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op1.png'},
+                'op-2': { id: 'op-2', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op2.png' },
+                'op-3': { id: 'op-3', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op3.png' },
+                'op-4': { id: 'op-4', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op4.png' },
+                'op-5': { id: 'op-5', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op5.png' },
+                'op-6': { id: 'op-6', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op6.png' },
+                'op-7': { id: 'op-7', content: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/U1_L9_Match_Op7.png' }
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  'Between -6 and -4',
+                    taskIds: ['op-7'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Between -4 and -2',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Between -2 and 0',
+                    taskIds: ['op-4', 'op-5', 'op-2'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Between 0 and 2',
+                    taskIds: ['op-1'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'input',
+                    title: 'Between 2 and 4',
+                    taskIds: ['op-3'],
+                },
+                'column-6': {
+                    id: 'column-6',
+                    type: 'input',
+                    title: 'Between 4 and 6',
+                    taskIds: ['op-6'],
+                },
+                'column-7': {
+                    id: 'column-7',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5', 'column-6', 'column-7'],
+        }
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Make the expressions true by matching each to the correct symbol',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '<'},
+                'op-2': { id: 'op-2', content: '>' },
+                'op-3': { id: 'op-3', content: '=' },
+                'op-4': { id: 'op-4', content: '<' },
+                'op-5': { id: 'op-5', content: '<' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  '-⁵⁄₇ ☐ -⁴⁄₇',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: '-⅚ ☐ -⁵⁄₇',
+                    taskIds: []
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: '2 ☐ √2',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: '-𝜋/-𝜋 ☐ 3.1416',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4', 'op-5'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '<'},
+                'op-2': { id: 'op-2', content: '>' },
+                'op-3': { id: 'op-3', content: '=' },
+                'op-4': { id: 'op-4', content: '<' },
+                'op-5': { id: 'op-5', content: '<' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  '-⁵⁄₇ ☐ -⁴⁄₇',
+                    taskIds: ['op-1'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: '-⅚ ☐ -⁵⁄₇',
+                    taskIds: ['op-4'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: '2 ☐ √2',
+                    taskIds: ['op-2'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: '-𝜋/-𝜋 ☐ 3.1416',
+                    taskIds: ['op-5'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-3'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        }
+    }
+
+    
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/photoSubmit.png",
+            alt: 'process',
+            position: 'below',
+            width: '500vw',
+            zoom: null
+        },
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Worksheet, Hint, sampleVertDND, WP, sampleHorizDND, Match, Ending ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

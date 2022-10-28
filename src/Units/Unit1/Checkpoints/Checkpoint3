@@ -1,0 +1,111 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+    
+    const Intro = {
+        Type: 'Default',
+        Header: 'Check-in Questions',
+        Text: {
+            transition: null,
+            text: [ 
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Checkpoint/check-in+(2).png",
+            alt: 'flag',
+            position: 'below',
+            width: 300,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Question1 = {
+        Type: 'Default',
+        Header: 'Question One',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>Why are powers important?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question2 = {
+        Type: 'Default',
+        Header: 'Question Two',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>Explain how the identity rule works.</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question3 = {
+        Type: 'Default',
+        Header: 'Question Three',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>In what cases would you evaluate the powers before the rest of the expression?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question4 = {
+        Type: 'Default',
+        Header: 'Question Four',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>What is the difference between the product and quotient rule?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question5 = {
+        Type: 'Default',
+        Header: 'Question Five',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>When determining the power of a quotient, what do we do?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    
+    const Question6 = {
+        Type: 'Default',
+        Header: 'Question Six',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>Evaluate as an exact value: 6<sup>-14</sup></div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Question1, Question2, Question3, Question4, Question5, Question6 ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

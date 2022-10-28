@@ -1,0 +1,244 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'One-Step Linear Equations',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this mission, students will:</i>
+                <p>Create algebraic expressions to generalize relationships expressed in words, numbers, and visual representations, in various contexts</p>
+                <p>Create and solve equations for various contexts, and verify their solutions</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Apply their knowledge of one-step linear equations</p>`
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1HTdkIbbh2Jxv6Zoee6YeAlTn_hB0m4nF",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Fill in the blanks.',
+        Question: [
+            '<p>ʷ⁄₅ = 3,</p>',
+            'w = ',
+            ['8', '⅗', '15', '⅛'], 
+            '<p>2w - 7 = k</p>',
+            'k = ',
+            ['23', '7', '14', '30'],
+            '<p>k + 30 = j</p>',
+            'j = ',
+            ['33', '⁷⁄₃₀', '53', '26']
+        ],
+        Answer: ['15', '23', '53'],
+        Image: null,
+        Audio: null , 
+    };
+
+    const Sort = {
+        Type: 'Vertical DND',
+        Header: 'Order the polynomials from highest to lowest degree',
+        Data: [
+            {
+                id: '1',
+                label: '-99a⁵ + 5a⁴ + a⁷',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '2',
+                label: 'b⁴ - 12b⁶ + 41b + 24b² - 10',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '3',
+                label: '18 + 24x² + 6x',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '4',
+                label: '5d⁵ - 3d⁴ + 9d³ - 9d²',
+                items: [
+                ],
+                tint: 5,
+              }   
+        ],
+        Answer: [
+            {
+                id: '1',
+                label: '-99a⁵ + 5a⁴ + a⁷',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '2',
+                label: 'b⁴ - 12b⁶ + 41b + 24b² - 10',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '4',
+                label: '5d⁵ - 3d⁴ + 9d³ - 9d²',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '3',
+                label: '18 + 24x² + 6x',
+                items: [
+                ],
+                tint: 5,
+              }  
+        ]
+    }
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "If a nanny earns <b>$560.00</b> a week and works <b>8</b> hours a day, what is her <i>hourly wage</i>?",
+                "Represent the problem as an equation where <i>h</i> is the nanny's hourly wage in dollars.",
+                "Show all your work!",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=139yVA-Htn3rtSEjWHbJ8j7E9HqhWI398",
+            alt: 'stop',
+            position: 'below',
+            width: '200vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Solve. Show all your work!',
+        Question: 'Isabella and her friends are gaming online. An hour later, 3 people go offline. If 12 of them continue playing, how many were online initially?',
+        Options: [
+            "12",
+            "9",
+            "15",
+            "3"
+        ],
+        Answer: "15",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=18iJy-njns0g6RgHQdO7cEWT8k7naCxwU",
+            alt: 'stop',
+            position: 'below',
+            width: '100vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const Feed = {
+        Type: 'Feed',
+        Header: "Daniel will only eat equations with variables equal to 8. Feed him up to five polynomials to see if you can get him to eat.",
+        Options : 
+        [
+            {
+                name:'6 = ᵏ⁄₉',
+                score: '-6',
+                icon: 'A',
+            },
+            {
+                name:'k + 10 = 27',
+                score: '-6',
+                icon: 'B',
+            },
+            {
+                name:'n + 19 = 30',
+                score: '-6',
+                icon: 'C',
+            },
+            {
+                name:'b + 8 = 1',
+                score: '-6',
+                icon: 'D',
+            },
+            {
+                name:'a - 32 = 40',
+                score: '2',
+                icon: 'E',
+            },
+            {
+                name:'3 = t - 3',
+                score: '-6',
+                icon: 'F',
+            },
+            {
+                name:'14 + j = 22',
+                score: '2',
+                icon: 'G',
+            },
+            {
+                name:'1 = ᵍ⁄₈',
+                score: '2',
+                icon: 'H',
+            },
+            {
+                name:'9a = 81',
+                score: '-6',
+                icon: 'I',
+            },
+            {
+                name:'25 = q + 17',
+                score: '2',
+                icon: 'J',
+            },
+            {
+                name:'ᶻ⁄₂ = 72',
+                score: '-6',
+                icon: 'K',
+            },
+            {
+                name:'16 = 2s',
+                score: '2',
+                icon: 'L',
+            },
+        ]
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Feed, MC, WP, FB, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

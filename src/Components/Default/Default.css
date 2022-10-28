@@ -1,0 +1,122 @@
+.default {
+    margin: auto;
+    width: 80%;
+    font-weight: 405;
+    font-size: 1.4vw;
+    letter-spacing: 0.05vw;
+    padding-top: 10px;
+    line-height: 2;
+}
+.default .intro {
+    vertical-align:middle;
+    margin-bottom: 70px;
+    display: inline-block;
+    width: 60%;
+}
+
+.default h1 {
+    font-family: 'Fogie';
+    letter-spacing: 0.2vw;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 3.2vw;
+    color: #000;
+    background: #000;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.default .introh1 {
+    border:solid;
+    font-family: 'Fogie';
+    letter-spacing: 0.2vw;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 3.2vw;
+    color: #000;
+    background: #000;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.default h2 {
+    margin: 20px 0;
+    font-weight: 600;
+    font-size: 1.6vw;
+    text-transform: uppercase;
+    color: #000;
+    background: #000;
+    display: inline-block;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.default b {
+    font-weight: 700;
+    font-size: 1.6vw;
+}
+
+.default .numbers {
+    color: #fa2a1b;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+    margin: 0vh;
+}
+
+.default .re {
+    color: #fa2a1b;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+.default .or {
+    color: #fa991b;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+.default .ye {
+    color: #faeb1b;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+.default .gr {
+    color: #1bfa53;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+.default .bl {
+    color: #1b83fa;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+.default .vi {
+    color: #961bfa;
+    font-weight: 500;
+    font-size: 2.5vw;
+    display: inline-block;
+}
+
+.default i {
+    font-weight: 300;
+    font-size: 1.6vw;
+}
+.default .zero {
+    color: #faeb1b;
+    font-weight: 600;
+    font-size: 5vw;
+    display: inline-block;
+}
+
+.thermostat {
+    display: inline-block;
+}
+
+.default .example {
+    font-size: 4vw;
+}

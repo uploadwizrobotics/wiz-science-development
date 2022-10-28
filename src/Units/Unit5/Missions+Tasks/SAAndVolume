@@ -1,0 +1,134 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Final Mission',
+        Text: {
+            transition: null,
+            text: [ 
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'flag',
+            position: 'below',
+            width: 350,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC1 = {
+        Type: 'Multiple Choice',
+        Header: 'Solve. Show all your work!',
+        Index: 1,
+        Question: 'Austin and Tasha each have a box of popcorn.<p>Whose box holds more popcorn?</p>',
+        Options: [
+            "Austin",
+            "Tasha"
+        ],
+        Answer: "Austin",
+        Image: null,
+        Audio: null
+    };
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Fill in the blank.',
+        Question: [
+            'A =', 
+            ['2', '3', '4','5'], 
+            'πrh + 2π',
+            ['h', 'r', 'd'],
+            '²'
+        ],
+        Answer: ['95°', '130°', '135°'],
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=11hAYvNS0ooVPbPegtKQqG6Do0LPf3zkk",
+            alt: 'flag',
+            position: 'below',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP1 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Tyrone is eating a snow cone on a hot day.<p/>",
+                "<p>By the time he eats all the ice off the top, the paper cone is filled with 27π cm<sup>3</sup> of melted purple liquid.</p>",
+                "<p>The radius of the cone is 3 cm.",
+                "<p>What is the height of the cone? (answer in eact terms of π)</p>",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1Yo_-HRovESzYb7c8oGjAz4u2eJ_K2f_t",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const WP2 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>A goldfish bowl is shaped exactly like half of a sphere.<p/>",
+                "<p>The radius of the bowl is 15 cm.</p>",
+                "<p>What is the volume of the bowl?",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1Yo_-HRovESzYb7c8oGjAz4u2eJ_K2f_t",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const SA = {
+        Type: 'Short Answer',
+        Header: 'Solve. Show all your work!',
+        Question: 'Find the surface area.</p>',
+        Placeholder: '____cm³',
+        Answer: '129',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1992RM9B1PKc2PoAWSiAq910bdW7bwvj1",
+            alt: 'process',
+            position: 'below',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const Ending = {
+        Type: 'Default',
+        Header: "Congrats! You made it to the end!",
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, SA, WP1, MC1, FB, WP2, Ending ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

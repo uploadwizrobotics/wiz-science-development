@@ -1,0 +1,142 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Mid-Unit Review',
+        Text: {
+            transition: null,
+            text: [ 
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'flag',
+            position: 'below',
+            width: 350,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Solve. Show all your work!',
+        Index: 1,
+        Question: 'What is the value of x?',
+        Options: [
+            "√32",
+            "√40",
+            "8",
+            "12"
+        ],
+        Answer: "A",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1iVqBaeRDLmK5jFFZLWzxAaYzRO7hc2sa",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP1 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>In a reactangular room with dimensions 30 × 12 × 12, a spider is located in the middle of one of the 12 × 12 walls, 1 ft away from the ceiling.<p/>",
+                "<p>A fly is in the middle of the opposite wall 1 ft away from the floor.</p>",
+                "<p>If the fly does not move, what is the shortest distance that the spider can travel along the walls, ceiling, and floor to reach the fly?</p>",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1hwAo6Q0hRvUiwTyNPxOMt1-e0UsJiwlF",
+            alt: 'stop',
+            position: 'below',
+            width: '500vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Calculate the measure of each unknown angle.',
+        Question: [
+            '∠z =', 
+            ['94°', '128°', '325°'], 
+            '∠x =',
+            ['62°', '90°', '250°'],
+            '∠y =',
+            ['25°', '62°', '15°']
+        ],
+        Answer: ['128°', '62°', '62°'],
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1TrQetOpUAPRTxV-h6wUqtya65pXFdtoe",
+            alt: 'flag',
+            position: 'below',
+            width: 250,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP2 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>A student drew an equailateral triangle △ABC and the right bisector of each side.<p/>",
+                "<p>She found that the three bisectors intersect at point G.</p><p>SHe hypothesized that △AGC, △CGB, and △BGA are also equilateral triangles.</p>",
+                "<p>Is the student correct? <i>Explain</i>.</p>",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1hsRZ9CWBOUtPp9vgMP38VHLqIoZXhUQ7",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Rocket = {
+        Type: 'Rocket',
+        Header: 'Solve to launch the rocket.',
+        Question: 'What is the area of the blue square?',
+        Placeholder: 'Input answer here',
+        Answer: '85',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1tx8Ia72X2JEJurQpNrhc3vkFxbHqY45O",
+            alt: 'Question',
+            position: 'above',
+            width: 250,
+            zoom: null
+        },
+        Audio: null
+    }
+   
+    const Ending = {
+        Type: 'Default',
+        Header: "Congrats! You made it to the end!",
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Rocket, WP1, MC, WP2, FB, Ending ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

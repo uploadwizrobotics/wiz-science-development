@@ -1,0 +1,144 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+   const Intro = {
+        Type: 'Default',
+        Header: 'Final Mission',
+        Text: null,
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'flag',
+            position: 'below',
+            width: 350,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Worksheet = {
+        Type: 'Default',
+        Header: "Don't forget to print and fill out the worksheet!",
+        Text: null,
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1rSdQNvCOfJgV_TO1MHhUpdLx9dqwushs",
+            alt: 'flag',
+            position: 'below',
+            width: '600vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Fill in the blanks',
+        Question: [
+            '4¾ + 1⅙ =',            
+            ['5²⁄₆', '5¹¹⁄₁₂', '6¾', '8²'], 
+            '÷ 1⅙',
+            ['4¾', '3⅙', '1⅙', '9³'],
+        ],
+        Answer: ['5¹¹⁄₁₂', '4¾'],
+        Image: null,
+        Audio: null , // optional
+    };
+
+    const MC1 = {
+        Type: 'Multiple Choice',
+        Header: 'Find the sum.',
+        Index: 1,
+        Question: "Don't forget to show all your work!",
+        Options: [
+            "¹⁄₂₂",
+            "3 ⁴⁄₇",
+            "³¹⁄₅₇",
+            '⁶⁴⁄₈₃'
+        ],
+        Answer: '³¹⁄₅₇', 
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=16SGPBqfxJE17wUyB1hDD50_ZoqDZOxbW",
+            alt: 'stop',
+            position: 'below',
+            width: '120vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const SA1 = {
+        Type: 'Short Answer',
+        Header: 'Evaluate.',
+        Question: "The temperature in Richmond, BC, at 4:00 PM was 2°C. The temperature drops 1.3°C each hour. What will the temperature be at 11:00 PM?",
+        Placeholder: '___°C',
+        Answer: '-71',
+        Image: null,
+        Audio: null
+    };
+
+    const MC2 = {
+        Type: 'Multiple Choice',
+        Header: 'Evaluate.',
+        Index: 2,
+        Question: "Show all of your steps. Input your answer as an improper fraction!",
+        Options: [
+            "⁻⁵⁰⁰⁄₃₆₅",
+            '-1 ²¹¹⁄₃₆₅',
+            '⁻²¹⁄₁₆',
+            '36 ¹⁵⁄₁₆'
+        ],
+        Answer: '-1 ²¹¹⁄₃₆₅',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1R13Xbov4d3IHXw8_RTEdIdCK5knDnuDl",
+            alt: 'stop',
+            position: 'below',
+            width: 450,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<img src=https://drive.google.com/uc?export=view&id=1oSNbYJ2Z8xBCcJPZ9BcB0sJMZr6iekvt width='500' style='border-radius: 20px; padding-top: 10px;' alt={alt}/><p>Kathryn left her house at <b>7:45 PM</b> to go shopping for groceries.</p>",
+                "<img src=https://drive.google.com/uc?export=view&id=1XE-mYOXDBI-hy-YJs9xHQlHI7UxBTXbX width='500' style='border-radius: 20px; padding-top: 10px;' alt={alt}/><p>She returned at <b>10:30 PM</b>.</p>",
+                "<p><b>a)</b> Express the time in <b>hours</b> that Kathryn spent away from home.</p>",
+                "<p><b>b)</b> If Kathryn spent 1½ hours shopping for clothes, then how much time did she spend doing other things?</p>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=144cHnrSnRLPCIOXWqPCwpu6JRVQaV3CQ",
+            alt: 'process',
+            position: 'below',
+            width: '500vw',
+            zoom: null
+        },
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Worksheet, FB, SA1, WP, MC1, MC2, Ending ];
+
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

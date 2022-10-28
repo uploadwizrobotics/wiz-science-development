@@ -1,0 +1,220 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Powers with Product and Quotient Bases',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply an understanding of rational numbers, ratios, rates, percentages, and proportions in various mathematical contexts, and to solve problems</p>
+                <p>Use patterns and number relationships to explain density, infinity, and limit as they relate to number sets</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Identify the Power of a Product Rule and the Power of a Quotient Rule</p>
+                <p>Explain and apply the exponent laws</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+II/compliant.png",
+            alt: 'process',
+            position: 'below',
+            width: '20vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Guess = {
+        Type: 'Default',
+        Header: 'Make an Educated Guess',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>What do you think is the result of:</p>",
+                {
+                    Example: "Math",
+                    Content: '(2 \\times 5)^3'
+                },
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Exponent+Law+II/spongebobthink.gif",
+            alt: 'process',
+            position: 'below',
+            width: '15vw',
+            zoom: null
+        },
+        Audio: null
+    }
+    
+    const Lesson1 = {
+        Type: 'Default',
+        Header: 'Power of a Product Rule',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>So far we’ve only seen powers with positive integer bases, but the base of a power may also be a product.</p>",
+                "<p>The power of a product rule allows us to quickly find the result of a product raised to an exponent:</p>",
+                "<p>When we have a power raised to an exponent, <b>distribute the exponent</b> to each term in the product.</p>",
+                "<p>Using the power of a power rule, we get:</p>",
+                "<p>This means we have:</p>",
+                {
+                    Example: "Math",
+                    Content: '(2 \\times 5)^3 = 2^3 \\times 5^3 = 8 \\times 125 = 1000'
+                },
+                "<p>To see why this is the case, let's take a look at the step that is skipped in the process:</p>",
+                {
+                    Example: "Math",
+                    Content: '(\\frac{2}{5})^3 = (2 \\times 2 \\times 2) \\times (5 \\times 5 \\times 5) = 2^3 \\times 5^3 = 8 \\times 125 = 1000'
+                },
+                "<p>Done!</p>",
+                "<p>The power of a product rule allows us to skip this step and go straight to the simplified exponential form!</p>"
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Make the expressions true by matching each to the correct symbol.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '<'},
+                'op-2': { id: 'op-2', content: '>' },
+                'op-3': { id: 'op-3', content: '=' },
+                'op-4': { id: 'op-4', content: '>' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  '(4 x 10³) + (6 x 10²) + (6 x 10¹) + (7 x 10⁰) ☐ 4327',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: '(2 x 10⁴) + (4 x 10³) + (4 x 10¹) ☐ 2432',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: '(7 x 10⁷) + (7 x 10³) ☐ 777 777',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '<'},
+                'op-2': { id: 'op-2', content: '>' },
+                'op-3': { id: 'op-3', content: '=' },
+                'op-4': { id: 'op-4', content: '>' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  '(4 x 10³) + (6 x 10²) + (6 x 10¹) + (7 x 10⁰) ☐ 4327',
+                    taskIds: ['op-2'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: '(2 x 10⁴) + (4 x 10³) + (4 x 10¹) ☐ 2432',
+                    taskIds: ['op-1'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: '(7 x 10⁷) + (7 x 10³) ☐ 777 777',
+                    taskIds: ['op-4'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-3'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4'],
+        }
+    }
+    
+    const Lesson2 = {
+        Type: 'Default',
+        Header: 'Power of a Quotient Rule',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Just as the base of a power may be a product, it can also be a quotient.</p>",
+                "<p>The power of a quotient rule allows us to quickly find the result of a quotient raised to an exponent:</p>",
+                "<p>When we have a quotient raised to an exponent, <b>distribute the exponent</b> to both the numerator and the denominator.</p>",
+                "<p>Using the power of a quotient rule, we get:</p>",
+                {
+                    Example: "Math",
+                    Content: '(\\frac{2}{5})^3 = \\frac{2^3}{5^3} = \\frac{8}{125}'
+                },
+                "<p>To see why this is the case, let's take a look at the step that is skipped in the process:</p>",
+                {
+                    Example: "Math",
+                    Content: '(\\frac{2}{5})^3 = (2 \\times 2 \\times 2) \\div (5 \\times 5 \\times 5) = \\frac{2^3}{5^3} = \\frac{8}{125}'
+                },
+                "<p>Done!</p>",
+                "<p>The power of a quotient rule allows us to skip this step and go straight to the simplified exponential form!</p>"
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: null,
+        Question: "<p>Which is the answer to the following expression?",
+        Options: [
+            "1",
+            "7<sup>2</sup>",
+            "-7",
+            "7<sup>-2</sup>"
+        ],
+        Answer: '7^-2', 
+        Image: null,
+        Audio: null
+    };
+    
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Guess, Lesson1, Lesson2, Ending ];
+
+
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

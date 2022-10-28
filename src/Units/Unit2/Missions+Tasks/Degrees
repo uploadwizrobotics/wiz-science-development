@@ -1,0 +1,295 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Degrees',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply the mathematical processes as they develop an understanding of algebraic concepts in various contexts</p>
+                <p>Simplify algebraic expressions by applying properties of operations of numbers, using various representations and tools, in different contexts</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Identify the degree of a polynomial</p>
+                <p>Order polynomials by degree</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Graph_Degrees.png",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson1 = {
+        Type: 'Default',
+        Header: 'Introduction to Degrees',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<p>Recall that the <h2>degree</h2> of a <i>term</i> refers to the <b>exponent of the variable</b></p>`,
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p>Remember, the exponent is placed in the upper right corner and indicates the number of times you need to multiply the base",
+                    Image: {
+                        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/exponent.gif",
+                        alt: 'stop',
+                        position: 'below',
+                        width: '20vw',
+                        zoom: null
+                    },
+                }, 
+                `<p>For example, 4x³ has degree 3, x⁵ has degree 5, and 3 has degree 0.</'p>`,
+                `<p>The degree of the <i>polynomial</i> is the <b>highest degree of the terms.</b></p>`,
+                `<p>Think of it this way:</p>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/ceo.png width='300' style='padding-top: 4vh;' alt={alt}/>
+                 <p>Let's say that you are the CEO of a company with a loyal team of six employees</p>`,
+                 `<p>We represent them using the polynomial:</p>
+                 <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Polynomial1.png width='600' style='padding-top: 4vh;' alt={alt}/>
+                 <p>where</p>`,
+                 `<p>each <i>term</i> represents an <b>employee</b> and</p>
+                 <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Polynomial2.png width='600' style='padding-top: 4vh;' alt={alt}/>`,
+                 `<p>each <i>degree</i> represents the employee's <b>experience</b> in years.</p>
+                 <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Polynomial3.png width='600' style='padding-top: 4vh;' alt={alt}/>`,
+                 {
+                    Example: 'Note',
+                    Content: "<p>Note:</p>Remember that x actually has exponent 1 since <p>x¹ = x!</p>",
+                    Image: {
+                        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/ExponentLaw1.gif",
+                        alt: 'stop',
+                        position: 'below',
+                        width: '20vw',
+                        zoom: null
+                    },
+                }, 
+                 `Let's give each of these employees a name.`,
+                 `<p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Polynomial4.png width='600' style='padding-bottom: 4vh;' alt={alt}/></p>
+                 There!`,
+                `<p>Now, you need to pick a single employee to represent your team.</p>
+                <br />
+                <p>You decide to base your choice on the <b>number of years of experience</b> each employee has.</p>
+                <br />
+                The more, the better!`,
+                `Let's take a look at your options:
+                <div class='people'>
+                    <div class='overlay'>
+                        <img class="static" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Susan.png width='300vw' alt={alt}>
+                        <img class="static" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Chad.png width='300vw' alt={alt}>
+                        <img class="static" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Carol.png width='300vw' alt={alt}>
+                        <img class="static" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Edward.png width='300vw' alt={alt}>
+                        <img class="static" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Jennifer.png width='300vw' alt={alt}>
+                    </div>
+                    <img class="active" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Susan+(1).gif width='300vw' alt={alt}>
+                    <img class="active" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Chad+(1).gif width='300vw' alt={alt}/>
+                    <img class="active" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Carol+(1).gif width='300vw' alt={alt}/>
+                    <img class="active" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Edward+(1).gif width='300vw' alt={alt}/>
+                    <img class="active" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Jennifer+(1).gif width='300vw' alt={alt}/>
+                </div>`,
+                `After plenty of contemplation, you choose...`,
+                `<p><img class="active" src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/WinSusan.gif width='500' style='padding-bottom: 4vh;' alt={alt}/></p>
+                Realizing that Susan, with 5 years of experience in her belt, is the perfect fit for the job, you elect her to be the face of the team!`,
+                `Much like this scenario, when determining the degree of a polynomial, all you need to do is <b>find the highest exponent</b> in the expression.`,
+                `<p>We now know that our original polynomial has a degree of 5!</p>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Degrees/Polynomial5.png width='650' style='padding-top: 4vh;' alt={alt}/>`
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Match the degrees to their corresponding polynomials',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-30'},
+                'op-2': { id: 'op-2', content: '7z + 2' },
+                'op-3': { id: 'op-3', content: '6x⁴ + 3x³ -17²x + 9x - 39' },
+                'op-4': { id: 'op-4', content: '4y² + y + 1' },
+                'op-5': { id: 'op-5', content: '9x² + 8x³ - 4x' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'Degree 4',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Degree 3',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Degree 2',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Degree 1',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'input',
+                    title: 'Degree 0',
+                    taskIds: [],
+                },
+                'column-6': {
+                    id: 'column-6',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4', 'op-5'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5', 'column-6'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-30'},
+                'op-2': { id: 'op-2', content: '7z + 2' },
+                'op-3': { id: 'op-3', content: '6x⁴ + 3x³ -17x² + 9x - 39' },
+                'op-4': { id: 'op-4', content: '4y² + y + 1' },
+                'op-5': { id: 'op-5', content: '9x² + 8x³ - 4x' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'Degree 4',
+                    taskIds: ['op-3'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Degree 3',
+                    taskIds: ['op-5'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Degree 2',
+                    taskIds: ['op-4'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Degree 1',
+                    taskIds: ['op-2'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'input',
+                    title: 'Degree 0',
+                    taskIds: ['op-1'],
+                },
+                'column-6': {
+                    id: 'column-6',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5', 'column-6'],
+        }
+    }
+
+    const Sort = {
+        Type: 'Vertical DND',
+        Header: 'Order the polynomials from highest to lowest degree',
+        Data: [
+            {
+                id: '1',
+                label: '6x⁵ + 5x⁴ - 3x² + x⁷',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '2',
+                label: '10x² - 58x + 12',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '3',
+                label: 'x⁴ + x² + 6x - 2',
+                items: [
+                ],
+                tint: 5,
+              } ,
+              {
+                id: '4',
+                label: '6x⁵ - 2x² + 3x⁶ + x - 3x⁴',
+                items: [
+                ],
+                tint: 5,
+              }   
+        ],
+        Answer: [
+            {
+                id: '1',
+                label: '6x⁵ + 5x⁴ - 3x² + x⁷',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '4',
+                label: '6x⁵ - 2x² + 3x⁶ + x - 3x⁴',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '3',
+                label: 'x⁴ + x² + 6x - 2',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '2',
+                label: '10x² - 58x + 12',
+                items: [
+                ],
+                tint: 5,
+              },  
+        ]
+    }    
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Lesson1, Match, Sort, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

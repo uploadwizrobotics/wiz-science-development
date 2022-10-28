@@ -1,0 +1,370 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Final Mission',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this mission, students will:</i>
+                <p>Create algebraic expressions to generalize relationships expressed in words, numbers, and visual representations, in various contexts</p>
+                <p>Create and solve equations for various contexts, and verify their solutions</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Evaluate one and two step linear inequalities</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Match the inequalities with their corresponding solution sets solution set.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-2x + 7 < 23'},
+                'op-2': { id: 'op-2', content: '-12 ≤ 44 + x' },
+                'op-3': { id: 'op-3', content: '-3x + 8 > 15' },
+                'op-4': { id: 'op-4', content: '10x + 5 ≤ 45' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'x ≥ -56',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1FyLD64-elbCq449jvXTmicxkFH_G0jAE',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1AR_sb2dRXgtC_ZPzQvjQh-KZbXxVUhW-',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'x < -⁷⁄₃',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-2x + 7 < 23'},
+                'op-2': { id: 'op-2', content: '-12 ≤ 44 + x' },
+                'op-3': { id: 'op-3', content: '-3x + 8 > 15' },
+                'op-4': { id: 'op-4', content: '10x + 5 ≤ 45' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'x ≥ -56',
+                    taskIds: ['op-2'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1FyLD64-elbCq449jvXTmicxkFH_G0jAE',
+                    taskIds: ['op-1'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1AR_sb2dRXgtC_ZPzQvjQh-KZbXxVUhW-',
+                    taskIds: ['op-4'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'x < -⁷⁄₃',
+                    taskIds: ['op-3'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        }
+    }
+
+    const WP1 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: null,
+            text: [
+                "Write the equation modelled by the balance scales. Then, solve for the weight of the hamburgers, <i>x</i>.<p><i>Show all your work</i>!</p>",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=10wISVEfFbvRReJUf1Hb5y2yrI_0f9ZgS",
+            alt: 'stop',
+            position: 'below',
+            width: '450vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Feed = {
+        Type: 'Feed',
+        Header: "Daniel will only eat equations with variables greater than 13. Feed him up to five polynomials to see if you can get him to eat.",
+        Options : 
+        [
+            {
+                name:'-4 + x ≤ 9',
+                score: '-6',
+                icon: 'A',
+            },
+            {
+                name:'ʷ⁄₅ = 3',
+                score: '2',
+                icon: 'B',
+            },
+            {
+                name:'15 < -5x',
+                score: '-6',
+                icon: 'C',
+            },
+            {
+                name:'7b - 15 = 5b - 3',
+                score: '-6',
+                icon: 'D',
+            },
+            {
+                name:'-3b - 15 > -24',
+                score: '-6',
+                icon: 'E',
+            },
+            {
+                name:'ʲ⁄₂₅ > 5',
+                score: '2',
+                icon: 'F',
+            },
+            {
+                name:'12 = n - 9',
+                score: '2',
+                icon: 'G',
+            },
+            {
+                name:'-4(w + 1) = -24',
+                score: '-6',
+                icon: 'H',
+            },
+            {
+                name:'r + 7 = 25',
+                score: '-6',
+                icon: 'I',
+            },
+            {
+                name:'52 - 3x < -14',
+                score: '2',
+                icon: 'J',
+            },
+            {
+                name:'27 = 15 + n',
+                score: '-6',
+                icon: 'K',
+            },
+            {
+                name:'-x < -29',
+                score: '2',
+                icon: 'L',
+            },
+        ]
+    }
+
+    const Sort = {
+        Type: 'Vertical DND',
+        Header: 'Arrange the steps in the correct order.',
+        Data: [
+            {
+                id: '1',
+                label: '⁻⁶³ʸ⁄₋₆₃ > ²²⁄₋₆₃',
+                items: [
+                ],
+                tint: 1,
+            },
+            {
+                id: '2',
+                label: '-65y + 2y < 22',
+                items: [
+                ],
+                tint: 2,
+            },
+            {
+                id: '3',
+                label: '-65y + 19 - 19 < -2y + 41 - 19',
+                items: [
+                ],
+                tint: 3,
+            },
+            {
+                id: '4',
+                label: 'y > ²²⁄₋₆₃',
+                items: [
+                ],
+                tint: 1,
+            }, 
+            {
+                id: '5',
+                label: '-65y + 19 < -2y + 41',
+                items: [
+                ],
+                tint: 2,
+            },
+            {
+                id: '6',
+                label: '-65y < -2y + 22',
+                items: [
+                ],
+                tint: 3,
+            },
+            {
+                id: '7',
+                label: '-63y < 22',
+                items: [
+                ],
+                tint: 1,
+            }, 
+        ],
+        Answer: [
+            {
+                id: '5',
+                label: '-65y + 19 < -2y + 41',
+                items: [
+                ],
+                tint: 2,
+            },
+            {
+                id: '3',
+                label: '-65y + 19 - 19 < -2y + 41 - 19',
+                items: [
+                ],
+                tint: 3,
+            },
+            {
+                id: '6',
+                label: '-65y < -2y + 22',
+                items: [
+                ],
+                tint: 3,
+            },
+            {
+                id: '2',
+                label: '-65y + 2y < 22',
+                items: [
+                ],
+                tint: 2,
+            },
+            {
+                id: '7',
+                label: '-63y < 22',
+                items: [
+                ],
+                tint: 1,
+            },
+            {
+                id: '1',
+                label: '⁻⁶³ʸ⁄₋₆₃ > ²²⁄₋₆₃',
+                items: [
+                ],
+                tint: 1,
+            }, 
+            {
+                id: '4',
+                label: 'y > ²²⁄₋₆₃',
+                items: [
+                ],
+                tint: 1,
+            }, 
+        ]
+    }    
+
+    const WP2 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "Ms.Plum has a special reward system for her class. When all her sturdents behave well, she rewards them by putting <b>3</b> marbles in a glass jar.",
+                "<p><img src=https://drive.google.com/uc?export=view&id=1FcwsJVdob3zTIDb8HBaQzClvFCo_Dkvo width='300' style='padding-top: 4vh;' alt={alt}/></p>When the jar has <b>100 or more</b> marbles, the students have an ice cream party. <p>Right now, the jar has <b>24</b> marbles.</p>",
+                "<b>A)</b> Write an inequality to determine the <b>number of additional times</b>, <i>r</i>, Ms.Plum should reward the class in order for the students to have an ice cream party.",
+                "<b>B)</b> Will the students have a party if Ms.Plum rewards them <b>31</b> additional times?",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1ESYMzwfIHIUP_CYlQpeXHN6vCO9qTzbO",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+    }
+
+    const Rocket = {
+        Type: 'Rocket',
+        Header: 'Solve to launch the rocket.',
+        Question: 'Solve for <i>s</i>. Show all your work!',
+        Placeholder: 'n =',
+        Answer: '-2',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=140b6qAYcBcEPyv6g2-uSS_Nfq-pbgyjD",
+            alt: 'Question',
+            position: 'above',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, WP1, Feed, Sort, WP2, Match, Rocket, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

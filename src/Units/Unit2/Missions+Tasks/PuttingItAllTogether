@@ -1,0 +1,239 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Putting it all together',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply the mathematical processes as they develop an understanding of algebraic concepts in various contexts</p>
+                <p>Simplify algebraic expressions by applying properties of operations of numbers, using various representations and tools, in different contexts</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Recall and apply all previous concepts</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'What belongs in the blank?',
+        Question: [
+            'E = -7g⁴ + 3g²h² - 11h⁴<br />F = 6g⁴ - 13g²h² + 8h⁴<br />E + F =', 
+            ['-g⁴ - 10g²h² - 3h⁴', '-6g⁴ - 4g²h² - 3h⁴', '-g⁴ + 4g²h² - 3h⁴', '-g⁴ - 4g²h² + 2h⁴'], 
+        ],
+        Answer: ['-g⁴ - 10g²h² - 3h⁴'],
+        Image: null,
+        Audio: null , 
+    };
+
+    const Sort = {
+        Type: 'Vertical DND',
+        Header: 'Order the polynomials from highest to lowest degree',
+        Data: [
+            {
+                id: '1',
+                label: '-99a⁵ + 5a⁴ + a⁷',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '2',
+                label: 'b⁴ - 12b⁶ + 41b + 24b² - 10',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '3',
+                label: '18 + 24x² + 6x',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '4',
+                label: '5d⁵ - 3d⁴ + 9d³ - 9d²',
+                items: [
+                ],
+                tint: 5,
+              }   
+        ],
+        Answer: [
+            {
+                id: '1',
+                label: '-99a⁵ + 5a⁴ + a⁷',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '2',
+                label: 'b⁴ - 12b⁶ + 41b + 24b² - 10',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '4',
+                label: '5d⁵ - 3d⁴ + 9d³ - 9d²',
+                items: [
+                ],
+                tint: 5,
+              },
+              {
+                id: '3',
+                label: '18 + 24x² + 6x',
+                items: [
+                ],
+                tint: 5,
+              }  
+        ]
+    }
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "Write a single polynomial to represent the area of this shape.",
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> You need to use both multiplication and addition!",
+                },
+                "Show all your work!",
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Putting+it+All+Together/U1_L26_WP1.png",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Feed = {
+        Type: 'Feed',
+        Header: "Daniel will only eat products in the perfect squares form. Feed him up to five polynomials to see if you can get him to eat.",
+        Options : 
+        [
+            {
+                name:'9x² + 6x + 1',
+                score: '2',
+                icon: 'A',
+            },
+            {
+                name:'(1 + 6x)²',
+                score: '2',
+                icon: 'B',
+            },
+            {
+                name:'-99x⁵ + 5x⁴ + x⁷',
+                score: '-6',
+                icon: 'C',
+            },
+            {
+                name:'(3x + 12)(3x - 12)',
+                score: '-6',
+                icon: 'D',
+            },
+            {
+                name:'(2x + 3)(2x + 3)',
+                score: '2',
+                icon: 'E',
+            },
+            {
+                name:'5x³ + 22x² - 9',
+                score: '-6',
+                icon: 'F',
+            },
+            {
+                name:'-x² - 5x + x²',
+                score: '-6',
+                icon: 'G',
+            },
+            {
+                name:'16x² + 8x + 1',
+                score: '2',
+                icon: 'H',
+            },
+            {
+                name:'-94x⁵ + 7x³ - 43x² - 8',
+                score: '-6',
+                icon: 'I',
+            },
+            {
+                name:'(5x + 4)(5x - 4)',
+                score: '-6',
+                icon: 'J',
+            },
+            {
+                name:'5x',
+                score: '-6',
+                icon: 'K',
+            },
+            {
+                name:'(x + 2)(x + 2)',
+                score: '2',
+                icon: 'L',
+            },
+        ]
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Solve.',
+        Question: '(4x + 9)(4x - 9)',
+        Options: [
+            "16x² - 81",
+            "8x² - 18",
+            "(16x - 81)²",
+            "18x² - 6"
+        ],
+        Answer: "16x² - 81", // answer must be one of your options
+        Image: { // optional
+            url: 'Image url goes here', 
+            alt: 'Short image description goes here',
+            position: 'above or below (for above or below text)',
+            zoom: 'zoomed image goes here' // optional
+        },
+        Audio: 'Audio file goes here' , // optional
+    };
+      
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Sort, WP, Feed, MC, FB, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

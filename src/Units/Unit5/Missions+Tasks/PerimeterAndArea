@@ -1,0 +1,213 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Final Mission',
+        Text: {
+            transition: null,
+            text: [ 
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'flag',
+            position: 'below',
+            width: 350,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Match the figures with their perimeters, rounded to the nearest decimal.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '42.4 cm'},
+                'op-2': { id: 'op-2', content: '75.7 cm' },
+                'op-3': { id: 'op-3', content: '22.3 cm' },
+                'op-4': { id: 'op-4', content: '35.8 cm' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1YXzq5FTnmNjfspIdfbEvaFgi4aSIslgt',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1RlF0lTi6Wm5FwakWFMgtWz9B48aME18D',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1HX9kngOTpOKW8jrzEQYNqpoxnVZNliCr',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1Go6c16op7yz5fJMfCZDfnIDnj7N7hRTt',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '42.4 cm'},
+                'op-2': { id: 'op-2', content: '75.7 cm' },
+                'op-3': { id: 'op-3', content: '22.3 cm' },
+                'op-4': { id: 'op-4', content: '35.8 cm' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1YXzq5FTnmNjfspIdfbEvaFgi4aSIslgt',
+                    taskIds: ['op-3'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1RlF0lTi6Wm5FwakWFMgtWz9B48aME18D',
+                    taskIds: ['op-4'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1HX9kngOTpOKW8jrzEQYNqpoxnVZNliCr',
+                    taskIds: ['op-2'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1Go6c16op7yz5fJMfCZDfnIDnj7N7hRTt',
+                    taskIds: ['op-1'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        }
+    }
+
+
+    const MC1 = {
+        Type: 'Multiple Choice',
+        Header: 'Solve. Show all your work!',
+        Index: 1,
+        Question: '<p>Tom is buying soil for the flower bed shown above.</p><p>One bag of soil covers <b>15 square meters</b>.</p><p>How many bags of topsoil does Tom need to cover his flower bed?</p></p>',
+        Options: [
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        Answer: "2",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1FLZKavxFp8IGfVPYN3av6E7pWMaKlwUm",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP1 = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>An archery target has a diameter of 80 cm.<p/>",
+                "<p>It contains a circle in the center with a radius of 8 cm and three additional concentric rings each 8 cm wide.</p>",
+                "<p><b>A)</b> Find the area of the outer ring, to the nearest centimeter.</p>",
+                "<p><b>B)</b> What percent of the total area is the outer ring?</p>",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1yCwi9Wpfskley6TqNHLSiIzgLPH0Xgzp",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+
+    const Rocket = {
+        Type: 'Rocket',
+        Header: 'Solve to launch the rocket.',
+        Question: 'Determine the area.',
+        Placeholder: '___cm²',
+        Answer: '512',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=10foMXgcEPufX21AHHU5BGMhoeVue3Gmi",
+            alt: 'Question',
+            position: 'above',
+            width: 300,
+            zoom: null
+        },
+        Audio: null
+    }
+   
+    const Ending = {
+        Type: 'Default',
+        Header: "Congrats! You made it to the end!",
+        Text: null,
+        Audio: null
+    }
+
+    const MC2 = {
+        Type: 'Multiple Choice',
+        Header: 'Solve. Show all your work!',
+        Index: 2,
+        Question: 'What is the circumference of the circle?',
+        Options: [
+            "2π",
+            "3π",
+            "4π",
+            "5π"
+        ],
+        Answer: "4π",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=10gyMDzs4vguY1i1PM-OBUnL5xc-HQfOn",
+            alt: 'Question',
+            position: 'above',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, MC1, Match, Rocket, WP1, MC2, Ending ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

@@ -1,0 +1,273 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+   const Intro = {
+        Type: 'Default',
+        Header: 'Multiplying and Dividing Rational Numbers',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply an understanding of rational numbers, ratios, rates, percentages, and proportions in various mathematical contexts, and to solve problems</p>
+                <p>Use patterns and number relationships to explain density, infinity, and limit as they relate to number sets</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Multiply and divide expressions involving rational numbers</p>
+                <p>Solve problems with positive and negative fractions</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+and+Dividing+Rational+Numbers/calculator.png",
+            alt: 'process',
+            position: 'below',
+            width: '200vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson1 = {
+        Type: 'Default',
+        Header: 'Multiplying Fractions',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>When multiplying fractions, it's important to follow the following steps:</p>",
+                "<div class='re'>1. Convert any mixed fractions to improper fractions</div>",
+                "<div class='or'>2. Multiply the numerators</div>",
+                "<div class='ye'>3. Multiply the denominators</div>",
+                "<div class='gr'>4. Simplify to lowest terms</div>"
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const VertDND = {
+        Type: 'Vertical DND',
+        Header: 'Reorder the rules of multiplying fractions to their correct positions:',
+        Data: [
+            {
+                id: 'rule-1',
+                label: 'Multiply the denominators',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'rule-2',
+                label: 'Simplify the result',
+                items: [],
+                tint: 2,
+            },
+            {
+                id: 'rule-3',
+                label: 'Multiply the numerators',
+                items: [],
+                tint: 3,
+            },
+            {
+                id: 'rule-4',
+                label: 'Convert any mixed numbers to improper fractions',
+                items: [],
+                tint: 1,
+            },
+        ],
+        Answer: [
+            {
+                id: 'rule-4',
+                label: 'Convert any mixed numbers to improper fractions',
+                items: [],
+                tint: 2,
+            },
+            {
+                id: 'rule-3',
+                label: 'Multiply the numerators',
+                items: [],
+                tint: 3,
+            },
+            {
+                id: 'rule-1',
+                label: 'Multiply the denominators',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'rule-2',
+                label: 'Simplify the result',
+                items: [],
+                tint: 2,
+            },
+        ]
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: null,
+        Question: "Find the product of ¼ × ⅓.", 
+        Options: [
+            "⅐",
+            "⁴⁄₃",
+            "⁷⁄₃",
+            "¹⁄₁₂"
+        ],
+        Answer: '¹⁄₁₂',
+        Image: null,
+        Audio: null
+    };
+
+    const Lesson2 = {
+        Type: 'Default',
+        Header: 'Multiplying Fractions with Whole Numbers',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Multiplying fractions by whole numbers is an easy concept.</p>",
+                "<p>Since we know that multiplication is the repeated addition of the same number, this fact can be applied to fractions as well!</p>",
+                "<p>Consider the example:",
+                {
+                    Example: 'Math',
+                    Content: '4 \\times \\frac{2}{3}'
+                },
+                "<p>Suppose there are four six-slice pizzas at a party:",
+                "Hawaiian<p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+and+Dividing+Rational+Numbers/hawaiian.gif width='300' alt={alt}/></p>",
+                "Meat Lovers<p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+and+Dividing+Rational+Numbers/meatlovers.gif width='300' alt={alt}/></p>",
+                "Seafood<p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+and+Dividing+Rational+Numbers/seafood.gif width='300' alt={alt}/></p>",
+                "and Vegetarian<p><img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+and+Dividing+Rational+Numbers/vegetarian.gif width='300' alt={alt}/></p>",
+                `<p>At the end of the party, there are four slices of each pizza left. How much pizza do we have left over in total?</p>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+and+Dividing+Rational+Numbers/hawaiian2.png width='130' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+and+Dividing+Rational+Numbers/meatlovers2.gif width='130' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+and+Dividing+Rational+Numbers/seafood2.gif width='130' alt={alt}/>
+                <img src=https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+and+Dividing+Rational+Numbers/vegetarian2.gif width='130' alt={alt}/>`,
+                "<p>As there are four pizzas, each with 4 slices, we have:",
+                {
+                    Example: 'Math',
+                    Content: '\\frac{4}{6} + \\frac{4}{6} + \\frac{4}{6} + \\frac{4}{6}'
+                },
+                "<p>Counting the number of pizzas gives:",
+                {
+                    Example: 'Math',
+                    Content: '4 \\times 4 = 16\\ slices.'
+                },
+                "This means we have 2⅔ whole pizzas left over.</p>",
+                "<p>Now, we know from the <i>simple rules of multiplication</i> that <p>⁴⁄₆ + ⁴⁄₆ + ⁴⁄₆ + ⁴⁄₆</p><p>is <b>equal</b> to</p> 4 × ⁴⁄₆.</p>",
+                "<p>Then, since ⁴⁄₆ can be simplified to ⅔, we have:",
+                {
+                    Example: 'Math',
+                    Content: '4 \\times \\frac{2}{3}'
+                },
+                "<p>Following the steps for fraction multiplication,</p>",
+                "<p><span class='re'>1.</span> There are no mixed fractions, so step 1 is complete.</p>",
+                "<p><span class='or'>2.</span> Recall that integers are also rational numbers:</p><p>4 can be written as ⁴⁄₁.</p><p>We can now multiply the numerators:</p>",
+                {
+                    Example: 'Math',
+                    Content: '4 \\times 2 = 8'
+                },
+                "<p><span class='ye'>3.</span> We then multiply the denominators:</p>",
+                {
+                    Example: 'Math',
+                    Content: '1 \\times 3 = 3'
+                },
+                "<p>Putting these together, we're left with the result:</p>",
+                {
+                    Example: 'Math',
+                    Content: '\\frac{8}{3}'
+                },
+                "<p><span class='gr'>4.</span> Simplifying the result gives us</p>",
+                {
+                    Example: 'Math',
+                    Content: '2\\frac{2}{3}!'
+                },
+                "<p>Thus, we have 2⅔ pizzas as required!</p>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const NL3 = {
+        Type: 'Default',
+        Header: 'Number Line',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Calculate 3(¾)</p><p>Remember that brackets imply multiplication!</p>",
+                {
+                    Example: 'Number Line',
+                    Max: '12',
+                    Min: '0',
+                    Step: '1',
+                    Initial: '0',
+                    Data: null
+                },
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    const SA = {
+        Type: 'Short Answer',
+        Header: 'Apply Your Knowledge',
+        Question: '<p>What is the the product of (¹³⁄₆)(7⁵⁄₄)? Answer as an improper fraction.</p>',
+        Placeholder: 'Input answer here',
+        Answer: '143/8',
+        Image: null,
+        Audio: null
+    }
+    const Lesson4 = {
+        Type: 'Default',
+        Header: 'Dividing Fractions',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>When dividing one fraction by another, we use the <b>reciprocal method</b>:</p>",
+                "<p>We keep the first fraction the same, flip the second fraction, switching the numerator and the denominator, and multiply as usual!</p>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const SA2 = {
+        Type: 'Short Answer',
+        Header: 'Make an Educated Guess',
+        Question: 'Using what you know about integer operations with negatives, what do you think will be the result of (-5¾)(-2⅔)? Answer as an improper fraction.',
+        Placeholder: 'Input answer here',
+        Answer: '46/3',
+        Image: null,
+        Audio: null
+    };
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Fill in the Blanks',
+        Question: [
+            '3½ × 5⅔ =', 
+            ['¹⁰⁰⁄₃', '19⅚', '20⁶⁄₅', '19\⁶⁄₅'], 
+            '÷ 5⅔ =',
+            ['⁷⁄₂', '⁷⁄₆', '⅔', '3⅓']
+        ],
+        Answer: [ '19⅚', '⁷⁄₂'],
+        Image: null,
+        Audio: null ,
+    };
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Lesson1, VertDND, MC, Lesson2,  NL3, SA, Lesson4, SA2, FB, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

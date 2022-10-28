@@ -1,0 +1,111 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+    
+    const Intro = {
+        Type: 'Default',
+        Header: 'Check-in Questions',
+        Text: {
+            transition: null,
+            text: [ 
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Checkpoint/check-in+(2).png",
+            alt: 'flag',
+            position: 'below',
+            width: 300,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Question1 = {
+        Type: 'Default',
+        Header: 'Question One',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>What is the degree of the polynomial 4x<sup>3</sup>-2x<sup>2</sup>+3x-1?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question2 = {
+        Type: 'Default',
+        Header: 'Question Two',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>What is the degree of the second term of the polynomial 5x<sup>2</sup>-3x<sup>4</sup>+2x-3?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question3 = {
+        Type: 'Default',
+        Header: 'Question Three',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>What type of polynomial is -50?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question4 = {
+        Type: 'Default',
+        Header: 'Question Four',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>Describe <i>how</i> to 'collect like terms'.</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question5 = {
+        Type: 'Default',
+        Header: 'Question Five',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>Describe <i>when</i> to collect like terms</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    
+    const Question6 = {
+        Type: 'Default',
+        Header: 'Question Six',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'> Now that you know how to add and subtract polynomials, how would you multiply a constant by a polynomial?</div><p>(a constant is a number that doesn’t ever change: 2, 5, ½, etc. as opposed to a variable” x, y, z, etc.)</p>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Question1, Question2, Question3, Question4, Question5, Question6 ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

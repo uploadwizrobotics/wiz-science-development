@@ -1,0 +1,132 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Multiplying Polynomials',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply the mathematical processes as they develop an understanding of algebraic concepts in various contexts</p>
+                <p>Simplify algebraic expressions by applying properties of operations of numbers, using various representations and tools, in different contexts</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Multiply polynomials in one and two variables</p>`
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1STELpbedyY6hBX2nnVXlLmyLEMp5LNNi",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Find the first step an error occurs.',
+        Question: 'Then, write down the correct solution.',
+        Options: [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        Answer: '2', 
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+Polynomials/U1_L18_MC1.png",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "Write a single polynomial to represent the area of the rectangle.",
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> the area of a rectangle is <p>length × width!",
+                    Image: {
+                        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+Polynomials/LengthXWidth.png",
+                        alt: 'stop',
+                        position: 'below',
+                        width: 150,
+                        zoom: null
+                    },
+                },
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+Polynomials/U1_L18_WP1.png",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+    
+
+    const Explain = {
+        Type: 'Default',
+        Header: 'Communicate Your Knowledge',
+        Text: {
+            transition: "Next",
+            text: [
+                "Write down how you would explain the distributive property to a 5-year-old.",
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> Use images to help you explain!",
+                    Image: {
+                        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+Polynomials/crafts.gif",
+                        alt: 'stop',
+                        position: 'below',
+                        width: 150,
+                        zoom: null
+                    },
+                },
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Multiplying+Polynomials/presentation+(5).png",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, WP, MC, Explain, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

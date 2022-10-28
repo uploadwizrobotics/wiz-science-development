@@ -1,0 +1,288 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Mid-Unit Review',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply the mathematical processes as they develop an understanding of algebraic concepts in various contexts</p>
+                <p>Simplify algebraic expressions by applying properties of operations of numbers, using various representations and tools, in different contexts</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Recall and apply all previous concepts</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Match each sum or difference of polynomials with its answer.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '4x² + 2x - 1'},
+                'op-2': { id: 'op-2', content: '7x² + 2' },
+                'op-3': { id: 'op-3', content: 'x² + 2x - 1' },
+                'op-4': { id: 'op-4', content: '-3x² - 2x' },
+                'op-5': { id: 'op-5', content: '-6x' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: '(5x² - 2) + (2x² + 4)',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: '(x² - 3x) - (4x² - x)',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: '(x² + 2x + 3) + (3x² - 4)',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: '(3x² - x + 2) - (2x² - 3x + 3)',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'input',
+                    title: '(-3x - 2) - (3x - 2)',
+                    taskIds: [],
+                },
+                'column-6': {
+                    id: 'column-6',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4', 'op-5'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5', 'column-6'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '4x² + 2x - 1'},
+                'op-2': { id: 'op-2', content: '7x² + 2' },
+                'op-3': { id: 'op-3', content: 'x² + 2x - 1' },
+                'op-4': { id: 'op-4', content: '-3x² - 2x' },
+                'op-5': { id: 'op-5', content: '-6x' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: '(5x² - 2) + (2x² + 4)',
+                    taskIds: ['op-2'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: '(x² - 3x) - (4x² - x)',
+                    taskIds: ['op-4'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: '(x² + 2x + 3) + (3x² - 4)',
+                    taskIds: ['op-1'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: '(3x² - x + 2) - (2x² - 3x + 3)',
+                    taskIds: ['op-3'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'input',
+                    title: '(-3x - 2) - (3x - 2)',
+                    taskIds: ['op-5'],
+                },
+                'column-6': {
+                    id: 'column-6',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5', 'column-6'],
+        }
+    }
+
+    const Rocket = {
+        Type: 'Rocket',
+        Header: 'Solve to launch the rocket.',
+        Question: 'Input 1, 2, or 3!',
+        Placeholder: 'Input answer here',
+        Answer: '2',
+        Image: {
+            url: 'https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Mid-Unit+Review/U1_L19_Rocket1.png', 
+            alt: 'Question',
+            position: 'above',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "Write a single polynomial to represent the blue area.",
+                {
+                    Example: 'Note',
+                    Content: "<p>Hint:</p> the blue area is the difference of the outer and inner rectangles!",
+                },
+                "Show all your work!",
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Mid-Unit+Review/U1_L19_WP1.png",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Sort = {
+        Type: 'Horizontal DND',
+        Header: 'Sort the polynomials by their type',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '6k² + 9ky + y²'},
+                'op-2': { id: 'op-2', content: '7x⁴ - 12x³ - 2x² + 99' },
+                'op-3': { id: 'op-3', content: '6y⁴ + 3y³ -17y² + 9y - 39' },
+                'op-4': { id: 'op-4', content: '1 + 4x' },
+                'op-5': { id: 'op-5', content: '9x² + 8³ - 4x' },
+                'op-6': { id: 'op-6', content: '3b⁷- 3b³ + 3' },
+                'op-7': { id: 'op-7', content: '46r + 7r⁶ + 9rx⁴ - 6r²x² - 90r² + 20x + 80' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'Monomial',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Binomial',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Trinomial',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Polynomial',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4', 'op-5', 'op-6', 'op-7'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '6k² + 9ky + y²'},
+                'op-2': { id: 'op-2', content: '7x⁴ - 12x³ - 2x² + 99' },
+                'op-3': { id: 'op-3', content: '6y⁴ + 3y³ -17y² + 9y - 39' },
+                'op-4': { id: 'op-4', content: '1 + 4x' },
+                'op-5': { id: 'op-5', content: '9x² + 8³ - 4x' },
+                'op-6': { id: 'op-6', content: '3b⁷- 3b³ + 3' },
+                'op-7': { id: 'op-7', content: '46r + 7r⁶ + 9rx⁴ - 6r²x² - 90r² + 20x + 80' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'Monomial',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Binomial',
+                    taskIds: ['op-4'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Trinomial',
+                    taskIds: ['op-1', 'op-5', 'op-6'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Polynomial',
+                    taskIds: ['op-2', 'op-3', 'op-7'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        }
+    }
+    
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Sort, Rocket, WP, Match, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

@@ -1,0 +1,212 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+   const Intro = {
+        Type: 'Default',
+        Header: 'Linear Equations with Parentheses',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this mission, students will:</i>
+                <p>Create algebraic expressions to generalize relationships expressed in words, numbers, and visual representations, in various contexts</p>
+                <p>Create and solve equations for various contexts, and verify their solutions</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Evaluate complex linear equations with parentheses</p>`
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=13b2BV9tIviVIf-Op5gzk9-kvvhGVLegQ",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Match the values to their corresponding equations',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-3'},
+                'op-2': { id: 'op-2', content: '1' },
+                'op-3': { id: 'op-3', content: '3' },
+                'op-4': { id: 'op-4', content: '6' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1yhKeZuPatqbVrQEALWrIpDVJA38rQaLI',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1gHaN8-ErKjfYpKQ29xOJZCCXFBLfOmKx',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1GWB5iFuKpwAcMdi9_Etq2AUEMznNRA49',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1PWkW5-p1149XoPHEUd1QYGb0VRdZEtjy',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-3'},
+                'op-2': { id: 'op-2', content: '1' },
+                'op-3': { id: 'op-3', content: '3' },
+                'op-4': { id: 'op-4', content: '6' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1OtxN1jkBKcJq11YNyzSbIwq-LlDpdtLx',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1QzxaWrwPZbyG4a2iH-A-dsY23ef2lg2W',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1YtRWLwCUN4COlvDPMiEshEAnRJ9ZtMsl',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1FDUizCQOm1n_at8aSm5AwbQAyxDIUE4y',
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        }
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Distribute the expression.',
+        Question: [
+            'a(b + c) = ',
+            ['a', '2a', 'ab', 'ac'],
+            " + ",
+            ['ca', 'bc', 'ab', 'c²']
+        ],
+        Answer: ['ab', 'ac'],
+        Image: null,
+        Audio: null , 
+    };
+
+    const Rocket = {
+        Type: 'Rocket',
+        Header: 'Solve to launch the rocket.',
+        Question: 'Solve for n. Show all your work!',
+        Placeholder: 'n =',
+        Answer: '2',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=140b6qAYcBcEPyv6g2-uSS_Nfq-pbgyjD",
+            alt: 'Question',
+            position: 'above',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "Jim has <b>5</b> <i>more</i> quarters than dimes and <b>7</b> <i>fewer</i> nickels than dimes.",
+                "A) How many of each coin does Jim have?",
+                "B) How much money (in dollars and cents) is it worth?",
+                "Show all your work!",
+            ]
+        },
+        Image: {
+            url: "https://media0.giphy.com/media/SsTcO55LJDBsI/giphy.gif?cid=ecf05e478x3tnq8swltpels7o2m7zwdiyhvynjw04cizniju&rid=giphy.gif&ct=g",
+            alt: 'stop',
+            position: 'below',
+            width: '400vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Solve. Show all your work!',
+        Question: 'Demian is checking his work. At which line does he make his FIRST error?',
+        Options: [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        Answer: "4",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1_5Gbin0QpPgXWNWtdPkTYZ3LPTkAZA41",
+            alt: 'stop',
+            position: 'below',
+            width: '100vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, FB, Rocket, WP, Match, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

@@ -1,0 +1,120 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+    
+    const Intro = {
+        Type: 'Default',
+        Header: 'Integers',
+        Intro: true,
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Describe how various subsets of a number system are defined, and describe similarities and differences between these subsets</p>
+                <p>Use patterns and number relationships to explain density, infinity, and limit as they relate to number sets</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Identify integers</p>
+                <p>Visualize integers using the number line</p>`
+            ]
+        },
+        Image: {
+            url: "Thermostat",
+            alt: 'thermostat',
+            position: 'below',
+            zoom: null
+        },
+        Audio: null
+    }
+    
+    const Lesson1 = {
+        Type: 'Default',
+        Header: 'Introduction to Integers',
+        Text: {
+            transition: "Next",
+            text: [
+                "<b>Integers</b>, represented by <b>Z</b>, are a subset of whole-values numbers that can either be <b>positive</b>, <b>negative</b>, or <b>zero</b>:",
+                "<div class='numbers'>... , -4, -3, -2, -1, 0, 1, 2, 3, 4, ...</div>",
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> You can't have a negative number of objects.",
+                    Image: {
+                        url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Integers/no.png",
+                        alt: 'stop',
+                        position: 'below',
+                        width: 150,
+                        zoom: null
+                    },
+                    Text: "Positive integers and 0 are often used to count objects and people!"
+                },
+                { 
+                    Example: 'Thermometer', 
+                    Text: "Negative integers are used in thermometers to determine the temperature, which can reach values <b>below 0</b>."
+                }
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: null,
+        Question: 'Which of the following is an integer?',
+        Options: [
+            "-72",
+            "3.4",
+            "√6",
+            "-3/4"
+        ],
+        Answer: '-72', 
+        Image: null,
+        Audio: null
+    };
+
+    const Lesson2 = {
+        Type: 'Default',
+        Header: 'Visualizing Integers on the Number Line',
+        Text: {
+            transition: "Next",
+            text: [ 
+                "This is a number line.",
+                {
+                    Example: 'Number Line',
+                    Max: 6,
+                    Min: 1,
+                    Step: 1,
+                    Initial: 1,
+                    Data: "A number line is a straight, horizontal line with numbers placed an equal distance apart from one another",
+                },
+                "Numbers lines are great for visualizing number systems and there is a lot we can learn just from looking at them!",
+                "For example, if we want to see the integers from -10 to 10, we can take a look at the number line:",
+                {
+                    Example: 'Number Line',
+                    Max: 10,
+                    Min: -10,
+                    Step: 1,
+                    Initial: 0,
+                    Data: "Notice that all the numbers are all placed <b>1 apart</b>, and that the number line contains <b>negative numbers</b>",
+                },
+            ]
+        },
+        Image: null,
+        Audio: null
+    };
+    
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Lesson1, MC, Lesson2, Ending ];
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;

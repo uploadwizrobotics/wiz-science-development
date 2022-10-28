@@ -1,0 +1,217 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Operations with Powers',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply an understanding of rational numbers, ratios, rates, percentages, and proportions in various mathematical contexts, and to solve problems</p>
+                <p>Use patterns and number relationships to explain density, infinity, and limit as they relate to number sets</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Perform operations with powers</p>
+                <p>Explain and apply the order of operations with exponents</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Operation+With+Powers/Operations.png",
+            alt: 'process',
+            position: 'below',
+            width: '20vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson1 = {
+        Type: 'Default',
+        Header: 'Adding and Subtracting with Powers',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>To add and subtract exponents, we <i>evaluate the powers <b>first</b></i>, then apply any external operations.</p>",
+                "<p>Let’s work through a couple examples:</p>",
+                {
+                    Example: "Math",
+                    Content: 'Evaluate\\ 3^3 + 2^3.'
+                },
+                "<p>We need to <b>evaluate the powers</b> before adding them together:</p>",
+                {
+                    Example: "Math",
+                    Content: '3^3 + 2^3 = (3)(3)(3) + (2)(2)(2) = 27 + 8 = 35'
+                },
+                "<p>Done!</p>",
+                {
+                    Example: "Math",
+                    Content: 'Evaluate\\ (3 + 2)^3.'
+                },
+                "<p>Following the steps of <i>BEDMAS</i>, we evaluate the <b>brackets</b> first:",
+                {
+                    Example: "Math",
+                    Content: '(3 + 2)^3 = (5)^3'
+                },
+                "<p>Then, we evaluate the <b>power</b>:",
+                {
+                    Example: "Math",
+                    Content: '(3 + 2)^3 = (5)(5)(5) = 125'
+                },
+                "<p>Done!</p>"
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Fill in the blanks',
+        Question: [
+            'When adding and subtracting exponents, we evaluate the powers', 
+            ['last', 'after adding', 'after multiplying', 'first'], 
+        ],
+        Answer: ['first'],
+        Image: null,
+        Audio: null , // optional
+    };
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Evaluate the following expression.',
+        Index: 1,
+        Question: '3³ - 4²',
+        Options: [
+            "9",
+            "16",
+            "11",
+            "-2"
+        ],
+        Answer: '11', 
+        Image: null,
+        Audio: null
+    };
+
+    const Lesson2 = {
+        Type: 'Default',
+        Header: 'Multiplying and Dividing Powers with Unlike Bases',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>There are two cases to consider when multiplying and dividing powers with</p><p><i>unlike bases</i></p>",
+                "<div class='gr'>1) When the bases are different but the powers are the same</div>",
+                "<p>In this case, the bases can be <b>multiplied first</b>. To illustrate, let’s take a look at an example:</p>",
+                {
+                    Example: "Math",
+                    Content: 'Evaluate\\ 5^2 \\times 8^2.'
+                },
+                "<p>Here, we can see that the bases are different but the powers are the same.</p>",
+                "<p>We will first multiply the bases:</p>",
+                {
+                    Example: "Math",
+                    Content: '5^2 \\times 8^2 = (5 \\times 8)^2 = (40)^2'
+                },
+                "<p>Then, we will evaluate the resulting power:",
+                {
+                    Example: "Math",
+                    Content: '5^2 \\times 8^2 = (40)(40) = 1600'
+                },
+                "<p>Done!</p>",
+                "<p>The same thing applies for <i>dividing</i>:</p>",
+                {
+                    Example: "Math",
+                    Content: 'Evaluate\\ 12^3 \\div 3^3.'
+                },
+                "<p>Again, the bases are different but the powers are the same.</p>",
+                "<p>We will first divide the bases:",
+                {
+                    Example: "Math",
+                    Content: '12^3 \\div 3^3 = (12 \\div 3)^3 = (4)^3'
+                },
+                "<p>Then, we will evaluate the resulting power:",
+                {
+                    Example: "Math",
+                    Content: '12^3 \\div 3^3 = (4)(4)(4) = 64'
+                },
+               "<p>Done!</p>",
+                "<div class='bl'>2) When both bases and powers are different</div>",
+                "<p>In this case, each of the powers must be <i>evaluated first</i>, just like when they are added and subtracted.</p>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    const Translate = {
+        Type: 'Default',
+        Header: 'Translate',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Convert the following word problem into an expression and evaluate.</p>",
+                "<p>The area of land is measured in hectares(ha).</p>",
+                "<p>One hectare is the area of a <i>square</i> with side length <b>100 m</b>.</p><img src=https://drive.google.com/uc?export=view&id=1TkioHlCpbrPCK9yMQHr2L14UUY_WCEWB width='300' alt={alt}/>",
+                "<p>How many <i>square meters</i> are there in <b>1 ha</b>?</p>",
+                { 
+                    Example: 'List',
+                    Content: [
+                        {   front: {
+                            Example: null,
+                            Content: "ANSWERS", 
+                            }, 
+                            back: {
+                                Example: null,
+                                Content: "<p>1 ha <br />= Area of a ⬚<br />= L × W<br />= 100 m × 100 m<br />= 100² m²<br />= 10000 m²</p>", 
+                            },
+                        }
+                    ]
+                }
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    const MC2 = {
+        Type: 'Multiple Choice',
+        Header: 'Find the first step an error occurs.',
+        Index: 2,
+        Question: 'Evaluate.',
+        Options: [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        Answer: '2', 
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1AlWuR6TPMArtK6SUnqT38Sl0ToaWpW5z",
+            alt: 'process',
+            position: 'below',
+            width: '30vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Lesson1, FB, MC, Lesson2, Translate, MC2, Ending ];
+
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

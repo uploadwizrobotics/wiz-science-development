@@ -1,0 +1,111 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+    
+    const Intro = {
+        Type: 'Default',
+        Header: 'Check-in Questions',
+        Text: {
+            transition: null,
+            text: [ 
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/Checkpoint/check-in+(2).png",
+            alt: 'flag',
+            position: 'below',
+            width: 300,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Question1 = {
+        Type: 'Default',
+        Header: 'Question One',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>What type of number system do we use today?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question2 = {
+        Type: 'Default',
+        Header: 'Question Two',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>What type of number is 17?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question3 = {
+        Type: 'Default',
+        Header: 'Question Three',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>What type of number is √7?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+    
+    const Question4 = {
+        Type: 'Default',
+        Header: 'Question Four',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>You can divide the number types into two distinct groups.<br />What are the names of these groups?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question5 = {
+        Type: 'Default',
+        Header: 'Question Five',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>What are irrational numbers?</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Question6 = {
+        Type: 'Default',
+        Header: 'Question Six',
+        Text: {
+            transition: null,
+            text: [
+                "<div class='or'>Give an example of a situation where you would use integers rather than whole numbers.</div>",
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Question1, Question2, Question3, Question4, Question5, Question6 ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

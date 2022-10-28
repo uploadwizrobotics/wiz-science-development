@@ -1,0 +1,225 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Final Mission',
+        Text: {
+            transition: null,
+            text: [ 
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/NumberSenseFinal/flag+(5).png",
+            alt: 'flag',
+            position: 'below',
+            width: 350,
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Find the measures of exterior angles of △ABC.',
+        Question: [
+            '∠DAB =', 
+            ['0°', '45°', '95°'], 
+            '∠EBC =',
+            ['130°', '60°', '90°'],
+            '∠ACF =',
+            ['65°', '25°', '135°']
+        ],
+        Answer: ['95°', '130°', '135°'],
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1fNlAEl4Kv-me7t8I4G6qCumPjpGPgt6T",
+            alt: 'flag',
+            position: 'below',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const MC1 = {
+        Type: 'Multiple Choice',
+        Header: 'Solve. Show all your work!',
+        Index: 1,
+        Question: 'The area of △ADE is',
+        Options: [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        Answer: "A",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1O0LfurOWVCRAG64Vfa9mVqTOnBdjhC3O",
+            alt: 'flag',
+            position: 'below',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Multiple Choice',
+        Index: 1,
+        Question: 'The sum of the exterior angles of a convex polygon',
+        Options: [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        Answer: "B",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1d_Y6CTl2vyMHiKeRFCj9Wkg2nAFI7l3H",
+            alt: 'flag',
+            position: 'above',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const SA = {
+        Type: 'Short Answer',
+        Header: 'Solve.',
+        Question: '<p>The sum of the interior angles of a polygon is 2340°.</p><p><b>How many sides does the polygon have?</b></p>',
+        Placeholder: 'Input answer here',
+        Answer: '15',
+        Image: null,
+        Audio: null
+    };
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Draw a counter-example to disprove the following hypothesis:<p/>",
+                "<p><div class='example'>'All quadrilaterals with a pair of equal opposite angled are parallelograms.'</div></p>",
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1d67GgnUPq1Dob2iSwb7e8Au556vpw0Q5",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Match the diagrams with the correct value for the unknown angle.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '110°'},
+                'op-2': { id: 'op-2', content: '95°' },
+                'op-3': { id: 'op-3', content: '85°' },
+                'op-4': { id: 'op-4', content: '90°' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=137mW8jDvtIAasWqtmunQ1ZyVZI7xfg4V',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1-f7CcN3A1f1prgOB-jssiATBOEEC_2qo',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=15McCh9kHoM8Lm8ChMENfL5berRJyy7ND',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1_CiYHKnLBVrUBcPoWmNYNGPLaS6Qzg_e',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '110°'},
+                'op-2': { id: 'op-2', content: '95°' },
+                'op-3': { id: 'op-3', content: '85°' },
+                'op-4': { id: 'op-4', content: '90°' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=137mW8jDvtIAasWqtmunQ1ZyVZI7xfg4V',
+                    taskIds: ['op-3'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1-f7CcN3A1f1prgOB-jssiATBOEEC_2qo',
+                    taskIds: ['op-4'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=15McCh9kHoM8Lm8ChMENfL5berRJyy7ND',
+                    taskIds: ['op-2'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1_CiYHKnLBVrUBcPoWmNYNGPLaS6Qzg_e',
+                    taskIds: ['op-1'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        }
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: "Congrats! You made it to the end!",
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, FB, MC, WP, Match, SA, Ending ];
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

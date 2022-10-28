@@ -1,0 +1,266 @@
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import MakePage from './MakePage.js';
+import Markdown from '../Formatting/Math.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Two-Step Linear Equations',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this mission, students will:</i>
+                <p>Create algebraic expressions to generalize relationships expressed in words, numbers, and visual representations, in various contexts</p>
+                <p>Create and solve equations for various contexts, and verify their solutions</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Apply their knowledge of Two-Step Linear Equations</p>`
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1HTdkIbbh2Jxv6Zoee6YeAlTn_hB0m4nF",
+            alt: 'stop',
+            position: 'below',
+            width: '300vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const FB = {
+        Type: 'Fill in the Blank',
+        Header: 'Fill in the blanks.',
+        Question: [
+            '<p>ʷ⁄₅ = 3,</p>',
+            'w = ',
+            ['8', '⅗', '15', '⅛'], 
+            '<p>2w - 7 = k</p>',
+            'k = ',
+            ['23', '7', '14', '30'],
+            '<p>k + 30 = j</p>',
+            'j = ',
+            ['33', '⁷⁄₃₀', '53', '26']
+        ],
+        Answer: ['15', '23', '53'],
+        Image: null,
+        Audio: null , 
+    };
+
+    const Sort = {
+        Type: 'Vertical DND',
+        Header: 'Order the solution sets from greatest to least',
+        Data: [
+            {
+                id: '1',
+                label: '-3b - 15 > -24',
+                items: [
+                ],
+                tint: 5,
+            },
+            {
+                id: '2',
+                label: '8x + 2 > 34',
+                items: [
+                ],
+                tint: 5,
+            },
+            {
+                id: '3',
+                label: '119 + 5 ≤ 49',
+                items: [
+                ],
+                tint: 5,
+            },
+            {
+                id: '4',
+                label: '-11 - 2d',
+                items: [
+                ],
+                tint: 5,
+            }   
+        ],
+        Answer: [
+            {
+                id: '2',
+                label: '8x + 2 > 34',
+                items: [
+                ],
+                tint: 5,
+            },
+            {
+                id: '3',
+                label: '119 + 5 ≤ 49',
+                items: [
+                ],
+                tint: 5,
+            },
+            {
+                id: '1',
+                label: '-3b - 15 > -24',
+                items: [
+                ],
+                tint: 5,
+            },
+            {
+                id: '4',
+                label: '-11 - 2d',
+                items: [
+                ],
+                tint: 5,
+            }
+        ]
+    }
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "Carl is boarding a plane. He has 2 checked bags of <i>equal weight</i> and a backpack that weighs <b>4</b>kg.",
+                "The total weight of Carl's baggage is <b>35</b>kg.",
+                "<b>A)</b> Write an equation to determine the weight, <i>w</i> of each of Carl's bags.",
+                "<b></b> Find the weight of <b>each</b> of his bags."
+            ]
+        },
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=139yVA-Htn3rtSEjWHbJ8j7E9HqhWI398",
+            alt: 'stop',
+            position: 'below',
+            width: '200vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'Solve. Show all your work!',
+        Question: 'Isabella and her friends are gaming online. An hour later, 3 people go offline. If 12 of them continue playing, how many were online initially?',
+        Options: [
+            "12",
+            "9",
+            "15",
+            "3"
+        ],
+        Answer: "15",
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=18iJy-njns0g6RgHQdO7cEWT8k7naCxwU",
+            alt: 'stop',
+            position: 'below',
+            width: '100vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const Match = {
+        Type: 'Horizontal DND',
+        Header: 'Match the inequalities with their corresponding solution sets solution set.',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-2x + 7 < 23'},
+                'op-2': { id: 'op-2', content: '-12 ≤ 44 + x' },
+                'op-3': { id: 'op-3', content: '-3x + 8 > 15' },
+                'op-4': { id: 'op-4', content: '10x + 5 ≤ 45' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'x ≥ -56',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1FyLD64-elbCq449jvXTmicxkFH_G0jAE',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1AR_sb2dRXgtC_ZPzQvjQh-KZbXxVUhW-',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'x < -⁷⁄₃',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '-2x + 7 < 23'},
+                'op-2': { id: 'op-2', content: '-12 ≤ 44 + x' },
+                'op-3': { id: 'op-3', content: '-3x + 8 > 15' },
+                'op-4': { id: 'op-4', content: '10x + 5 ≤ 45' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title: 'x ≥ -56',
+                    taskIds: ['op-2'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1FyLD64-elbCq449jvXTmicxkFH_G0jAE',
+                    taskIds: ['op-1'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'https://drive.google.com/uc?export=view&id=1AR_sb2dRXgtC_ZPzQvjQh-KZbXxVUhW-',
+                    taskIds: ['op-4'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'x < -⁷⁄₃',
+                    taskIds: ['op-3'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        }
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Feed, MC, WP, FB, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+

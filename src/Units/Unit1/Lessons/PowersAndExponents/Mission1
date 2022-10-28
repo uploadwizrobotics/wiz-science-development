@@ -1,0 +1,187 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+
+    const Intro = {
+        Type: 'Default',
+        Header: 'Introduction to Powers Mission',
+        Text: {
+            transition: "Next",
+            text: [ 
+                "<img src=https://drive.google.com/uc?export=view&id=1BsLagNI951HVAXZ0446Ouwc54OZT-JNq width='300' alt={alt}/>",
+                {
+                    Example: 'Note',
+                    Content: "<p>Note:</p> This mission does not have a worksheet!",
+                    Image: {
+                        url: "https://drive.google.com/uc?export=view&id=1Qi9UKySMUPZ0-rFOPRoe5rPW01bd24IE",
+                        alt: 'stop',
+                        position: 'below',
+                        width: 200,
+                        zoom: null
+                    },
+                },
+            ]
+        },
+        Audio: null
+    }
+
+    const SA = {
+        Type: 'Short Answer',
+        Header: 'Evaluate the power.',
+        Question: 'Think about the <i>negative sign</i>',
+        Placeholder: 'Input answer here',
+        Answer: '-1',
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1992RM9B1PKc2PoAWSiAq910bdW7bwvj1",
+            alt: 'process',
+            position: 'below',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: 'What is the sign of the expression?',
+        Question: 'Think about the <i>brackets</i>',
+        Options: [
+            "Positive",
+            "Negative",
+        ],
+        Answer: 'Positive', 
+        Image: {
+            url: "https://drive.google.com/uc?export=view&id=1nY0JAx5o8DNm-G-zmS05UDjAUU5rWgQL",
+            alt: 'process',
+            position: 'above',
+            width: 400,
+            zoom: null
+        },
+        Audio: null
+    };
+    
+    const Sort = {
+        Type: 'Vertical DND',
+        Header: 'Arrange the powers in order from greatest to least:',
+        Data: [
+            {
+                id: 'group-1',
+                label: '3⁵',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'group-2',
+                label: '5²',
+                items: [],
+                tint: 2,
+            },
+            {
+                id: 'group-3',
+                label: '3⁴',
+                items: [],
+                tint: 3,
+            },
+            {
+                id: 'group-4',
+                label: '6³',
+                items: [],
+                tint: 1,
+            }
+        ],
+        Answer: [
+            {
+                id: 'group-1',
+                label: '3⁵',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'group-4',
+                label: '6³',
+                items: [],
+                tint: 1,
+            },
+            {
+                id: 'group-3',
+                label: '3⁴',
+                items: [],
+                tint: 3,
+            },
+            {
+                id: 'group-2',
+                label: '5²',
+                items: [],
+                tint: 2,
+            },
+        ]
+    }
+    
+    const WP = {
+        Type: 'Default',
+        Header: 'Word Problem',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Earnest works on a corn farm.</p><img src=https://drive.google.com/uc?export=view&id=1w74jPIwhb-ODMXGHNAJHZWmncR9XJrjo width='500' alt={alt}/>",
+                "<p>Over the last <b>2 weeks</b> Earnest has harvested <b>3<sup>3</sup> kg</b> of corn.</p>",
+                "<p>If the harvesting season lasts for <b>54 weeks</b>, and Earnest continues to harvest corn at the <i>same rate</i>, how much corn will Earnest have at the end of the season?</p><p>Write your answer as a <i>single power</i>. Remember to simplify!</p>",
+                {
+                    Example: 'List',
+                    Content: [
+                        {   front: {
+                                Example: null,
+                                Content: "Answers"
+                            }, 
+                            back: {
+                                Example: null,
+                                Content: "→"
+                            },
+                        },
+                        {   front: {
+                                Example: null,
+                                Content: "Part 2"
+                            }, 
+                            back: {
+                                Example: null,
+                                Content: "<p>3<sup>3</sup> weeks × 3<sup>3</sup> kg/week<br />= 3<sup>3+3</sup><br />= 3<sup>6</sup><br />(we will learn how to multiply powers in a future lesson)</p>"
+                            },
+                        },
+                        {   front: {
+                                Example: null,
+                                Content: "Part 1"
+                            }, 
+                            back: {
+                                Example: null,
+                                Content: "<p>54 weeks ÷ 2 weeks<br />= 27 weeks<br />= 3 × 3 × 3 weeks<br />= 3<sup>3</sup> weeks</p>"
+                            },
+                        },
+                    ]
+                }
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Audio: null
+    }
+
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, SA, WP,  MC, Sort, Ending ];
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+
+
+

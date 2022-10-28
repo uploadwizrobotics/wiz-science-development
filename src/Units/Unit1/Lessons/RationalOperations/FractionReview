@@ -1,0 +1,271 @@
+import MakePage from './MakePage.js';
+
+const MakeComponent = () => {
+    
+    const Intro = {
+        Type: 'Default',
+        Header: 'Fraction Review',
+        Text: {
+            transition: 'Next',
+            text: [
+                `<i>By the end of this lesson, students will:</i>
+                <p>Apply an understanding of rational numbers, ratios, rates, percentages, and proportions in various mathematical contexts, and to solve problems</p>
+                <p>Use patterns and number relationships to explain density, infinity, and limit as they relate to number sets</p>`,
+                `<i>Students will be able to successfully:</i>
+                <p>Identify various types of fractions</p>
+                <p>Recall the key concepts of fractions</p>`
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FractionReview/pie-chart+(1).png",
+            alt: 'pie',
+            position: 'below',
+            width: '20vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const Lesson1 = {
+        Type: 'Default',
+        Header: 'Important Terms',
+        Text: {
+            transition: null,
+            text: 
+            {
+                    Example: 'List',
+                    Content: [
+                        {   front: {
+                                Example: null,
+                                Content: "Least Common Multiple (LCM)", 
+                            }, 
+                            back: {
+                                Example: null,
+                                Content: "<p>The smallest number among all common multiples of two or more numbers. Eg. LCM(2, 5) = 10</p>", 
+                            },
+                        },
+                        {
+                            front: {
+                                Example: null,
+                                Content: "Common Denominator", 
+                            },
+                            back: {
+                                Example: null,
+                                Content: "<p>A common multiple of the denominator of a number of fractions. Eg. ⅖, ⅕</p>", 
+                            },
+                        },
+                        {
+                            front: {
+                                Example: null,
+                                Content: "Greatest Common Factor",
+                            },
+                            back: {
+                                Example: null,
+                                Content: "<p>The largest number that is a factor of two or more numbers. Eg. GCF(24, 36) = 12</p>",
+                            },
+                        },
+                        {
+                            front: {
+                                Example: null,
+                                Content: "Mixed Number",
+                            },
+                            back: {
+                                Example: null,
+                                Content: "<p>A fraction formed by combining a whole number and a fraction. Eg. 1½</p>",
+                            },
+                        },
+                        {
+                            front: {
+                                Example: null,
+                                Content: "Improper Fraction",
+                            },
+                            back: {
+                                Example: null,
+                                Content: "<p>A fraction where the numerator is greater than or equal to the denominator. Eg. ⁷⁄₅</p>"
+                            },
+                        },
+                        {
+                            front: {
+                                Example: null,
+                                Content: "Opposite Integers",
+                            },
+                            back: {
+                                Example: null,
+                                Content: "<p>Numbers that are the exact same distance away from the 0 on opposite sides of the number line. Eg. 6, -6</p>"
+                            },
+                        }
+                    ],
+                }
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const Guess = {
+        Type: 'Default',
+        Header: 'Make an Educated Guess',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Now that you know some of the important terms for this module, it’s time to test your thinking!</p>",
+                "<p>Given the definition of <i>Least Common Multiple</i> and the definition of <i>Common Denominator</i>, what do you think the term <b>“Least Common Denominator”</b> refers to?</p>"
+            ]
+        },
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FractionReview/thinking2.gif",
+            alt: 'think',
+            position: 'below',
+            width: '18vw',
+            zoom: null
+        },
+        Audio: null
+    }
+
+    const MC = {
+        Type: 'Multiple Choice',
+        Header: null,
+        Question: 'Find the first line an error occurs:',
+        Options: [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        Answer: '1',
+        Image: {
+            url: "https://wizroboticsintro.s3.us-east-2.amazonaws.com/Curriculum/CWE/MPM1D/MPM1D-U1/FractionReview/Op1.png",
+            alt: 'question',
+            position: 'below',
+            width: '18vw',
+            zoom: null
+        },
+        Audio: null
+    };
+
+    const WP = {
+        Type: 'Default',
+        Header: 'Translate',
+        Text: {
+            transition: "Next",
+            text: [
+                "<p>Convert the following word problem into an expression and evaluate. Remember to use the order of operations and show your steps!</p>",
+                "<p>Michael is expecting a shipment of 5 boxes of A4 paper and 3 boxes of letter paper.</p>",
+                "<p>Each box contains 4 packs of paper and each A4 pack contains 100 sheets of paper, while each letter pack contains 50 sheets.</p>",
+                "<p>If the manufacturing company forgets to add 5 sheets, how many sheets of paper does Michael receive?</p>"
+            ]
+        },
+        Image: null,
+        Audio: null
+    }
+
+    const sampleHorizDND = {
+        Type: 'Horizontal DND',
+        Header: 'Match the terms with the correct definitions/examples',
+        Data: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '5²⁄₆'},
+                'op-2': { id: 'op-2', content: 'The lowest possible number that is divisible by the given numbers' },
+                'op-3': { id: 'op-3', content: 'The negative and positive versions of a integer' },
+                'op-4': { id: 'op-4', content: '⁴⁄₃' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  'Lowest Common Denominator',
+                    taskIds: [],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Mixed Number',
+                    taskIds: [],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Improper Fraction',
+                    taskIds: [],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Opposite Integers',
+                    taskIds: [],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: ['op-1', 'op-2', 'op-3', 'op-4'],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+        Answer: {
+            tasks: {
+                'op-1': { id: 'op-1', content: '5²⁄₆'},
+                'op-2': { id: 'op-2', content: 'The lowest possible number that is divisible by the given numbers' },
+                'op-3': { id: 'op-3', content: 'The negative and positive versions of a integer' },
+                'op-4': { id: 'op-4', content: '⁴⁄₃' },
+            },
+            columns: {
+                'column-1': {
+                    id: 'column-1',
+                    type: 'input',
+                    title:  'Lowest Common Denominator',
+                    taskIds: ['op-2'],
+                },
+                'column-2': {
+                    id: 'column-2',
+                    type: 'input',
+                    title: 'Mixed Number',
+                    taskIds: ['op-1'],
+                },
+                'column-3': {
+                    id: 'column-3',
+                    type: 'input',
+                    title: 'Improper Fraction',
+                    taskIds: ['op-4'],
+                },
+                'column-4': {
+                    id: 'column-4',
+                    type: 'input',
+                    title: 'Opposite Integers',
+                    taskIds: ['op-3'],
+                },
+                'column-5': {
+                    id: 'column-5',
+                    type: 'options',
+                    title: 'Options',
+                    taskIds: [],
+                },
+            },
+            // Facilitate reordering of the columns
+            columnOrder: ['column-1', 'column-2', 'column-3', 'column-4', 'column-5'],
+        },
+    }
+    
+    const Ending = {
+        Type: 'Default',
+        Header: 'Congrats! You made it to the end!',
+        Text: null,
+        Image: null,
+        Audio: null
+    }
+    
+    // place objects in order of appearance
+    const ComponentArray = [ Intro, Lesson1, Guess, sampleHorizDND, Ending ];
+
+
+    return (
+        <MakePage componentArray={ComponentArray} />
+    );
+}
+
+export default MakeComponent;
+
+
+
