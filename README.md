@@ -13,8 +13,10 @@ In this branch, this is the most updated version of the curriculum. This is wher
 
 Steps to push your files to the GitHub: 
 After you have cloned the curriculum template, make sure you are on the right branch. 
-```git branch -a
-git checkout master```
+```
+git branch -a
+git checkout master
+```
 Then you want to add all the files to git
 ```git add .```
 After you have added your files, you will want to commit your changes. 
