@@ -1,7 +1,9 @@
 # Curriculum-Development
-Repo
 
-## Hello, welcome to the wiz robotics github! This is the master branch. 
+## Hello, welcome to the wiz robotics github! 
+
+Title: 
+Master Branch Repo 
 
 Disclosure: This is the most updated deployable code. Do not delete or remove any files unless you are modifying them or are sure you want to delete them.
 
