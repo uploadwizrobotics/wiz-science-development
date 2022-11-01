@@ -21,7 +21,7 @@ Then you want to add all the files to git
 ```
 git add .
 ```
-- After you have added your files, you will want to commit your changes. 
+After you have added your files, you will want to commit your changes. 
 ```
 git commit -m ‘Your text goes in here’
 ```
