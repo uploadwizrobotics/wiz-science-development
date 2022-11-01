@@ -18,8 +18,10 @@ git branch -a
 git checkout master
 ```
 Then you want to add all the files to git
-```git add .```
-After you have added your files, you will want to commit your changes. 
+```
+git add .
+```
+- After you have added your files, you will want to commit your changes. 
 ```git commit -m ‘Your text goes in here’```
 After you commit yoru files, you push your files to git
 ```git push```
