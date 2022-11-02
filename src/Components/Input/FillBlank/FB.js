@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { showMoreContext } from "../../../Parser/ParsePage.js";
 import { endContext } from "../../../Parser/ParsePage.js";
 import scrollToDummy from '../../../Transitions/ScrollTo.js';
+import Alert from '../../Alert/Alert';
 import LoadMore from '../../../Transitions/Continue/LoadMore';
 import DisplayImage from '../../Image/Display/PrintImage';
 
@@ -18,13 +19,13 @@ const FB = (props) => {
     const height = props.height;
     const zoom = props.zoom;
     var idx = -1;
-    var results = [];
     var option = 0;
-    const [showMore, setShowMore] = React.useContext(showMoreContext);
+    var input = [];
     const [end, setEnd] = React.useContext(endContext);
     const [loadMore, setLoadMore] = useState(false);
     const [count, setCount] = useState(0);
-    
+    const [result, setResult] = useState(null);
+
     const handleChoice = (event) => {
         if (event.target.className === 'blank') {
             option = event.target.id;
@@ -36,8 +37,9 @@ const FB = (props) => {
         } else if (event.target.className === 'choice') {
             const name = event.target.getAttribute("name");
             const choice = event.target.id;
+            document.getElementById("text_container" + option).innerHTML = name;
             if (document.getElementById(choice).className === "choice" && document.getElementById("choice_cloud" + option).contains(document.getElementById(choice))) {
-                document.getElementById("text_container" + option).innerHTML = name;
+                document.getElementById("choice_cloud" + option).style.display = "none";
                 checkAnswer(option, name);
             } 
         }
@@ -45,12 +47,19 @@ const FB = (props) => {
 
     const checkAnswer = (index, ans) => {
         if (answer[index] === ans) {
-            results.push('success');
-        }
-        if (results.length === answer.length) {
-            console.log("success");
+            
+            input[index] = answer[index];
+            for (let i = 0; i < answer.length; i++) {
+                if (answer[i] != input[i]) {
+                    return;
+                }
+            }
+            setResult('success');
             setLoadMore(true);
             scrollToDummy();
+        }
+        else {
+            input[index] = ans;
         }
     }
 
@@ -59,11 +68,11 @@ const FB = (props) => {
         setCount(newCount);
         LoadMore();
         setLoadMore(false);
-        setShowMore(true);
     }
 
     return (
         <div className='FB'>
+            { result === 'success' && <Alert result={result} />}
             <div class="content_container">
                 {header && <h1>{header}</h1>}
                 { image &&  <p><DisplayImage image={image} alt={alt} position={position} width={width} height={height} zoom={zoom} /></p>}

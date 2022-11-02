@@ -24,7 +24,7 @@ main, label, label:before, label:after {
   align-items: center;
   justify-content: center;
 }
-label {
+ label {
   z-index: 3;
   width: 3.5vw;
   height: 2.5vw;
@@ -104,7 +104,7 @@ display: none;
 
 .MC {
   margin: auto;
-  width: 60%;
+  width: 100%;
 }
 
 .MC .squircle__input {

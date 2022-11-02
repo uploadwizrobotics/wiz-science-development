@@ -21,7 +21,7 @@
 }
  .sticky-note {
     margin: 0 auto;
-    font-family: 'Tomson Talks', cursive;
+    font-family: 'Tomson Talks';
 	 width: 25vw;
 	 min-height: 300px;
 	 padding: 1em;

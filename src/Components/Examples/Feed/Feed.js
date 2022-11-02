@@ -2,7 +2,6 @@ import './Feed.css'
 import $ from 'jquery';
 import React, { useEffect, useState } from 'react';
 import { Grid } from '@mui/material';
-import { showMoreContext } from "../../../Parser/ParsePage.js";
 import { endContext } from "../../../Parser/ParsePage.js";
 import scrollToDummy from '../../../Transitions/ScrollTo'
 import LoadMore from "../../../Transitions/Continue/LoadMore.js";
@@ -12,14 +11,11 @@ const Feed = (props) => {
     const header = props.header;
     const emojiArr = props.options;
 
-    const [showMore, setShowMore] = React.useContext(showMoreContext);
     const [end, setEnd] = React.useContext(endContext);
     const [loadMore, setLoadMore] = useState(false);
-    const [count, setCount] = useState(0);
-
+    const pagetype = props.pagetype;
 
     useEffect(() => {
-        if (count === 0) {
         $(document).ready(function() {
             $(emojiArr).each(function(i) {
                 var toAppend =
@@ -71,7 +67,7 @@ const Feed = (props) => {
                 "Why do you feed me such disgusting things?",
                 "So terrible you are.",
                 "Bad luck.",
-                "Why is life so cruel to the young, handsome Daniel?"
+                "Why is life so cruel to the young, handsome, Daniel?"
             ];
         
             if (score > 5) {
@@ -96,7 +92,7 @@ const Feed = (props) => {
             $(".response-dialog").html('Feed me!');
             $(".avatar__mouth").attr("class", "avatar__mouth");
         });
-    }
+    
     
         /*var emojiArr = [
             { icon: "3x", score: "-3", name: "3x" },
@@ -104,11 +100,10 @@ const Feed = (props) => {
             { icon: "5x+3", score: "-3", name: "5x+3" },
             { icon: "6x", score: "-4", name: "6x" },
         ];*/
-    });
+    }, []);
 
-    if (loadMore === true && !end && count === 0) {
-        const newCount = count + 1;
-        setCount(newCount);
+    if (loadMore === true && !end) {
+        console.log('It is in here!');
         LoadMore();
         setLoadMore(false);
     }
@@ -120,16 +115,18 @@ const Feed = (props) => {
                     {header}
                 </aside>
                 <Grid item style={{ flexGrow: "1" }}>
-                        <div className="control-center">
-                            <h4>Your chosen items:</h4>
-                            <ul className="chosen-items">
+                    <div className="control-center">
+                       { (pagetype === 'Lesson') && 
+                        <><h4>Your chosen items:</h4><ul className="chosen-items">
                                 <li></li>
                                 <li></li>
                                 <li></li>
                                 <li></li>
                                 <li></li>
-                            </ul>
-                            <div><a className="js-feed">Feed me!</a><a className="js-reset">Reset</a></div>
+                            </ul></> }
+                { (pagetype === 'Lesson') && 
+                    <div><a className="js-feed">Feed me!</a><a className="js-reset">Reset</a></div>
+                }
                             <div className="avatar">
                                 <div className="avatar__hair"></div>
                                 <div className="avatar__head">

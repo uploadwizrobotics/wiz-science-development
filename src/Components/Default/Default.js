@@ -11,11 +11,24 @@ import Note from "../Notes/Note.js";
 import Math from '../../Formatting/Math';
 import PlayVideo from '../../Components/Video/PlayVideo';
 import ClickMe from '../UI/Buttons/ClickMe/ClickMe';
+import PlanetToy from '../PlanetToy/PlanetToy';
+import BigBang from '../BigBang/BigBang';
+import Planet from '../Planet/Planet';
+import Electricity from '../Electricity/Electricity';
+import Charger from '../Charger/Charger';
+import Pikachu from '../Pikachu/Pikachu';
+import ElectricString from '../ElectricString/ElectricString';
+import LightSwitch from '../LightSwitch/LightSwitch';
+import Solid from '../Solid/Solid';
+import Liquid from '../Liquid/Liquid';
+import Gas from '../Gas/Gas';
+import Builder from '../Builder/Builder';
+import Particles from '../Particles/Particles';
+
 export const otherTextContext = React.createContext();
 export const showMoreTextContext = React.createContext();
 export const listTextContext = React.createContext();
 export const indexTextContext = React.createContext();
-
 
 const Default = (props) => {
 
@@ -51,7 +64,7 @@ const Default = (props) => {
             if (transition === 'Next') {
                 // setNext(true);
                 type = 'next';
-            } 
+            }
         } else if (typeof text === 'object') {
             type = 'example';
         } else {
@@ -72,7 +85,7 @@ const Default = (props) => {
                     <showMoreTextContext.Provider value={[showMoreText, setShowMoreText]}>
                         <listTextContext.Provider value={[textList, setTextList]}>
                             <indexTextContext.Provider value={[textIndex, setTextIndex]}>
-                                <div className = { intro ? 'intro' : 'nextgroup' }> 
+                                <div className = { intro ? 'intro' : 'nextgroup' }>
                                     <Next />
                                 </div>
                                 <div className="dummy"></div>
@@ -82,7 +95,112 @@ const Default = (props) => {
                 </otherTextContext.Provider>
             );
         }
-        if (type === 'default') {
+
+       if (type === "planettoy") {
+        return (
+        <React.Fragment>
+            <PlanetToy/>
+            <br/><p><div dangerouslySetInnerHTML={{__html: text.Text}}/></p>
+        </React.Fragment>
+        )
+       }
+       if (type === "planet") {
+        return (
+            <React.Fragment>
+                <Planet/>
+                <br/><p><div dangerouslySetInnerHTML={{__html: text.Text}}/></p>
+            </React.Fragment>
+        )
+       }
+       if (type === "bigbang") {
+        return (
+            <React.Fragment>
+                <BigBang/>
+                <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+            </React.Fragment>
+        )
+       }
+       if (type === "electricity") {
+        return (
+            <React.Fragment>
+                <Electricity />
+                <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+            </React.Fragment>
+        )
+       }
+       if (type === "charger") {
+            return (
+                <React.Fragment>
+                    <Charger/>
+                    <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+                </React.Fragment>
+            )
+       }
+       if (type === "pikachu") {
+            return (
+                <React.Fragment>
+                    <Pikachu/>
+                    <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+                </React.Fragment>
+            )
+       }
+       if (type === "electricstring") {
+        return (
+            <React.Fragment>
+                <ElectricString/>
+                <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+            </React.Fragment>
+        )
+       }
+       if (type === "lightswitch") {
+            return (
+                <React.Fragment>
+                    <LightSwitch/>
+                    <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+                </React.Fragment>
+            )
+       }
+       if (type === "solid") {
+        return (
+            <React.Fragment>
+                <Solid/>
+                <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+            </React.Fragment>
+        )
+       }
+       if (type === "liquid") {
+        return (
+            <React.Fragment>
+                <Liquid/>
+                <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+            </React.Fragment>
+        )
+       }
+       if (type === "gas") {
+        return (
+            <React.Fragment>
+                <Gas/>
+                <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+            </React.Fragment>
+        )
+       }
+       if (type === "builder") {
+         return (
+           <React.Fragment>
+              <Builder/>
+            <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+            </React.Fragment>
+         )
+       }
+       if (type === "particles") {
+        return (
+            <React.Fragment>
+                <Particles/>
+                <br/><p><div dangerouslySetInnerHTML={{__html:text.Text}}/></p>
+            </React.Fragment>
+        )
+       }
+    if (type === 'default') {
             return <div dangerouslySetInnerHTML={{ __html: text }} />;
         }
         if (type === 'example') {
@@ -130,7 +248,7 @@ const Default = (props) => {
             {header && <h1>{header}</h1>}
                 { (text && (position === 'above' || position === null)) && <TextType /> }
                 { (image) &&  <DisplayImage image={image} alt={alt} position={position} width={width} height={height} zoom={zoom} />}
-                { (text && (position === 'below')) && <TextType />} 
+                { (text && (position === 'below')) && <TextType />}
         </div>
     );
 

@@ -2,16 +2,16 @@ import React, { useEffect, useState, } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { showMoreContext } from "../../../../Parser/ParsePage";
 import { endContext } from "../../../../Parser/ParsePage";
-import { typeContext } from "../../../../Parser/ParsePage";
 import scrollToDummy from '../../../../Transitions/ScrollTo';
 import LoadMore from "../../../../Transitions/Continue/LoadMore";
 import "./Vert.css"
 
-function DND(props) {
+ function DND(props) {
 
   const header = props.header;
   const data = props.data;
   const answer = props.answer;
+  console.log('pagetype DND', props);
 
   return (
     <div className = 'vertical'>
@@ -23,7 +23,7 @@ function DND(props) {
             </div>
           </div>
         </div>
-        <SortingGame data={data} answer={answer}/>
+        <SortingGame data={data} answer={answer} loadMore={props.loadMore} pagetype={props.pagetype}/>
       </div>
     </div>
   );
@@ -253,3 +253,4 @@ function DroppableList({ id, items, label, tint, }) {
 }
 
 export default DND;
+

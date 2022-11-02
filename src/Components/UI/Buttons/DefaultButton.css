@@ -77,7 +77,7 @@
   .cta:hover:before {
     color: black;
     width: 100%;
-    background: #FF6C24; 
+    background: #a1adee; 
   }
   .cta:hover svg {
     text-decoration: none;

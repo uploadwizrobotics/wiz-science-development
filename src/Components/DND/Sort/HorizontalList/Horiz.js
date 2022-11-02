@@ -2,9 +2,9 @@ import { React, useState }from 'react';
 import '@atlaskit/css-reset';
 import styled from 'styled-components';
 import { DragDropContext } from 'react-beautiful-dnd';
-import { typeContext } from "../../../../Parser/ParsePage";
 import Column from './Column.js';
 import RetroButton from '../../../UI/Buttons/Retro/RetroButton.js';
+import Alert from '../../../Alert/Alert';
 
 const Container = styled.div`
   display: flex;
@@ -28,6 +28,7 @@ function Horiz(props) {
   const Answer = props.answer;
   const header = props.header;
   const [data, setData] = useState(initialData);
+  const [result, setResult] = useState(null);
   const pagetype = props.pagetype;
 
   const handleDragEnd = (result) => {
@@ -122,11 +123,13 @@ function Horiz(props) {
           }
         }
       }
+    setResult("success");
     return "Success";
   }
 
   return (
     <div className="horizontal">
+      { result === "success" && <Alert result={result} />}
       <h1>{header}</h1>
       <DragDropContext 
         onDragEnd={handleDragEnd}

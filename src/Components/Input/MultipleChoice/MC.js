@@ -1,6 +1,6 @@
 import './MC.css'
 import '../../UI/Buttons/DefaultButton.css'
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Question from "../Question/QuestionTemplate.js"
 import Box from "../../UI/Box/Box.js"
 import Alert from '../../Alert/Alert';
@@ -37,6 +37,7 @@ function Form(props) {
   const handleChange = (position) => {
     const updatedChecked = checked.map((item, index) => index === position ? !item: item);
     setSubmitted(false);
+    setResult(null);
     setChecked(updatedChecked);
   };
 
@@ -84,7 +85,7 @@ function Form(props) {
                   isChecked={checked}
                   onChange={handleChange}
                   />
-                  <label for={"radio-" + option.id + idx}>
+                  <label className='mcLabel' for={"radio-" + option.id + idx}>
                     <div className="name">
                       {option.title}
                     </div>

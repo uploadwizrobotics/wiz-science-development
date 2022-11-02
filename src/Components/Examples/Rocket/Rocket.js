@@ -7,23 +7,15 @@ export const launchContext = React.createContext();
 const Rocket = (props) => {
 
   const header = props.header;
-
   const question = props.question;
-
   const answer = props.answer;
-
   const placeholder = props.placeholder;
-
   const image = props.image;
-
   const alt = props.alt;
-
   const position = props.position;
-
   const zoom = props.zoom;
-
   const width = props.width;
-
+  const pagetype = props.pagetype;
   const [launch, setLaunch] = useState(false);
   
 
@@ -104,7 +96,7 @@ const Rocket = (props) => {
           </Grid>
           <Grid>
           <launchContext.Provider value={[launch, setLaunch]} >
-          <SA header={header} question={question} placeholder={placeholder} answer={answer} image={image} alt={alt} position={position} width={width} zoom={zoom} />
+          <SA header={header} question={question} placeholder={placeholder} answer={answer} image={image} alt={alt} position={position} width={width} zoom={zoom} pagetype={pagetype} />
           </launchContext.Provider>
           </Grid>
           </Grid>

@@ -1,0 +1,47 @@
+* {
+    margin: 0 auto;
+  }
+  
+  body {
+    transition: 0.6s;
+  }
+  
+  .body-color {
+    background-color: rgb(32, 38, 38);
+  }
+  
+  .center {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    margin: auto;
+  }
+ 
+    .outer {
+    height: 110px;
+    width: 200px;
+    border-radius: 100px;
+    border: 4px solid #999;
+    transition: 0.6s;
+  }
+  
+  .day {
+    background: url(https://connorlaw.co.uk/codepen-images/day.jpg) no-repeat 0/cover;
+  }
+  
+  .night {
+    background: url(https://connorlaw.co.uk/codepen-images/night.jpg) no-repeat 0/cover;
+  }
+  
+  .slider {
+    height: 90px;
+    width: 90px;
+    background-color: white;
+    border-radius: 100px;
+    transform: translateX(-44px);
+    cursor: pointer;
+    box-shadow: 0px 0px 20px #777;
+    transition: 0.6s;
+  }

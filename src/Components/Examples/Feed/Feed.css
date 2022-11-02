@@ -81,11 +81,11 @@
      margin: 0 auto;
 }
  .control-center h4 {
-	 font: 700 20px 'Quicksand';
+	 font: 700 20px;
 	 margin: 1em 0 0.8em;
 }
  .control-center a {
-	 font: 700 16px 'Quicksand';
+	 font: 700 16px;
 	 padding: 10px 15px;
 	 margin: 1em 0.2em;
 	 border-radius: 6px;
@@ -110,7 +110,7 @@
 	 background: #f1f1f1;
 }
  .control-center h5 {
-	 font: 700 20px 'Quicksand';
+	 font: 700 20px;
 	 margin: 0 0 0.5em;
 }
  .control-center p {
@@ -129,13 +129,13 @@
 	}
 }
  .instructions {
-	 font-weight: 700;
+	 font-weight: 600;
 	 max-width: 1070px;
 	 padding: 0.8em 1.2em;
 	 border-radius: 6px;
 	 margin: 2vw auto;
 	 color: black;
-	 font-size: 2vw;
+	 font-size: 2.25vw;
 }
  .avatar {
 	 margin-top: 40px;
